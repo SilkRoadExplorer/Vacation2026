@@ -955,28 +955,29 @@
 
 <!-- HEADER -->
 <div class="page-header">
-  <div class="overline">Jedwabny Szlak · 1 osoba · 1 – 15 sierpnia 2026</div>
-  <h1>Wakacje 2026</h1>
+  <div class="overline" data-i18n="overline">Jedwabny Szlak · 1 osoba · 1 – 15 sierpnia 2026</div>
+  <h1 data-i18n="h1">Wakacje 2026</h1>
   <div style="display:flex;justify-content:center;gap:32px;flex-wrap:wrap;margin-bottom:6px;">
     <div style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;color:#cc99cc;">Jedwabny Szlak do Xi'anu</div>
   </div>
   <div style="display:flex;justify-content:center;gap:32px;flex-wrap:wrap;margin-bottom:20px;font-size:12px;opacity:0.65;">
     <div>Ałmaty → Horgos → Sajram → Yining → Turpan → Jiayuguan → Zhangye → Xi'an</div>
   </div>
-  <div class="plan-badges">
-    <span class="badge badge-c"><span class="badge-dot"></span> Jedwabny Szlak do Xi'anu</span>
+  <div class="plan-badges" style="display:flex;align-items:center;justify-content:center;gap:16px;">
+    <span class="badge badge-c"><span class="badge-dot"></span> <span data-i18n="badge_silk_road">Jedwabny Szlak do Xi'anu</span></span>
+    <button id="lang-toggle" onclick="switchLang()" style="background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.35);color:#fff;font-family:inherit;font-size:12px;font-weight:500;padding:5px 14px;border-radius:20px;cursor:pointer;letter-spacing:0.05em;transition:background 0.15s;" onmouseover="this.style.background='rgba(255,255,255,0.25)'" onmouseout="this.style.background='rgba(255,255,255,0.15)'">EN</button>
   </div>
 </div>
 
 <!-- PACKLISTE -->
 <div class="packlist-section accordion-section" id="acc-pack">
   <button class="acc-header" onclick="toggleAcc('acc-pack')" aria-expanded="false">
-    <span class="acc-title">🎒 Packliste — Jedwabny Szlak</span>
+    <span class="acc-title" data-i18n="acc_pack">🎒 Packliste — Jedwabny Szlak</span>
     <span class="acc-arrow">▼</span>
   </button>
   <div class="acc-body" style="display:none">
     <div class="pack-progress">
-      <span id="pack-label">0 / 0 spakowano</span>
+      <span id="pack-label" data-i18n-packed="0 / 0 spakowano" data-i18n-packed-en="0 / 0 packed">0 / 0 spakowano</span>
       <div class="pack-progress-bar"><div class="pack-progress-fill" id="pack-fill" style="width:0%"></div></div>
       <button class="pack-reset" id="pack-reset-btn">↺ Reset</button>
     </div>
@@ -984,84 +985,84 @@
 
       <!-- Dokumenty & Finanse -->
       <div>
-        <div class="pack-cat-title">📄 Dokumenty &amp; Finanse</div>
-        <div class="pack-item"><input type="checkbox" id="p1"><label for="p1">Paszport (ważny min. 6 mies.)</label></div>
-        <div class="pack-item"><input type="checkbox" id="p2"><label for="p2">Wiza chińska (naklejona!)</label></div>
-        <div class="pack-item"><input type="checkbox" id="p3"><label for="p3">Kopie dokumentów (zdjęcia w chmurze)</label></div>
-        <div class="pack-item"><input type="checkbox" id="p4"><label for="p4">Karta kredytowa Visa/Mastercard</label></div>
-        <div class="pack-item"><input type="checkbox" id="p5"><label for="p5">Gotówka USD/EUR (wymiana na miejscu)</label></div>
-        <div class="pack-item"><input type="checkbox" id="p6"><label for="p6">Gotówka CNY ~500 yuan (Chiny)</label></div>
-        <div class="pack-item"><input type="checkbox" id="p7"><label for="p7">Ubezpieczenie podróżne (polisa)</label></div>
-        <div class="pack-item"><input type="checkbox" id="p8"><label for="p8">Potwierdzenia rezerwacji hoteli</label></div>
-        <div class="pack-item"><input type="checkbox" id="p9"><label for="p9">Bilety lotnicze (wydruk lub offline)</label></div>
+        <div class="pack-cat-title" data-i18n="pack_cat_docs">📄 Dokumenty &amp; Finanse</div>
+        <div class="pack-item"><input type="checkbox" id="p1"><label for="p1" data-pl="Paszport (ważny min. 6 mies.)" data-en="Passport (valid min. 6 months)" data-de="Reisepass (min. 6 Monate gültig)">Paszport (ważny min. 6 mies.)</label></div>
+        <div class="pack-item"><input type="checkbox" id="p2"><label for="p2" data-pl="Wiza chińska (naklejona!)" data-en="Chinese visa (affixed!)" data-de="Chinesisches Visum (eingeklebt!)">Wiza chińska (naklejona!)</label></div>
+        <div class="pack-item"><input type="checkbox" id="p3"><label for="p3" data-pl="Kopie dokumentów (zdjęcia w chmurze)" data-en="Document copies (photos in cloud)" data-de="Dokumentenkopien (Fotos in der Cloud)">Kopie dokumentów (zdjęcia w chmurze)</label></div>
+        <div class="pack-item"><input type="checkbox" id="p4"><label for="p4" data-pl="Karta kredytowa Visa/Mastercard" data-en="Credit card Visa/Mastercard" data-de="Kreditkarte Visa/Mastercard">Karta kredytowa Visa/Mastercard</label></div>
+        <div class="pack-item"><input type="checkbox" id="p5"><label for="p5" data-pl="Gotówka USD/EUR (wymiana na miejscu)" data-en="Cash USD/EUR (exchange on site)" data-de="Bargeld USD/EUR (Wechsel vor Ort)">Gotówka USD/EUR (wymiana na miejscu)</label></div>
+        <div class="pack-item"><input type="checkbox" id="p6"><label for="p6" data-pl="Gotówka CNY ~500 yuan (Chiny)" data-en="Cash CNY ~500 yuan (China)" data-de="Bargeld CNY ~500 Yuan (China)">Gotówka CNY ~500 yuan (Chiny)</label></div>
+        <div class="pack-item"><input type="checkbox" id="p7"><label for="p7" data-pl="Ubezpieczenie podróżne (polisa)" data-en="Travel insurance (policy)" data-de="Reiseversicherung (Police)">Ubezpieczenie podróżne (polisa)</label></div>
+        <div class="pack-item"><input type="checkbox" id="p8"><label for="p8" data-pl="Potwierdzenia rezerwacji hoteli" data-en="Hotel booking confirmations" data-de="Hotelbuchungsbestätigungen">Potwierdzenia rezerwacji hoteli</label></div>
+        <div class="pack-item"><input type="checkbox" id="p9"><label for="p9" data-pl="Bilety lotnicze (wydruk lub offline)" data-en="Flight tickets (print or offline)" data-de="Flugtickets (Ausdruck oder offline)">Bilety lotnicze (wydruk lub offline)</label></div>
       </div>
 
       <!-- Technika & Łączność -->
       <div>
-        <div class="pack-cat-title">📱 Technika &amp; Łączność</div>
-        <div class="pack-item"><input type="checkbox" id="t1"><label for="t1">Telefon + ładowarka</label></div>
-        <div class="pack-item"><input type="checkbox" id="t2"><label for="t2">Powerbank (min. 10 000 mAh)</label></div>
-        <div class="pack-item"><input type="checkbox" id="t3"><label for="t3">Adapter do gniazdek (CN: typ A/I)</label></div>
-        <div class="pack-item"><input type="checkbox" id="t4"><label for="t4">VPN zainstalowany i aktywny przed wjazdem do CN</label></div>
-        <div class="pack-item"><input type="checkbox" id="t5"><label for="t5">WeChat zainstalowany (rejestracja przed wyjazdem)</label></div>
-        <div class="pack-item"><input type="checkbox" id="t6"><label for="t6">Mapy offline (Maps.me lub OsmAnd)</label></div>
-        <div class="pack-item"><input type="checkbox" id="t7"><label for="t7">Aparat / dodatkowa karta SD</label></div>
-        <div class="pack-item"><input type="checkbox" id="t8"><label for="t8">Słuchawki</label></div>
-        <div class="pack-item"><input type="checkbox" id="t9"><label for="t9">SIM karta lub eSIM (KZ + CN)</label></div>
+        <div class="pack-cat-title" data-i18n="pack_cat_tech">📱 Technika &amp; Łączność</div>
+        <div class="pack-item"><input type="checkbox" id="t1"><label for="t1" data-pl="Telefon + ładowarka" data-en="Phone + charger" data-de="Handy + Ladekabel">Telefon + ładowarka</label></div>
+        <div class="pack-item"><input type="checkbox" id="t2"><label for="t2" data-pl="Powerbank (min. 10 000 mAh)" data-en="Powerbank (min. 10,000 mAh)" data-de="Powerbank (min. 10.000 mAh)">Powerbank (min. 10 000 mAh)</label></div>
+        <div class="pack-item"><input type="checkbox" id="t3"><label for="t3" data-pl="Adapter do gniazdek (CN: typ A/I)" data-en="Plug adapter (CN: type A/I)" data-de="Steckeradapter (CN: Typ A/I)">Adapter do gniazdek (CN: typ A/I)</label></div>
+        <div class="pack-item"><input type="checkbox" id="t4"><label for="t4" data-pl="VPN zainstalowany i aktywny przed wjazdem do CN" data-en="VPN installed and active before entering China" data-de="VPN installiert und aktiv vor Einreise nach China">VPN zainstalowany i aktywny przed wjazdem do CN</label></div>
+        <div class="pack-item"><input type="checkbox" id="t5"><label for="t5" data-pl="WeChat zainstalowany (rejestracja przed wyjazdem)" data-en="WeChat installed (register before departure)" data-de="WeChat installiert (Registrierung vor Abreise)">WeChat zainstalowany (rejestracja przed wyjazdem)</label></div>
+        <div class="pack-item"><input type="checkbox" id="t6"><label for="t6" data-pl="Mapy offline (Maps.me lub OsmAnd)" data-en="Offline maps (Maps.me or OsmAnd)" data-de="Offline-Karten (Maps.me oder OsmAnd)">Mapy offline (Maps.me lub OsmAnd)</label></div>
+        <div class="pack-item"><input type="checkbox" id="t7"><label for="t7" data-pl="Aparat / dodatkowa karta SD" data-en="Camera / extra SD card" data-de="Kamera / extra SD-Karte">Aparat / dodatkowa karta SD</label></div>
+        <div class="pack-item"><input type="checkbox" id="t8"><label for="t8" data-pl="Słuchawki" data-en="Headphones" data-de="Kopfhörer">Słuchawki</label></div>
+        <div class="pack-item"><input type="checkbox" id="t9"><label for="t9" data-pl="SIM karta lub eSIM (KZ + CN)" data-en="SIM card or eSIM (KZ + CN)" data-de="SIM-Karte oder eSIM (KZ + CN)">SIM karta lub eSIM (KZ + CN)</label></div>
       </div>
 
       <!-- Ubrania -->
       <div>
-        <div class="pack-cat-title">👕 Ubrania</div>
-        <div class="pack-item"><input type="checkbox" id="u1"><label for="u1">T-shirty oddychające (4–5 szt.)</label></div>
-        <div class="pack-item"><input type="checkbox" id="u2"><label for="u2">Lekkie spodnie / spodenki (2 szt.)</label></div>
-        <div class="pack-item"><input type="checkbox" id="u3"><label for="u3">Spodnie długie (meczet, świątynie)</label></div>
-        <div class="pack-item"><input type="checkbox" id="u4"><label for="u4">Cienka kurtka / bluza na wieczory</label></div>
-        <div class="pack-item"><input type="checkbox" id="u5"><label for="u5">Bielizna (5–6 szt.)</label></div>
-        <div class="pack-item"><input type="checkbox" id="u6"><label for="u6">Skarpety (5–6 par)</label></div>
-        <div class="pack-item"><input type="checkbox" id="u7"><label for="u7">Buty trekkingowe / solidne sandały</label></div>
-        <div class="pack-item"><input type="checkbox" id="u8"><label for="u8">Klapki (hotel, plaża)</label></div>
-        <div class="pack-item"><input type="checkbox" id="u9"><label for="u9">Czapka / kapelusz (UV Turpan!)</label></div>
-        <div class="pack-item"><input type="checkbox" id="u10"><label for="u10">Chusta / buff (kurz, słońce)</label></div>
+        <div class="pack-cat-title" data-i18n="pack_cat_clothes">👕 Ubrania</div>
+        <div class="pack-item"><input type="checkbox" id="u1"><label for="u1" data-pl="T-shirty oddychające (4–5 szt.)" data-en="Breathable t-shirts (4–5 pcs)" data-de="Atmungsaktive T-Shirts (4–5 Stk.)">T-shirty oddychające (4–5 szt.)</label></div>
+        <div class="pack-item"><input type="checkbox" id="u2"><label for="u2" data-pl="Lekkie spodnie / spodenki (2 szt.)" data-en="Light trousers / shorts (2 pcs)" data-de="Leichte Hosen / Shorts (2 Stk.)">Lekkie spodnie / spodenki (2 szt.)</label></div>
+        <div class="pack-item"><input type="checkbox" id="u3"><label for="u3" data-pl="Spodnie długie (meczet, świątynie)" data-en="Long trousers (mosques, temples)" data-de="Lange Hose (Moscheen, Tempel)">Spodnie długie (meczet, świątynie)</label></div>
+        <div class="pack-item"><input type="checkbox" id="u4"><label for="u4" data-pl="Cienka kurtka / bluza na wieczory" data-en="Light jacket / hoodie for evenings" data-de="Leichte Jacke / Hoodie für Abende">Cienka kurtka / bluza na wieczory</label></div>
+        <div class="pack-item"><input type="checkbox" id="u5"><label for="u5" data-pl="Bielizna (5–6 szt.)" data-en="Underwear (5–6 pcs)" data-de="Unterwäsche (5–6 Stk.)">Bielizna (5–6 szt.)</label></div>
+        <div class="pack-item"><input type="checkbox" id="u6"><label for="u6" data-pl="Skarpety (5–6 par)" data-en="Socks (5–6 pairs)" data-de="Socken (5–6 Paar)">Skarpety (5–6 par)</label></div>
+        <div class="pack-item"><input type="checkbox" id="u7"><label for="u7" data-pl="Buty trekkingowe / solidne sandały" data-en="Trekking shoes / sturdy sandals" data-de="Wanderschuhe / solide Sandalen">Buty trekkingowe / solidne sandały</label></div>
+        <div class="pack-item"><input type="checkbox" id="u8"><label for="u8" data-pl="Klapki (hotel, plaża)" data-en="Flip-flops (hotel, beach)" data-de="Flip-Flops (Hotel, Strand)">Klapki (hotel, plaża)</label></div>
+        <div class="pack-item"><input type="checkbox" id="u9"><label for="u9" data-pl="Czapka / kapelusz (UV Turpan!)" data-en="Cap / hat (UV in Turpan!)" data-de="Mütze / Hut (UV Turpan!)">Czapka / kapelusz (UV Turpan!)</label></div>
+        <div class="pack-item"><input type="checkbox" id="u10"><label for="u10" data-pl="Chusta / buff (kurz, słońce)" data-en="Scarf / buff (dust, sun)" data-de="Halstuch / Buff (Staub, Sonne)">Chusta / buff (kurz, słońce)</label></div>
       </div>
 
       <!-- Zdrowie & Apteczka -->
       <div>
-        <div class="pack-cat-title">💊 Zdrowie &amp; Apteczka</div>
-        <div class="pack-item"><input type="checkbox" id="h1"><label for="h1">Krem SPF 50+ (Turpan: 40°C!)</label></div>
-        <div class="pack-item"><input type="checkbox" id="h2"><label for="h2">Środek na owady</label></div>
-        <div class="pack-item"><input type="checkbox" id="h3"><label for="h3">Ibuprofen / Paracetamol</label></div>
-        <div class="pack-item"><input type="checkbox" id="h4"><label for="h4">Leki na biegunkę podróżną</label></div>
-        <div class="pack-item"><input type="checkbox" id="h5"><label for="h5">Elektrolity / tabletki na odwodnienie</label></div>
-        <div class="pack-item"><input type="checkbox" id="h6"><label for="h6">Plastry, bandaż, środek do dezynfekcji</label></div>
-        <div class="pack-item"><input type="checkbox" id="h7"><label for="h7">Leki na alergie (kurz stepowy)</label></div>
-        <div class="pack-item"><input type="checkbox" id="h8"><label for="h8">Recepty / leki stałe (z angielskim opisem)</label></div>
+        <div class="pack-cat-title" data-i18n="pack_cat_health">💊 Zdrowie &amp; Apteczka</div>
+        <div class="pack-item"><input type="checkbox" id="h1"><label for="h1" data-pl="Krem SPF 50+ (Turpan: 40°C!)" data-en="Sunscreen SPF 50+ (Turpan: 40°C!)" data-de="Sonnencreme SPF 50+ (Turpan: 40°C!)">Krem SPF 50+ (Turpan: 40°C!)</label></div>
+        <div class="pack-item"><input type="checkbox" id="h2"><label for="h2" data-pl="Środek na owady" data-en="Insect repellent" data-de="Insektenschutzmittel">Środek na owady</label></div>
+        <div class="pack-item"><input type="checkbox" id="h3"><label for="h3" data-pl="Ibuprofen / Paracetamol" data-en="Ibuprofen / Paracetamol" data-de="Ibuprofen / Paracetamol">Ibuprofen / Paracetamol</label></div>
+        <div class="pack-item"><input type="checkbox" id="h4"><label for="h4" data-pl="Leki na biegunkę podróżną" data-en="Traveller's diarrhoea medication" data-de="Medikamente gegen Reisedurchfall">Leki na biegunkę podróżną</label></div>
+        <div class="pack-item"><input type="checkbox" id="h5"><label for="h5" data-pl="Elektrolity / tabletki na odwodnienie" data-en="Electrolytes / rehydration tablets" data-de="Elektrolyte / Rehydrationstabletten">Elektrolity / tabletki na odwodnienie</label></div>
+        <div class="pack-item"><input type="checkbox" id="h6"><label for="h6" data-pl="Plastry, bandaż, środek do dezynfekcji" data-en="Plasters, bandage, disinfectant" data-de="Pflaster, Bandage, Desinfektionsmittel">Plastry, bandaż, środek do dezynfekcji</label></div>
+        <div class="pack-item"><input type="checkbox" id="h7"><label for="h7" data-pl="Leki na alergie (kurz stepowy)" data-en="Allergy medication (steppe dust)" data-de="Allergiemedikamente (Steppenstaub)">Leki na alergie (kurz stepowy)</label></div>
+        <div class="pack-item"><input type="checkbox" id="h8"><label for="h8" data-pl="Recepty / leki stałe (z angielskim opisem)" data-en="Prescriptions / regular meds (with English description)" data-de="Rezepte / Dauermedikamente (mit englischer Beschreibung)">Recepty / leki stałe (z angielskim opisem)</label></div>
       </div>
 
       <!-- Bagaż & Codzienny -->
       <div>
-        <div class="pack-cat-title">🎒 Bagaż &amp; Codzienny</div>
-        <div class="pack-item"><input type="checkbox" id="b1"><label for="b1">Plecak główny (35–45L)</label></div>
-        <div class="pack-item"><input type="checkbox" id="b2"><label for="b2">Mały plecak dzienny</label></div>
-        <div class="pack-item"><input type="checkbox" id="b3"><label for="b3">Kłódka do plecaka</label></div>
-        <div class="pack-item"><input type="checkbox" id="b4"><label for="b4">Worek wodoodporny na elektronikę</label></div>
-        <div class="pack-item"><input type="checkbox" id="b5"><label for="b5">Opaska na paszport / nerka</label></div>
-        <div class="pack-item"><input type="checkbox" id="b6"><label for="b6">Butelka na wodę (min. 1 L)</label></div>
-        <div class="pack-item"><input type="checkbox" id="b7"><label for="b7">Poduszka podróżna</label></div>
-        <div class="pack-item"><input type="checkbox" id="b8"><label for="b8">Zatyczki do uszu (pociągi nocne)</label></div>
-        <div class="pack-item"><input type="checkbox" id="b9"><label for="b9">Mała latarka / headlamp</label></div>
+        <div class="pack-cat-title" data-i18n="pack_cat_bag">🎒 Bagaż &amp; Codzienny</div>
+        <div class="pack-item"><input type="checkbox" id="b1"><label for="b1" data-pl="Plecak główny (35–45L)" data-en="Main backpack (35–45L)" data-de="Hauptrucksack (35–45 L)">Plecak główny (35–45L)</label></div>
+        <div class="pack-item"><input type="checkbox" id="b2"><label for="b2" data-pl="Mały plecak dzienny" data-en="Small day pack" data-de="Kleiner Tagesrucksack">Mały plecak dzienny</label></div>
+        <div class="pack-item"><input type="checkbox" id="b3"><label for="b3" data-pl="Kłódka do plecaka" data-en="Padlock for backpack" data-de="Vorhängeschloss für Rucksack">Kłódka do plecaka</label></div>
+        <div class="pack-item"><input type="checkbox" id="b4"><label for="b4" data-pl="Worek wodoodporny na elektronikę" data-en="Waterproof bag for electronics" data-de="Wasserdichter Beutel für Elektronik">Worek wodoodporny na elektronikę</label></div>
+        <div class="pack-item"><input type="checkbox" id="b5"><label for="b5" data-pl="Opaska na paszport / nerka" data-en="Passport holder / money belt" data-de="Reisepasshülle / Bauchtasche">Opaska na paszport / nerka</label></div>
+        <div class="pack-item"><input type="checkbox" id="b6"><label for="b6" data-pl="Butelka na wodę (min. 1 L)" data-en="Water bottle (min. 1 L)" data-de="Trinkflasche (min. 1 L)">Butelka na wodę (min. 1 L)</label></div>
+        <div class="pack-item"><input type="checkbox" id="b7"><label for="b7" data-pl="Poduszka podróżna" data-en="Travel pillow" data-de="Reisekissen">Poduszka podróżna</label></div>
+        <div class="pack-item"><input type="checkbox" id="b8"><label for="b8" data-pl="Zatyczki do uszu (pociągi nocne)" data-en="Earplugs (night trains)" data-de="Ohrstopsel (Nachtzüge)">Zatyczki do uszu (pociągi nocne)</label></div>
+        <div class="pack-item"><input type="checkbox" id="b9"><label for="b9" data-pl="Mała latarka / headlamp" data-en="Small torch / headlamp" data-de="Kleine Taschenlampe / Stirnlampe">Mała latarka / headlamp</label></div>
       </div>
 
       <!-- Jurta / Nocleg polowy -->
       <div>
-        <div class="pack-cat-title">🏕️ Jurta &amp; Nocleg polowy</div>
-        <div class="pack-item"><input type="checkbox" id="j1"><label for="j1">Śpiwór do +5°C (Sajram: 8°C w nocy)</label></div>
-        <div class="pack-item"><input type="checkbox" id="j2"><label for="j2">Polar / cienka kurtka puchowa</label></div>
-        <div class="pack-item"><input type="checkbox" id="j3"><label for="j3">Ciepłe skarpety (jurta)</label></div>
-        <div class="pack-item"><input type="checkbox" id="j4"><label for="j4">Ręcznik z mikrofibry</label></div>
-        <div class="pack-item"><input type="checkbox" id="j5"><label for="j5">Płyn do dezynfekcji rąk</label></div>
-        <div class="pack-item"><input type="checkbox" id="j6"><label for="j6">Papier toaletowy (zapas!)</label></div>
-        <div class="pack-item"><input type="checkbox" id="j7"><label for="j7">Pastylki do uzdatniania wody</label></div>
+        <div class="pack-cat-title" data-i18n="pack_cat_yurt">🏕️ Jurta &amp; Nocleg polowy</div>
+        <div class="pack-item"><input type="checkbox" id="j1"><label for="j1" data-pl="Śpiwór do +5°C (Sajram: 8°C w nocy)" data-en="Sleeping bag to +5°C (Sayram: 8°C at night)" data-de="Schlafsack bis +5°C (Sayram: 8°C nachts)">Śpiwór do +5°C (Sajram: 8°C w nocy)</label></div>
+        <div class="pack-item"><input type="checkbox" id="j2"><label for="j2" data-pl="Polar / cienka kurtka puchowa" data-en="Fleece / thin down jacket" data-de="Fleece / dünne Daunenjacke">Polar / cienka kurtka puchowa</label></div>
+        <div class="pack-item"><input type="checkbox" id="j3"><label for="j3" data-pl="Ciepłe skarpety (jurta)" data-en="Warm socks (yurt)" data-de="Warme Socken (Jurte)">Ciepłe skarpety (jurta)</label></div>
+        <div class="pack-item"><input type="checkbox" id="j4"><label for="j4" data-pl="Ręcznik z mikrofibry" data-en="Microfibre towel" data-de="Mikrofaser-Handtuch">Ręcznik z mikrofibry</label></div>
+        <div class="pack-item"><input type="checkbox" id="j5"><label for="j5" data-pl="Płyn do dezynfekcji rąk" data-en="Hand sanitiser" data-de="Händedesinfektionsmittel">Płyn do dezynfekcji rąk</label></div>
+        <div class="pack-item"><input type="checkbox" id="j6"><label for="j6" data-pl="Papier toaletowy (zapas!)" data-en="Toilet paper (backup!)" data-de="Toilettenpapier (Reserve!)">Papier toaletowy (zapas!)</label></div>
+        <div class="pack-item"><input type="checkbox" id="j7"><label for="j7" data-pl="Pastylki do uzdatniania wody" data-en="Water purification tablets" data-de="Wasserreinigungstabletten">Pastylki do uzdatniania wody</label></div>
       </div>
 
     </div>
@@ -1072,11 +1073,11 @@
 <!-- WEATHER SECTION -->
 <div class="weather-section accordion-section" id="acc-weather">
   <button class="acc-header" onclick="toggleAcc('acc-weather')" aria-expanded="false">
-    <span class="acc-title">🌤️ Klimat sierpień — trasa Jedwabnego Szlaku</span>
+    <span class="acc-title" data-i18n="acc_weather">🌤️ Klimat sierpień — trasa Jedwabnego Szlaku</span>
     <span class="acc-arrow">▼</span>
   </button>
   <div class="acc-body" style="display:none">
-  <div class="weather-section-title">Dane klimatyczne sierpień — stacje na trasie</div>
+  <div class="weather-section-title" data-i18n="weather_title">Dane klimatyczne sierpień — stacje na trasie</div>
   <div class="weather-grid">
     <!-- Almaty -->
     <div class="wcard wc-almaty">
@@ -1084,7 +1085,7 @@
         <div class="wcard-icon">🏙️</div>
         <div>
           <div class="wcard-name">Ałmaty</div>
-          <div class="wcard-sub">Kazachstan · Stacja 36870 · 848 m n.p.m.</div>
+          <div class="wcard-sub" data-pl="Kazachstan · Stacja 36870 · 848 m n.p.m." data-en="Kazakhstan · Station 36870 · 848 m a.s.l." data-de="Kasachstan · Station 36870 · 848 m ü.M.">Kazachstan · Stacja 36870 · 848 m n.p.m.</div>
         </div>
       </div>
       <div class="wcard-temps">
@@ -1093,10 +1094,10 @@
         <span class="wtemp-min">17,3°</span>
       </div>
       <div class="wcard-stats">
-        <div class="wstat"><div class="wstat-label">Norma opadów</div><div class="wstat-val">34 mm</div></div>
-        <div class="wstat"><div class="wstat-label">Dni deszczowe</div><div class="wstat-val">~11 dni</div></div>
+        <div class="wstat"><div class="wstat-label" data-pl="Norma opadów" data-en="Avg. rainfall" data-de="Ø Niederschlag">Norma opadów</div><div class="wstat-val">34 mm</div></div>
+        <div class="wstat"><div class="wstat-label" data-pl="Dni deszczowe" data-en="Rainy days" data-de="Regentage">Dni deszczowe</div><div class="wstat-val">~11 dni</div></div>
       </div>
-      <div class="wcard-note">Najsuchszy miesiąc roku — wilgotność tylko 45%. Absolutne maksimum: 40,5°C (1944). Sierpień 2024 był rekordowy: średnio 25,6°C.</div>
+      <div class="wcard-note" data-pl="Najsuchszy miesiąc roku — wilgotność tylko 45%. Absolutne maksimum: 40,5°C (1944). Sierpień 2024 był rekordowy: średnio 25,6°C." data-en="Driest month of the year — humidity only 45%. Absolute max: 40.5°C (1944). August 2024 was record-breaking: avg. 25.6°C." data-de="Trockenster Monat des Jahres — Luftfeuchtigkeit nur 45 %. Absolutes Maximum: 40,5 °C (1944). August 2024 war Rekord: Ø 25,6 °C.">Najsuchszy miesiąc roku — wilgotność tylko 45%. Absolutne maksimum: 40,5°C (1944). Sierpień 2024 był rekordowy: średnio 25,6°C.</div>
     </div>
 
 
@@ -1105,8 +1106,8 @@
       <div class="wcard-head">
         <div class="wcard-icon">🏔️</div>
         <div>
-          <div class="wcard-name">Jezioro Sajram</div>
-          <div class="wcard-sub">Xinjiang (CN) · 2.073 m n.p.m.</div>
+          <div class="wcard-name" data-pl="Jezioro Sajram" data-en="Sayram Lake" data-de="Sayram-See">Jezioro Sajram</div>
+          <div class="wcard-sub" data-pl="Xinjiang (CN) · 2.073 m n.p.m." data-en="Xinjiang (CN) · 2,073 m a.s.l." data-de="Xinjiang (CN) · 2.073 m ü.M.">Xinjiang (CN) · 2.073 m n.p.m.</div>
         </div>
       </div>
       <div class="wcard-temps">
@@ -1115,10 +1116,10 @@
         <span class="wtemp-min">8°</span>
       </div>
       <div class="wcard-stats">
-        <div class="wstat"><div class="wstat-label">Charakter</div><div class="wstat-val">Jezioro alpejskie</div></div>
-        <div class="wstat"><div class="wstat-label">Noc</div><div class="wstat-val">5–10°C</div></div>
+        <div class="wstat"><div class="wstat-label" data-pl="Charakter" data-en="Character" data-de="Charakter">Charakter</div><div class="wstat-val">Jezioro alpejskie</div></div>
+        <div class="wstat"><div class="wstat-label" data-pl="Noc" data-en="Night" data-de="Nacht">Noc</div><div class="wstat-val">5–10°C</div></div>
       </div>
-      <div class="wcard-note">Nocleg w jurcie: spakuj polar i ciepłe skarpety. Lipiec–sierpień: szczyt sezonu koczowniczego Kazachów. Za dnia przyjemnie.</div>
+      <div class="wcard-note" data-pl="Nocleg w jurcie: spakuj polar i ciepłe skarpety. Lipiec–sierpień: szczyt sezonu koczowniczego Kazachów. Za dnia przyjemnie." data-en="Yurt overnight: pack fleece and warm socks. July–August: peak of Kazakh nomadic season. Pleasant during the day." data-de="Jurtenübernachtung: Fleece und warme Socken einpacken. Juli–August: Höhepunkt der Nomadensaison. Tagsüber angenehm.">Nocleg w jurcie: spakuj polar i ciepłe skarpety. Lipiec–sierpień: szczyt sezonu koczowniczego Kazachów. Za dnia przyjemnie.</div>
     </div>
 
     <!-- Yining -->
@@ -1126,7 +1127,7 @@
       <div class="wcard-head">
         <div class="wcard-icon">🕌</div>
         <div>
-          <div class="wcard-name">Yining / Dolina Ili</div>
+          <div class="wcard-name" data-pl="Yining / Dolina Ili" data-en="Yining / Ili Valley" data-de="Yining / Ili-Tal">Yining / Dolina Ili</div>
           <div class="wcard-sub">Xinjiang (CN) · klimat Ili · 663 m n.p.m.</div>
         </div>
       </div>
@@ -1200,7 +1201,7 @@
       </div>
       <div class="wcard-stats">
         <div class="wstat"><div class="wstat-label">Sierpień</div><div class="wstat-val">najcieplejszy</div></div>
-        <div class="wstat"><div class="wstat-label">Opady</div><div class="wstat-val">możliwe burze</div></div>
+        <div class="wstat"><div class="wstat-label" data-pl="Opady" data-en="Rainfall" data-de="Niederschlag">Opady</div><div class="wstat-val">możliwe burze</div></div>
       </div>
       <div class="wcard-note">Góry Tęczowe najpiękniejsze po deszczu — kolory intensywniejsze. Świt i zachód słońca obowiązkowe — złota godzina zmienia skały. Sierpień: szczyt sezonu.</div>
     </div>
@@ -1221,7 +1222,7 @@
       </div>
       <div class="wcard-stats">
         <div class="wstat"><div class="wstat-label">Opady sierpień</div><div class="wstat-val">~90 mm</div></div>
-        <div class="wstat"><div class="wstat-label">Wilgotność</div><div class="wstat-val">~75%</div></div>
+        <div class="wstat"><div class="wstat-label" data-pl="Wilgotność" data-en="Humidity" data-de="Luftfeuchtigkeit">Wilgotność</div><div class="wstat-val">~75%</div></div>
       </div>
       <div class="wcard-note">Gorąco i dość wilgotno — odczuwalne jak +38°C. Zwiedzanie Terakotowej Armii rano lub po 16:00. Wieczory przyjemne — idealne na spacer po dzielnicy muzułmańskiej.</div>
     </div>
@@ -1240,36 +1241,36 @@
 <!-- VISA INFO -->
 <div class="visa-section accordion-section" id="acc-visa">
   <button class="acc-header" onclick="toggleAcc('acc-visa')" aria-expanded="false">
-    <span class="acc-title">🛂 Wiza &amp; Wjazd — Kazachstan + Chiny</span>
+    <span class="acc-title" data-i18n="acc_visa">🛂 Wiza &amp; Wjazd — Kazachstan + Chiny</span>
     <span class="acc-arrow">▼</span>
   </button>
   <div class="acc-body" style="display:none">
     <div class="visa-grid">
       <div class="visa-card">
-        <div class="visa-card-head vkz">🇰🇿 Kazachstan</div>
+        <div class="visa-card-head vkz" data-pl="🇰🇿 Kazachstan" data-en="🇰🇿 Kazakhstan">🇰🇿 Kazachstan</div>
         <div class="visa-card-body">
-          <div class="visa-row"><span class="visa-label">Wiza</span><span class="visa-val">Brak wymagana — Polska: bezwizowo do 30 dni (umowa bilateralna KZ–PL)</span></div>
-          <div class="visa-row"><span class="visa-label">Paszport</span><span class="visa-val">Ważność min. 6 miesięcy od planowanej daty powrotu do Polski (wymóg touroperatorów i wytyczne MSZ)</span></div>
-          <div class="visa-row"><span class="visa-label">Rejestracja</span><span class="visa-val">Obowiązkowa jeśli pobyt &gt;5 dni roboczych — hotel rejestruje automatycznie. Przy Airbnb lub prywatnym noclegu — rejestracja ręczna przez gov.kz lub na komisariacie</span></div>
-          <div class="visa-row"><span class="visa-label">Karta migracyjna</span><span class="visa-val">Wypełniasz na przejściu granicznym Horgos przy wyjeździe do CN — zachowaj do powrotu do KZ (jeśli dotyczy)</span></div>
-          <div class="visa-row"><span class="visa-label">Waluta</span><span class="visa-val">Tenge (KZT) · 1 € ≈ 530 KZT (2025) — wymiana w kantorach w centrum Ałmaty, bankomaty Kaspi/Halyk powszechne</span></div>
-          <div class="visa-row"><span class="visa-label">SIM karta</span><span class="visa-val">Kcell lub Beeline — zakup z paszportem w oficjalnym sklepie sieci (lotnisko lub galeria). Kcell: lepszy zasięg w górach</span></div>
-          <div class="visa-row"><span class="visa-label">Ubezpieczenie</span><span class="visa-val">Zalecane — Kazachstan nie ma umowy o bezpłatnej opiece medycznej z Polską</span></div>
+          <div class="visa-row"><span class="visa-label" data-pl="Wiza" data-en="Visa">Wiza</span><span class="visa-val">Brak wymagana — Polska: bezwizowo do 30 dni (umowa bilateralna KZ–PL)</span></div>
+          <div class="visa-row"><span class="visa-label" data-pl="Paszport" data-en="Passport">Paszport</span><span class="visa-val">Ważność min. 6 miesięcy od planowanej daty powrotu do Polski (wymóg touroperatorów i wytyczne MSZ)</span></div>
+          <div class="visa-row"><span class="visa-label" data-pl="Rejestracja" data-en="Registration">Rejestracja</span><span class="visa-val">Obowiązkowa jeśli pobyt &gt;5 dni roboczych — hotel rejestruje automatycznie. Przy Airbnb lub prywatnym noclegu — rejestracja ręczna przez gov.kz lub na komisariacie</span></div>
+          <div class="visa-row"><span class="visa-label" data-pl="Karta migracyjna" data-en="Migration card">Karta migracyjna</span><span class="visa-val">Wypełniasz na przejściu granicznym Horgos przy wyjeździe do CN — zachowaj do powrotu do KZ (jeśli dotyczy)</span></div>
+          <div class="visa-row"><span class="visa-label" data-pl="Waluta" data-en="Currency">Waluta</span><span class="visa-val">Tenge (KZT) · 1 € ≈ 530 KZT (2025) — wymiana w kantorach w centrum Ałmaty, bankomaty Kaspi/Halyk powszechne</span></div>
+          <div class="visa-row"><span class="visa-label" data-pl="SIM karta" data-en="SIM card">SIM karta</span><span class="visa-val">Kcell lub Beeline — zakup z paszportem w oficjalnym sklepie sieci (lotnisko lub galeria). Kcell: lepszy zasięg w górach</span></div>
+          <div class="visa-row"><span class="visa-label" data-pl="Ubezpieczenie" data-en="Insurance">Ubezpieczenie</span><span class="visa-val">Zalecane — Kazachstan nie ma umowy o bezpłatnej opiece medycznej z Polską</span></div>
         </div>
       </div>
       <div class="visa-card">
-        <div class="visa-card-head vcn">🇨🇳 Chiny (Xinjiang, Gansu, Shaanxi)</div>
+        <div class="visa-card-head vcn" data-pl="🇨🇳 Chiny (Xinjiang, Gansu, Shaanxi)" data-en="🇨🇳 China (Xinjiang, Gansu, Shaanxi)">🇨🇳 Chiny (Xinjiang, Gansu, Shaanxi)</div>
         <div class="visa-card-body">
-          <div class="visa-row"><span class="visa-label">Wiza</span><span class="visa-val">🟢 <strong>Bezwizowo do 30 dni</strong> — Polska objęta programem od 1 lipca 2024 r., przedłużonym do 31 grudnia 2026 r. Dotyczy zwykłego paszportu, celów turystycznych, biznesowych, rodzinnych i tranzytowych. Wjazd możliwy przez wszystkie lądowe, lotnicze i morskie przejścia graniczne otwarte dla cudzoziemców — w tym Horgos.</span></div>
-          <div class="visa-row"><span class="visa-label">Formularz wjazdowy</span><span class="visa-val">Obowiązkowy elektroniczny formularz przed wjazdem: <strong>s.nia.gov.cn</strong> — wypełnij nie wcześniej niż 5 dni przed przekroczeniem granicy. Można też wypełnić na miejscu na urządzeniach w punkcie kontrolnym.</span></div>
-          <div class="visa-row"><span class="visa-label">Paszport</span><span class="visa-val">Ważny co najmniej 6 miesięcy od daty planowanego wyjazdu z Chin, min. 6 wolnych stron</span></div>
-          <div class="visa-row"><span class="visa-label">Na granicy</span><span class="visa-val">Funkcjonariusz może zapytać o plan podróży, adres noclegu i bilet powrotny — miej potwierdzenia hoteli dostępne offline</span></div>
-          <div class="visa-row"><span class="visa-label">Liczenie dni</span><span class="visa-val">30 dni liczone od następnego dnia po wjeździe (nie od dnia przylotu). Przy wieczornym przylocie masz pełne 30 dni od następnego dnia.</span></div>
-          <div class="visa-row"><span class="visa-label">Jeśli pobyt &gt;30 dni</span><span class="visa-val">Wymagana wiza L (turystyczna) — Konsulat Generalny ChRL w Warszawie (ul. Bonifraterska 1) lub CVASC · czas oczekiwania 4–7 dni roboczych</span></div>
-          <div class="visa-row"><span class="visa-label">Xinjiang</span><span class="visa-val">⚠️ Kontrole policji i skanowanie dokumentów przy wejściu do atrakcji — normalne procedury. Zawsze miej paszport przy sobie.</span></div>
-          <div class="visa-row"><span class="visa-label">WeChat Pay</span><span class="visa-val">Zarejestruj i powiąż kartę zagraniczną PRZED wjazdem do Chin — w samych Chinach może być trudniej</span></div>
-          <div class="visa-row"><span class="visa-label">VPN</span><span class="visa-val">Zainstaluj i przetestuj przed wjazdem — Google, WhatsApp, Instagram, Gmail zablokowane w CN</span></div>
-          <div class="visa-row"><span class="visa-label">Waluta</span><span class="visa-val">Yuan CNY · 1 € ≈ 7,8 CNY — bankomaty Bank of China/ICBC akceptują Visa/MC, cash backup ~500 CNY</span></div>
+          <div class="visa-row"><span class="visa-label" data-pl="Wiza" data-en="Visa">Wiza</span><span class="visa-val">🟢 <strong>Bezwizowo do 30 dni</strong> — Polska objęta programem od 1 lipca 2024 r., przedłużonym do 31 grudnia 2026 r. Dotyczy zwykłego paszportu, celów turystycznych, biznesowych, rodzinnych i tranzytowych. Wjazd możliwy przez wszystkie lądowe, lotnicze i morskie przejścia graniczne otwarte dla cudzoziemców — w tym Horgos.</span></div>
+          <div class="visa-row"><span class="visa-label" data-pl="Formularz wjazdowy" data-en="Entry form">Formularz wjazdowy</span><span class="visa-val">Obowiązkowy elektroniczny formularz przed wjazdem: <strong>s.nia.gov.cn</strong> — wypełnij nie wcześniej niż 5 dni przed przekroczeniem granicy. Można też wypełnić na miejscu na urządzeniach w punkcie kontrolnym.</span></div>
+          <div class="visa-row"><span class="visa-label" data-pl="Paszport" data-en="Passport">Paszport</span><span class="visa-val">Ważny co najmniej 6 miesięcy od daty planowanego wyjazdu z Chin, min. 6 wolnych stron</span></div>
+          <div class="visa-row"><span class="visa-label" data-pl="Na granicy" data-en="At the border">Na granicy</span><span class="visa-val">Funkcjonariusz może zapytać o plan podróży, adres noclegu i bilet powrotny — miej potwierdzenia hoteli dostępne offline</span></div>
+          <div class="visa-row"><span class="visa-label" data-pl="Liczenie dni" data-en="Counting days">Liczenie dni</span><span class="visa-val">30 dni liczone od następnego dnia po wjeździe (nie od dnia przylotu). Przy wieczornym przylocie masz pełne 30 dni od następnego dnia.</span></div>
+          <div class="visa-row"><span class="visa-label" data-pl="Jeśli pobyt &gt;30 dni" data-en="If stay &gt;30 days">Jeśli pobyt &gt;30 dni</span><span class="visa-val">Wymagana wiza L (turystyczna) — Konsulat Generalny ChRL w Warszawie (ul. Bonifraterska 1) lub CVASC · czas oczekiwania 4–7 dni roboczych</span></div>
+          <div class="visa-row"><span class="visa-label" data-pl="Xinjiang" data-en="Xinjiang">Xinjiang</span><span class="visa-val">⚠️ Kontrole policji i skanowanie dokumentów przy wejściu do atrakcji — normalne procedury. Zawsze miej paszport przy sobie.</span></div>
+          <div class="visa-row"><span class="visa-label" data-pl="WeChat Pay" data-en="WeChat Pay">WeChat Pay</span><span class="visa-val">Zarejestruj i powiąż kartę zagraniczną PRZED wjazdem do Chin — w samych Chinach może być trudniej</span></div>
+          <div class="visa-row"><span class="visa-label" data-pl="VPN" data-en="VPN">VPN</span><span class="visa-val">Zainstaluj i przetestuj przed wjazdem — Google, WhatsApp, Instagram, Gmail zablokowane w CN</span></div>
+          <div class="visa-row"><span class="visa-label" data-pl="Waluta" data-en="Currency">Waluta</span><span class="visa-val">Yuan CNY · 1 € ≈ 7,8 CNY — bankomaty Bank of China/ICBC akceptują Visa/MC, cash backup ~500 CNY</span></div>
         </div>
       </div>
     </div>
@@ -1281,14 +1282,14 @@
 <!-- APPS & TIPS -->
 <div class="apps-section accordion-section" id="acc-apps">
   <button class="acc-header" onclick="toggleAcc('acc-apps')" aria-expanded="false">
-    <span class="acc-title">📱 Aplikacje &amp; Praktyczne wskazówki</span>
+    <span class="acc-title" data-i18n="acc_apps">📱 Aplikacje &amp; Praktyczne wskazówki</span>
     <span class="acc-arrow">▼</span>
   </button>
   <div class="acc-body" style="display:none">
     <div class="apps-grid">
 
       <div>
-        <div class="app-group-title">💳 Płatności</div>
+        <div class="app-group-title" data-pl="💳 Płatności" data-en="💳 Payments">💳 Płatności</div>
         <div class="app-item"><span class="app-icon">💚</span><div><div class="app-name">WeChat Pay</div><div class="app-desc">Główna płatność w Chinach — zarejestruj i powiąż zagraniczną kartę przed wyjazdem. Sklepy, transport, jedzenie.</div></div></div>
         <div class="app-item"><span class="app-icon">🔵</span><div><div class="app-name">Alipay (opcja)</div><div class="app-desc">Alternatywa dla WeChat Pay — od 2023 r. akceptuje karty zagraniczne bez chińskiego numeru.</div></div></div>
         <div class="app-item"><span class="app-icon">🏧</span><div><div class="app-name">Gotówka CNY</div><div class="app-desc">Miej ~500 CNY cash jako backup — małe sklepy i taksówki w Xinjiangu mogą nie przyjmować WeChat.</div></div></div>
@@ -1296,7 +1297,7 @@
       </div>
 
       <div>
-        <div class="app-group-title">🗺️ Nawigacja &amp; Transport</div>
+        <div class="app-group-title" data-pl="🗺️ Nawigacja &amp; Transport" data-en="🗺️ Navigation &amp; Transport">🗺️ Nawigacja &amp; Transport</div>
         <div class="app-item"><span class="app-icon">🗺️</span><div><div class="app-name">Maps.me / OsmAnd</div><div class="app-desc">Pobierz mapy offline KZ i CN przed wyjazdem — działa bez internetu nawet w stepie.</div></div></div>
         <div class="app-item"><span class="app-icon">🚄</span><div><div class="app-name">12306 (CN koleje)</div><div class="app-desc">Oficjalna aplikacja kolei chińskich — bilety pociągami D/G. Kup przez Trip.com jeśli masz problem z rejestracją.</div></div></div>
         <div class="app-item"><span class="app-icon">✈️</span><div><div class="app-name">Trip.com</div><div class="app-desc">Hotele, pociągi i loty w Chinach. Interfejs po angielsku, płatność kartą zagraniczną.</div></div></div>
@@ -1305,7 +1306,7 @@
       </div>
 
       <div>
-        <div class="app-group-title">🌐 Internet &amp; Komunikacja</div>
+        <div class="app-group-title" data-pl="🌐 Internet &amp; Komunikacja" data-en="🌐 Internet &amp; Communication">🌐 Internet &amp; Komunikacja</div>
         <div class="app-item"><span class="app-icon">🔐</span><div><div class="app-name">VPN — obowiązek!</div><div class="app-desc">Zainstaluj i przetestuj PRZED wjazdem do Chin. Polecane: ExpressVPN, NordVPN, Astrill. W Chinach pobieranie nie działa.</div></div></div>
         <div class="app-item"><span class="app-icon">💬</span><div><div class="app-name">WeChat (komunikacja)</div><div class="app-desc">Działa bez VPN w Chinach. Zainstaluj przed wyjazdem — lokalni przewodnicy i hotele przez WeChat.</div></div></div>
         <div class="app-item"><span class="app-icon">📶</span><div><div class="app-name">SIM / eSIM</div><div class="app-desc">KZ: Kcell lub Beeline z paszportem na miejscu. CN: China Unicom SIM na lotnisku lub eSIM (Airalo, Holafly).</div></div></div>
@@ -1314,32 +1315,32 @@
       </div>
 
     </div>
-    <div class="app-tip">💡 <strong>Ważna kolejność przed wyjazdem:</strong> 1) Wypełnij formularz wjazdowy CN na s.nia.gov.cn (max 5 dni przed) → 2) Zarejestruj WeChat i powiąż kartę → 3) Zainstaluj i aktywuj VPN → 4) Pobierz mapy offline → 5) Zainstaluj 12306 lub Trip.com → 6) Przetestuj wszystko w domu. Po wjeździe do Chin pobieranie z zagranicznych store'ów może nie działać nawet przez VPN.</div>
+    <div class="app-tip" data-pl="💡 <strong>Ważna kolejność przed wyjazdem:</strong> 1) Wypełnij formularz wjazdowy CN na s.nia.gov.cn (max 5 dni przed) → 2) Zarejestruj WeChat i powiąż kartę → 3) Zainstaluj i aktywuj VPN → 4) Pobierz mapy offline → 5) Zainstaluj 12306 lub Trip.com → 6) Przetestuj wszystko w domu. Po wjeździe do Chin pobieranie z zagranicznych store'ów może nie działać nawet przez VPN." data-en="💡 <strong>Important pre-departure checklist:</strong> 1) Complete CN entry form at s.nia.gov.cn (max 5 days before) → 2) Register WeChat and link your card → 3) Install and activate VPN → 4) Download offline maps → 5) Install 12306 or Trip.com → 6) Test everything at home. After entering China, downloading from foreign app stores may not work even with a VPN.">💡 <strong>Ważna kolejność przed wyjazdem:</strong> 1) Wypełnij formularz wjazdowy CN na s.nia.gov.cn (max 5 dni przed) → 2) Zarejestruj WeChat i powiąż kartę → 3) Zainstaluj i aktywuj VPN → 4) Pobierz mapy offline → 5) Zainstaluj 12306 lub Trip.com → 6) Przetestuj wszystko w domu. Po wjeździe do Chin pobieranie z zagranicznych store'ów może nie działać nawet przez VPN.</div>
   </div>
 </div>
 
 <!-- ROUTE MAP -->
 <div class="map-section accordion-section" id="acc-map">
   <button class="acc-header" onclick="toggleAcc('acc-map')" aria-expanded="false">
-    <span class="acc-title">🗺️ Trasa — Ałmaty → Xi'an</span>
+    <span class="acc-title" data-i18n="acc_map">🗺️ Trasa — Ałmaty → Xi'an</span>
     <span class="acc-arrow">▼</span>
   </button>
   <div class="acc-body" style="display:none">
     <div id="route-map"></div>
-    <p style="font-size:11px;color:var(--muted);margin-top:8px;">Kliknij marker, aby zobaczyć szczegóły przystanku · © OpenStreetMap contributors</p>
+    <p style="font-size:11px;color:var(--muted);margin-top:8px;" data-i18n="map_caption">Kliknij marker, aby zobaczyć szczegóły przystanku · © OpenStreetMap contributors</p>
   </div>
 </div>
 
 <!-- QUICK COMPARE -->
 <div class="quick-compare">
   <div class="qc-col plan-c">
-    <div class="qc-title">Jedwabny Szlak</div>
-    <div class="qc-subtitle">Ałmaty → Horgos → Sajram → Yining → Turpan → Jiayuguan → Zhangye → Xi'an · Odlot Xi'an 15.8.</div>
+    <div class="qc-title" data-i18n="qc_title">Jedwabny Szlak</div>
+    <div class="qc-subtitle" data-pl="Ałmaty → Horgos → Sajram → Yining → Turpan → Jiayuguan → Zhangye → Xi'an · Odlot Xi'an 15.8." data-en="Almaty → Khorgos → Sayram → Yining → Turpan → Jiayuguan → Zhangye → Xi'an · Depart Xi'an 15 Aug">Ałmaty → Horgos → Sajram → Yining → Turpan → Jiayuguan → Zhangye → Xi'an · Odlot Xi'an 15.8.</div>
     <div class="qc-stats">
       <div class="stat"><div class="stat-label">Szacowane koszty</div><div class="stat-val c">~1.250 €</div></div>
-      <div class="stat"><div class="stat-label">Kraje</div><div class="stat-val c">2</div></div>
+      <div class="stat"><div class="stat-label" data-pl="Kraje" data-en="Countries">Kraje</div><div class="stat-val c">2</div></div>
       <div class="stat"><div class="stat-label">Granice</div><div class="stat-val c">1×</div></div>
-      <div class="stat"><div class="stat-label">Główny transport</div><div class="stat-val c">Bus + pociąg</div></div>
+      <div class="stat"><div class="stat-label" data-pl="Główny transport" data-en="Main transport">Główny transport</div><div class="stat-val c">Bus + pociąg</div></div>
     </div>
     <div class="qc-tags">
       <span class="qtag c">Jezioro Sajram + Nadam</span>
@@ -1365,14 +1366,14 @@
       <div class="day-card-header">
         <div class="day-num-block dn-rest"><span class="dn">Dzień 1</span><span class="dd">1 sie</span></div>
         <div class="day-info">
-          <div class="day-title">Przylot Ałmaty — Odpoczynek</div>
+          <div class="day-title" data-de="Ankunft Almaty — Erholung">Przylot Ałmaty — Odpoczynek</div data-de="Ankunft Almaty — Erholung">
           <div class="day-loc">Ałmaty · Hotel</div>
           <div class="day-chips"><span class="chip rest">Dzień przyjazdu</span></div>
         </div>
         <div class="day-cost"><span class="cost-main">~30 €</span><span class="cost-note">Hotel + transfer</span></div>
       </div>
       <div class="day-body">
-        Przylot rano, transfer z lotniska przez Yandex Go (~5 €), hotel, lekka kolacja. Brak programu — aklimatyzacja po locie.
+        <span class="day-body-text" data-pl="Przylot rano, transfer z lotniska przez Yandex Go (~5 €), hotel, lekka kolacja. Brak programu — aklimatyzacja po locie." data-en="Morning arrival, airport transfer via Yandex Go (~€5), hotel, light dinner. No agenda — acclimatisation after the flight." data-de="Ankunft morgens, Flughafentransfer per Yandex Go (~5 €), Hotel, leichtes Abendessen. Kein Programm — Akklimatisierung nach dem Flug.">Przylot rano, transfer z lotniska przez Yandex Go (~5 €), hotel, lekka kolacja. Brak programu — aklimatyzacja po locie.</span>
         <div class="day-links">
           <a class="day-link food" href="https://www.google.com/search?q=beshbarmak+kazachstan+baranina+makaron+zdjecia&tbm=isch" target="_blank">🥩 Beszbarmak — baranina na płaskim makaronie</a>
           <a class="day-link food" href="https://www.google.com/search?q=baursaki+kazakh+fried+dough+honey+photos&tbm=isch" target="_blank">🫓 Baursakty — smażone chlebki z miodem</a>
@@ -1380,7 +1381,7 @@
           <a class="day-link food" href="https://www.google.com/search?q=kazakh+manti+dumplings+steamed+photos&tbm=isch" target="_blank">🥟 Manty — gotowane pierogi z jagnięciną</a>
           <a class="day-link sights" href="https://www.google.com/search?q=almaty+green+bazaar+zeleny+bazar+photos&tbm=isch" target="_blank">🛒 Zielony Bazar Ałmaty</a>
           <a class="day-link sights" href="https://www.google.com/search?q=almaty+panfilov+park+zenkov+cathedral+photos&tbm=isch" target="_blank">⛪ Katedra Zenkov</a>
-          <span class="day-link sleep placeholder-hotel">🛏️ Nocleg — <em>link do uzupełnienia</em></span>
+          <span class="day-link sleep placeholder-hotel">🛏️ <span data-i18n="hotel_placeholder">Nocleg — <em>link do uzupełnienia</em></span></span>
         </div>
       </div>
     </div>
@@ -1401,7 +1402,7 @@
         <div class="day-cost"><span class="cost-main">~40 €</span><span class="cost-note">z kolejką linową</span></div>
       </div>
       <div class="day-body">
-        Zielony Bazar, kolejka linowa Kok-Tobe (~5 €) z panoramą miasta i gór, wieczór w restauracji.
+        <span class="day-body-text" data-pl="Zielony Bazar, kolejka linowa Kok-Tobe (~5 €) z panoramą miasta i gór, wieczór w restauracji." data-en="Green Bazaar, Kok-Tobe cable car (~€5) with panoramic city and mountain views, evening at a restaurant." data-de="Grüner Basar, Seilbahn Kok-Tobe (~5 €) mit Panoramablick auf Stadt und Berge, Abend im Restaurant.">Zielony Bazar, kolejka linowa Kok-Tobe (~5 €) z panoramą miasta i gór, wieczór w restauracji.</span>
         <div class="day-links">
           <a class="day-link food" href="https://www.google.com/search?q=lagman+noodles+kazakhstan+photos&tbm=isch" target="_blank">🍜 Lagman — ręcznie ciągnięty makaron w bulionie</a>
           <a class="day-link food" href="https://www.google.com/search?q=kazy+horse+meat+sausage+kazakhstan+photos&tbm=isch" target="_blank">🌭 Kazy — wędzona kiełbasa z koniny</a>
@@ -1418,32 +1419,32 @@
       <div class="fact-text"><strong>Medeo — rekordowe lodowisko</strong> 1691 m n.p.m., przez dekady arena bicia rekordów prędkościowych w łyżwiarstwie szybkim — suche, rzadkie powietrze górskie tworzy wyjątkowo twardy lód. W latach 70. padło tu ponad 120 rekordów świata. Latem: baza wypadowa w góry i gondola na Shymbulak.</div>
     </div>
 
-    <div class="section-label">Tranzyt do Chin — przez Horgos</div>
+    <div class="section-label" data-i18n="sec_transit_horgos">Tranzyt do Chin — przez Horgos</div>
 
     <!-- Dzień 3 -->
     <div class="day-card">
       <div class="day-card-header">
         <div class="day-num-block dn-transit"><span class="dn">Dzień 3</span><span class="dd">3 sie</span></div>
         <div class="day-info">
-          <div class="day-title">Bus Ałmaty → Horgos → Jezioro Sajram</div>
+          <div class="day-title" data-pl="Bus Ałmaty → Horgos → Jezioro Sajram" data-en="Bus Almaty → Khorgos → Sayram Lake" data-de="Bus Almaty → Khorgos → Sayram-See" data-de="Bus Almaty → Khorgos → Sayram-See">Bus Ałmaty → Horgos → Jezioro Sajram</div data-de="Bus Almaty → Khorgos → Sayram-See">
           <div class="day-loc">Dworzec Sajran → Horgos (6,5h) → Granica → Sajram Lake</div>
-          <div class="day-chips"><span class="chip transit">Długi dzień podróży</span><span class="chip border">Przejście graniczne</span></div>
+          <div class="day-chips"><span class="chip transit" data-pl="Długi dzień podróży" data-en="Long travel day" data-de="Langer Reisetag">Długi dzień podróży</span><span class="chip border" data-pl="Przejście graniczne" data-en="Border crossing" data-de="Grenzübergang">Przejście graniczne</span></div>
         </div>
         <div class="day-cost"><span class="cost-main">~35 €</span><span class="cost-note">Bus + transfer</span></div>
       </div>
       <div class="day-body">Bus z Ałmaty wczesnym rankiem — długi ale spektakularny dzień: step, góry, granica i pierwsze jurty.
         <div class="transit-card">
           <div class="tc-header">
-            <div class="tc-route">🚌 Ałmaty → Horgos → Jezioro Sajram</div>
-            <div class="tc-total">~9–10 h łącznie</div>
+            <div class="tc-route" data-pl="🚌 Ałmaty → Horgos → Jezioro Sajram" data-en="🚌 Almaty → Khorgos → Sayram Lake">🚌 Ałmaty → Horgos → Jezioro Sajram</div>
+            <div class="tc-total" data-pl="~9–10 h łącznie" data-en="~9–10 h total">~9–10 h łącznie</div>
           </div>
           <div class="tc-body">
-            <div class="tc-row"><span class="tc-label">Odjazd</span><span class="tc-val">07:00 · <a href="https://maps.app.goo.gl/4V6M1q9mPxDGbCEn7" target="_blank">Dw. autobusowy Sayran</a></span></div>
+            <div class="tc-row"><span class="tc-label" data-pl="Odjazd" data-en="Departure">Odjazd</span><span class="tc-val">07:00 · <a href="https://maps.app.goo.gl/4V6M1q9mPxDGbCEn7" target="_blank">Dw. autobusowy Sayran</a></span></div>
             <div class="tc-row"><span class="tc-label">Przyjazd Horgos</span><span class="tc-val">~13:30 · <a href="https://maps.app.goo.gl/jVRo5Gi2hDuALtzo7" target="_blank">Przejście graniczne</a></span></div>
-            <div class="tc-row"><span class="tc-label">Środek</span><span class="tc-val">Bus bezpośredni (~25 $, ~6,5 h)</span></div>
-            <div class="tc-row"><span class="tc-label">Po odprawie</span><span class="tc-val">Taxi/bus Horgos → Sajram (~1 h, ~110 km)</span></div>
+            <div class="tc-row"><span class="tc-label" data-pl="Środek" data-en="Transport">Środek</span><span class="tc-val" data-pl="Bus bezpośredni (~25 $, ~6,5 h)" data-en="Direct bus (~$25, ~6.5 h)">Bus bezpośredni (~25 $, ~6,5 h)</span></div>
+            <div class="tc-row"><span class="tc-label" data-pl="Po odprawie" data-en="After customs">Po odprawie</span><span class="tc-val" data-pl="Taxi/bus Horgos → Sajram (~1 h, ~110 km)" data-en="Taxi/bus Khorgos → Sayram (~1 h, ~110 km)">Taxi/bus Horgos → Sajram (~1 h, ~110 km)</span></div>
           </div>
-          <div class="tc-change">⚠️ Odprawa graniczna Horgos: 1–3 h (zależnie od kolejki) · Miej paszport i potwierdzenia hoteli dostępne offline · <a href="https://maps.app.goo.gl/jVRo5Gi2hDuALtzo7" target="_blank">📍 Mapa przejścia</a></div>
+          <div class="tc-change" data-pl='⚠️ Odprawa graniczna Horgos: 1–3 h (zależnie od kolejki) · Miej paszport i potwierdzenia hoteli dostępne offline · <a href="https://maps.app.goo.gl/jVRo5Gi2hDuALtzo7" target="_blank">📍 Mapa przejścia</a>' data-en='⚠️ Khorgos border control: 1–3 h (depending on queue) · Keep passport and hotel confirmations available offline · <a href="https://maps.app.goo.gl/jVRo5Gi2hDuALtzo7" target="_blank">📍 Border crossing map</a>'>⚠️ Odprawa graniczna Horgos: 1–3 h (zależnie od kolejki) · Miej paszport i potwierdzenia hoteli dostępne offline · <a href="https://maps.app.goo.gl/jVRo5Gi2hDuALtzo7" target="_blank">📍 Mapa przejścia</a></div>
         </div>
       </div>
     </div>
@@ -1474,7 +1475,7 @@
           <a class="day-link food" href="https://www.google.com/search?q=dried+apricots+xinjiang+ili+valley+market+photos&tbm=isch" target="_blank">🍑 Suszone morele z doliny Ili — od nomadów przy drodze</a>
           <a class="day-link sights" href="https://www.google.com/search?q=sayram+lake+xinjiang+turquoise+mountains+photos&tbm=isch" target="_blank">💙 Jezioro Sajram — turkus na 2073 m n.p.m.</a>
           <a class="day-link sights" href="https://www.google.com/search?q=kazakh+nadam+horse+racing+xinjiang+festival+photos&tbm=isch" target="_blank">🐎 Nadam — wyścigi konne nomadów Xinjangu</a>
-          <span class="day-link sleep placeholder-hotel">🛏️ Nocleg — <em>link do uzupełnienia</em></span>
+          <span class="day-link sleep placeholder-hotel">🛏️ <span data-i18n="hotel_placeholder">Nocleg — <em>link do uzupełnienia</em></span></span>
         </div>
       </div>
     </div>
@@ -1488,9 +1489,9 @@
       <div class="day-card-header">
         <div class="day-num-block dn-transit"><span class="dn">Dzień 5</span><span class="dd">5 sie</span></div>
         <div class="day-info">
-          <div class="day-title">Sajram → Yining — Dolina Ili</div>
-          <div class="day-loc">Jezioro Sajram → Kanion Guozigou → Yining · ~2,5h</div>
-          <div class="day-chips"><span class="chip transit">Przejazd</span><span class="chip nature">Kanion Guozigou</span><span class="chip culture">Yining nocleg</span></div>
+          <div class="day-title" data-pl="Sajram → Yining — Dolina Ili" data-en="Sayram → Yining — Ili Valley" data-de="Sayram → Yining — Ili-Tal" data-de="Sayram → Yining — Ili-Tal">Sajram → Yining — Dolina Ili</div data-de="Sayram → Yining — Ili-Tal">
+          <div class="day-loc" data-pl="Jezioro Sajram → Kanion Guozigou → Yining · ~2,5h" data-en="Sayram Lake → Guozigou Canyon → Yining · ~2.5h">Jezioro Sajram → Kanion Guozigou → Yining · ~2,5h</div>
+          <div class="day-chips"><span class="chip transit" data-pl="Przejazd" data-en="Transfer" data-de="Transit">Przejazd</span><span class="chip nature" data-pl="Kanion Guozigou" data-en="Guozigou Canyon">Kanion Guozigou</span><span class="chip culture" data-pl="Yining nocleg" data-en="Yining overnight">Yining nocleg</span></div>
         </div>
         <div class="day-cost"><span class="cost-main">~38 €</span><span class="cost-note">Transfer + hotel</span></div>
       </div>
@@ -1498,16 +1499,16 @@
         Przejazd przez spektakularny kanion Guozigou z najwyższym mostem wiszącym Xinjiangu. Wieczór w Yining — nocny targ, ujgurski szaszłyk, naan.
         <div class="transit-card">
           <div class="tc-header">
-            <div class="tc-route">🚐 Sajram → Yining przez Guozigou</div>
-            <div class="tc-total">~2,5 h</div>
+            <div class="tc-route" data-pl="🚐 Sajram → Yining przez Guozigou" data-en="🚐 Sayram → Yining via Guozigou">🚐 Sajram → Yining przez Guozigou</div>
+            <div class="tc-total" data-pl="~2,5 h" data-en="~2.5 h">~2,5 h</div>
           </div>
           <div class="tc-body">
             <div class="tc-row"><span class="tc-label">Odjazd</span><span class="tc-val">Rano · <a href="https://maps.app.goo.gl/QW1NuAHNPodYhiCW6" target="_blank">Jezioro Sajram</a></span></div>
             <div class="tc-row"><span class="tc-label">Przyjazd</span><span class="tc-val">~Południe · <a href="https://maps.app.goo.gl/Kk3hHpY4nHpZyMBx9" target="_blank">Yining centrum</a></span></div>
             <div class="tc-row"><span class="tc-label">Środek</span><span class="tc-val">Taxi zbiorowe lub bus (~20–30 CNY)</span></div>
-            <div class="tc-row"><span class="tc-label">Trasa</span><span class="tc-val">Przez Kanion Guozigou + most wiszący</span></div>
+            <div class="tc-row"><span class="tc-label">Trasa</span><span class="tc-val" data-pl="Przez Kanion Guozigou + most wiszący" data-en="Via Guozigou Canyon + suspension bridge">Przez Kanion Guozigou + most wiszący</span></div>
           </div>
-          <div class="tc-change">💡 Kanion Guozigou to atrakcja sama w sobie — siedź po prawej stronie autobusu dla lepszego widoku · <a href="https://maps.app.goo.gl/sDm3NLfJ9XC3pbdm7" target="_blank">📍 Most wiszący na mapie</a></div>
+          <div class="tc-change" data-pl='💡 Kanion Guozigou to atrakcja sama w sobie — siedź po prawej stronie autobusu dla lepszego widoku · <a href="https://maps.app.goo.gl/sDm3NLfJ9XC3pbdm7" target="_blank">📍 Most wiszący na mapie</a>' data-en='💡 Guozigou Canyon is an attraction in itself — sit on the right side of the bus for the best view · <a href="https://maps.app.goo.gl/sDm3NLfJ9XC3pbdm7" target="_blank">📍 Suspension bridge on map</a>'>💡 Kanion Guozigou to atrakcja sama w sobie — siedź po prawej stronie autobusu dla lepszego widoku · <a href="https://maps.app.goo.gl/sDm3NLfJ9XC3pbdm7" target="_blank">📍 Most wiszący na mapie</a></div>
         </div>
         <div class="day-links">
           <a class="day-link food" href="https://www.google.com/search?q=yining+uyghur+kebab+cumin+lamb+skewers+photos&tbm=isch" target="_blank">🍢 Kebab ujgurski z kminkiem — nocny targ Yining</a>
@@ -1516,7 +1517,7 @@
           <a class="day-link food" href="https://www.google.com/search?q=xinjiang+yogurt+ayran+milk+drink+yining+photos&tbm=isch" target="_blank">🥛 Kazachski jogurt — świeży przy nocnym targu</a>
           <a class="day-link sights" href="https://www.google.com/search?q=guozigou+bridge+canyon+xinjiang+suspension+photos&tbm=isch" target="_blank">🌉 Most wiszący Guozigou — najwyższy w Xinjangu</a>
           <a class="day-link sights" href="https://www.google.com/search?q=yining+night+market+xinjiang+uyghur+photos&tbm=isch" target="_blank">🌙 Nocny targ Yining — uliczne życie</a>
-          <span class="day-link sleep placeholder-hotel">🛏️ Nocleg — <em>link do uzupełnienia</em></span>
+          <span class="day-link sleep placeholder-hotel">🛏️ <span data-i18n="hotel_placeholder">Nocleg — <em>link do uzupełnienia</em></span></span>
         </div>
       </div>
     </div>
@@ -1525,30 +1526,30 @@
       <div class="fact-text"><strong>Przełęcz Guozigou — dawna droga śmierci</strong> Przez wieki Guozigou (果子沟) była jedną z najtrudniejszych przepraw w Xinjangu — lawinowa, oblodzona, podmywana. Nowoczesna autostrada i most wiszący z 2011 roku skróciły przejazd z kilku godzin do 20 minut. Po starej drodze możesz wciąż przejść pieszo.</div>
     </div>
 
-    <div class="section-label">Turpan — Serce Jedwabnego Szlaku</div>
+    <div class="section-label" data-i18n="sec_turpan">Turpan — Serce Jedwabnego Szlaku</div>
 
     <!-- Dzień 6 -->
     <div class="day-card">
       <div class="day-card-header">
         <div class="day-num-block dn-transit"><span class="dn">Dzień 6</span><span class="dd">6 sie</span></div>
         <div class="day-info">
-          <div class="day-title">Pociąg Yining → Ürümqi → Turpan</div>
-          <div class="day-loc">Yining → Ürümqi (~8h) → szybki pociąg → Turpan (1h)</div>
-          <div class="day-chips"><span class="chip transit">Dzień pociągiem</span><span class="chip culture">Przyjazd Turpan wieczór</span></div>
+          <div class="day-title" data-pl="Pociąg Yining → Ürümqi → Turpan" data-en="Train Yining → Ürümqi → Turpan" data-de="Zug Yining → Ürümqi → Turpan" data-de="Zug Yining → Ürümqi → Turpan">Pociąg Yining → Ürümqi → Turpan</div data-de="Zug Yining → Ürümqi → Turpan">
+          <div class="day-loc" data-pl="Yining → Ürümqi (~8h) → szybki pociąg → Turpan (1h)" data-en="Yining → Ürümqi (~8h) → fast train → Turpan (1h)">Yining → Ürümqi (~8h) → szybki pociąg → Turpan (1h)</div>
+          <div class="day-chips"><span class="chip transit" data-pl="Dzień pociągiem" data-en="Train day">Dzień pociągiem</span><span class="chip culture" data-pl="Przyjazd Turpan wieczór" data-en="Arrive Turpan evening">Przyjazd Turpan wieczór</span></div>
         </div>
         <div class="day-cost"><span class="cost-main">~28 €</span><span class="cost-note">2 bilety pociąg</span></div>
       </div>
       <div class="day-body">Dzień w pociągu przez pustynię Taklamakan — krajobraz zmienia się z zielonych dolin w ergi i skalne masywy.
         <div class="transit-card">
           <div class="tc-header">
-            <div class="tc-route">🚄 Yining → Ürümqi → Turpan</div>
-            <div class="tc-total">~9 h łącznie</div>
+            <div class="tc-route" data-pl="🚄 Yining → Ürümqi → Turpan" data-en="🚄 Yining → Ürümqi → Turpan">🚄 Yining → Ürümqi → Turpan</div>
+            <div class="tc-total" data-pl="~9 h łącznie" data-en="~9 h total">~9 h łącznie</div>
           </div>
           <div class="tc-body">
             <div class="tc-row"><span class="tc-label">Odjazd</span><span class="tc-val">~07:00 · <a href="https://maps.app.goo.gl/8fCyFAMxpQkGVtHr5" target="_blank">Yining Railway Station</a></span></div>
             <div class="tc-row"><span class="tc-label">Przyjazd Ürümqi</span><span class="tc-val">~15:00 · przesiadka ~1 h</span></div>
-            <div class="tc-row"><span class="tc-label">1. odcinek</span><span class="tc-val">Yining → Ürümqi (~11 €, ~8 h, pociąg K/T)</span></div>
-            <div class="tc-row"><span class="tc-label">2. odcinek</span><span class="tc-val">Ürümqi → Turpan North (~7 €, ~1 h, szybki D)</span></div>
+            <div class="tc-row"><span class="tc-label">1. odcinek</span><span class="tc-val" data-pl="Yining → Ürümqi (~11 €, ~8 h, pociąg K/T)" data-en="Yining → Ürümqi (~€11, ~8 h, K/T train)">Yining → Ürümqi (~11 €, ~8 h, pociąg K/T)</span></div>
+            <div class="tc-row"><span class="tc-label">2. odcinek</span><span class="tc-val" data-pl="Ürümqi → Turpan North (~7 €, ~1 h, szybki D)" data-en="Ürümqi → Turpan North (~€7, ~1 h, fast D-train)">Ürümqi → Turpan North (~7 €, ~1 h, szybki D)</span></div>
           </div>
           <div class="tc-change">💡 Kup oba bilety razem na <a href="https://www.trip.com" target="_blank">Trip.com</a> lub 12306 · Przy przesiadce w Ürümqi masz ok. 1 h — bagaż zostaje przy Tobie, nie trzeba odprawy · <a href="https://maps.app.goo.gl/4tRQmZN9nwdqcX517" target="_blank">📍 Ürümqi Railway Station</a></div>
         </div>
@@ -1560,9 +1561,9 @@
       <div class="day-card-header">
         <div class="day-num-block dn-china"><span class="dn">Dzień 7</span><span class="dd">7 sie</span></div>
         <div class="day-info">
-          <div class="day-title">Turpan — Jiaohe i Jaskinie Bezeklik</div>
+          <div class="day-title" data-pl="Turpan — Jiaohe i Jaskinie Bezeklik" data-en="Turpan — Jiaohe and Bezeklik Caves" data-de="Turpan — Jiaohe und Bezeklik-Höhlen" data-de="Turpan — Jiaohe und Bezeklik-Höhlen">Turpan — Jiaohe i Jaskinie Bezeklik</div data-de="Turpan — Jiaohe und Bezeklik-Höhlen">
           <div class="day-loc">Jiaohe (Orientalne Pompeje) · Jaskinie Bezeklik · Minaret Emina</div>
-          <div class="day-chips"><span class="chip silk">Jedwabny Szlak</span><span class="chip culture">Ruiny</span><span class="chip culture">Buddyzm</span></div>
+          <div class="day-chips"><span class="chip silk">Jedwabny Szlak</span><span class="chip culture">Ruiny</span><span class="chip culture" data-pl="Buddyzm" data-en="Buddhism" data-de="Buddhismus">Buddyzm</span></div>
         </div>
         <div class="day-cost"><span class="cost-main">~45 €</span><span class="cost-note">Wstępy ~25 €</span></div>
       </div>
@@ -1577,7 +1578,7 @@
           <a class="day-link sights" href="https://www.google.com/search?q=jiaohe+ancient+ruins+turpan+plateau+aerial+photos&tbm=isch" target="_blank">🏛️ Ruiny Jiaohe — „Orientalne Pompeje"</a>
           <a class="day-link sights" href="https://www.google.com/search?q=bezeklik+thousand+buddha+caves+murals+turpan+photos&tbm=isch" target="_blank">🙏 Jaskinie Bezeklik — freski buddyjskie</a>
           <a class="day-link sights" href="https://www.google.com/search?q=turpan+emin+minaret+mosque+1777+photos&tbm=isch" target="_blank">🕌 Minaret Emina — najwyższy minaret Chin</a>
-          <span class="day-link sleep placeholder-hotel">🛏️ Nocleg — <em>link do uzupełnienia</em></span>
+          <span class="day-link sleep placeholder-hotel">🛏️ <span data-i18n="hotel_placeholder">Nocleg — <em>link do uzupełnienia</em></span></span>
         </div>
       </div>
     </div>
@@ -1593,7 +1594,7 @@
         <div class="day-info">
           <div class="day-title">Turpan — Gaochang, Ogniste Góry, Karez → pociąg</div>
           <div class="day-loc">Gaochang · Flaming Mountains · Karez → Turpan North → Jiayuguan</div>
-          <div class="day-chips"><span class="chip silk">Karawanowe miasta</span><span class="chip nature">Pustynia</span><span class="chip transit">Wieczór: pociąg</span></div>
+          <div class="day-chips"><span class="chip silk">Karawanowe miasta</span><span class="chip nature" data-pl="Pustynia" data-en="Desert" data-de="Wüste">Pustynia</span><span class="chip transit">Wieczór: pociąg</span></div>
         </div>
         <div class="day-cost"><span class="cost-main">~80 €</span><span class="cost-note">Wstępy + bilet pociąg</span></div>
       </div>
@@ -1638,7 +1639,7 @@
           <a class="day-link sights" href="https://www.google.com/search?q=jiayuguan+pass+fortress+great+wall+western+end+photos&tbm=isch" target="_blank">🏯 Twierdza Jiayuguan — zachodni kraniec Muru Chińskiego</a>
           <a class="day-link sights" href="https://www.google.com/search?q=jiayuguan+overhanging+great+wall+cliff+photos&tbm=isch" target="_blank">⛰️ Wisząca Ściana — Mur wspinający się pionowym urwiskiem</a>
           <a class="day-link sights" href="https://www.google.com/search?q=jiayuguan+wei+jin+underground+tombs+murals+photos&tbm=isch" target="_blank">🎨 Groby Wei-Jin — podziemna galeria malowideł (III–V w.)</a>
-          <span class="day-link sleep placeholder-hotel">🛏️ Nocleg — <em>link do uzupełnienia</em></span>
+          <span class="day-link sleep placeholder-hotel">🛏️ <span data-i18n="hotel_placeholder">Nocleg — <em>link do uzupełnienia</em></span></span>
         </div>
       </div>
     </div>
@@ -1654,9 +1655,9 @@
       <div class="day-card-header">
         <div class="day-num-block dn-gansu"><span class="dn">Dzień 10</span><span class="dd">10 sie</span></div>
         <div class="day-info">
-          <div class="day-title">Zhangye — Góry Tęczowe i Leżący Budda</div>
-          <div class="day-loc">Zhangye Danxia Geopark · Świątynia Dafo (34,5 m Budda)</div>
-          <div class="day-chips"><span class="chip nature">Danxia UNESCO</span><span class="chip culture">Buddyzm</span></div>
+          <div class="day-title" data-de="Zhangye — Regenbogenberge">Zhangye — Góry Tęczowe i Leżący Budda</div data-de="Zhangye — Regenbogenberge">
+          <div class="day-loc" data-pl="Zhangye Danxia Geopark · Świątynia Dafo (34,5 m Budda)" data-en="Zhangye Danxia Geopark · Dafo Temple (34.5 m Buddha)">Zhangye Danxia Geopark · Świątynia Dafo (34,5 m Budda)</div>
+          <div class="day-chips"><span class="chip nature" data-pl="Danxia UNESCO" data-en="Danxia UNESCO">Danxia UNESCO</span><span class="chip culture" data-pl="Buddyzm" data-en="Buddhism" data-de="Buddhismus">Buddyzm</span></div>
         </div>
         <div class="day-cost"><span class="cost-main">~55 €</span><span class="cost-note">Wstępy + hotel</span></div>
       </div>
@@ -1671,7 +1672,7 @@
           <a class="day-link sights" href="https://www.google.com/search?q=zhangye+danxia+rainbow+mountains+colorful+rock+photos&tbm=isch" target="_blank">🌈 Góry Tęczowe — multikolorowe skały Danxia</a>
           <a class="day-link sights" href="https://www.google.com/search?q=zhangye+danxia+sunrise+sunset+golden+hour+photos&tbm=isch" target="_blank">🌅 Złota godzina w Danxia — o świcie lub zachodzie</a>
           <a class="day-link sights" href="https://www.google.com/search?q=zhangye+dafo+temple+giant+reclining+buddha+photos&tbm=isch" target="_blank">🙏 Świątynia Dafo — 34,5 m leżący Budda (1098 r.)</a>
-          <span class="day-link sleep placeholder-hotel">🛏️ Nocleg — <em>link do uzupełnienia</em></span>
+          <span class="day-link sleep placeholder-hotel">🛏️ <span data-i18n="hotel_placeholder">Nocleg — <em>link do uzupełnienia</em></span></span>
         </div>
       </div>
     </div>
@@ -1680,30 +1681,30 @@
       <div class="fact-text"><strong>Góry Tęczowe — kinowe arcydzieło</strong> Zhangye Danxia (张掖丹霞) — wielokolorowe formacje piaskowcowe przez miliony lat wyrzeźbione przez wiatr i deszcz. Wyróżnienie na 74. Festiwalu Filmowym w Wenecji jako jedno z najpiękniejszych miejsc zdjęciowych świata. Tu kręcono animację Mulan (Disney) i film „Wielki Mur" z Mattem Damonem.</div>
     </div>
 
-    <div class="section-label">Xi'an — Dawna Stolica i Koniec Jedwabnego Szlaku</div>
+    <div class="section-label" data-i18n="sec_xian">Xi'an — Dawna Stolica i Koniec Jedwabnego Szlaku</div>
 
     <!-- Dzień 11 -->
     <div class="day-card">
       <div class="day-card-header">
         <div class="day-num-block dn-transit"><span class="dn">Dzień 11</span><span class="dd">11 sie</span></div>
         <div class="day-info">
-          <div class="day-title">Pociąg Zhangye → Xi'an</div>
-          <div class="day-loc">Zhangye West → Xi'an North · ~6,5 godz.</div>
-          <div class="day-chips"><span class="chip transit">Dzień pociągiem</span><span class="chip city">Przyjazd Xi'an wieczór</span></div>
+          <div class="day-title" data-pl="Pociąg Zhangye → Xi'an" data-en="Train Zhangye → Xi'an" data-de="Zug Zhangye → Xi'an" data-de="Zug Zhangye → Xi'an">Pociąg Zhangye → Xi'an</div data-de="Zug Zhangye → Xi'an">
+          <div class="day-loc" data-pl="Zhangye West → Xi'an North · ~6,5 godz." data-en="Zhangye West → Xi'an North · ~6.5 hrs">Zhangye West → Xi'an North · ~6,5 godz.</div>
+          <div class="day-chips"><span class="chip transit" data-pl="Dzień pociągiem" data-en="Train day">Dzień pociągiem</span><span class="chip city" data-pl="Przyjazd Xi\'an wieczór" data-en="Arrive Xi'an evening">Przyjazd Xi'an wieczór</span></div>
         </div>
         <div class="day-cost"><span class="cost-main">~35 €</span><span class="cost-note">Bilet D-train 2kl</span></div>
       </div>
       <div class="day-body">Ostatni odcinek Jedwabnego Szlaku — przez Korytarz Hexi prosto do dawnej stolicy Chin.
         <div class="transit-card">
           <div class="tc-header">
-            <div class="tc-route">🚄 Zhangye → Xi'an</div>
-            <div class="tc-total">~6,5 h · bez przesiadki</div>
+            <div class="tc-route" data-pl="🚄 Zhangye → Xi'an" data-en="🚄 Zhangye → Xi'an">🚄 Zhangye → Xi'an</div>
+            <div class="tc-total" data-pl="~6,5 h · bez przesiadki" data-en="~6.5 h · no change">~6,5 h · bez przesiadki</div>
           </div>
           <div class="tc-body">
             <div class="tc-row"><span class="tc-label">Odjazd</span><span class="tc-val">~08:00–09:00 · <a href="https://maps.app.goo.gl/3e6J6nFt7Nxbmdpw9" target="_blank">Zhangye West Station</a></span></div>
             <div class="tc-row"><span class="tc-label">Przyjazd</span><span class="tc-val">~15:00–16:00 · <a href="https://maps.app.goo.gl/8xDtSJkbLHr5Aeq6A" target="_blank">Xi'an North Station</a></span></div>
-            <div class="tc-row"><span class="tc-label">Pociąg</span><span class="tc-val">D-train (动车) 2. klasa · bez przesiadki</span></div>
-            <div class="tc-row"><span class="tc-label">Koszt</span><span class="tc-val">~35 € (2. klasa) · rezerwuj z wyprzedzeniem</span></div>
+            <div class="tc-row"><span class="tc-label">Pociąg</span><span class="tc-val" data-pl="D-train (动车) 2. klasa · bez przesiadki" data-en="D-train (动车) 2nd class · no change">D-train (动车) 2. klasa · bez przesiadki</span></div>
+            <div class="tc-row"><span class="tc-label">Koszt</span><span class="tc-val" data-pl="~35 € (2. klasa) · rezerwuj z wyprzedzeniem" data-en="~€35 (2nd class) · book in advance">~35 € (2. klasa) · rezerwuj z wyprzedzeniem</span></div>
           </div>
           <div class="tc-change">💡 Kup bilet przez <a href="https://www.trip.com" target="_blank">Trip.com</a> · Z Xi'an North do centrum metro linia 2 (20 min, ~5 CNY) · <a href="https://maps.app.goo.gl/tz7rLg9bFxHsGyvS8" target="_blank">📍 Xi'an North Station na mapie</a></div>
         </div>
@@ -1715,9 +1716,9 @@
       <div class="day-card-header">
         <div class="day-num-block dn-xian"><span class="dn">Dzień 12</span><span class="dd">12 sie</span></div>
         <div class="day-info">
-          <div class="day-title">Xi'an — Terakotowa Armia</div>
-          <div class="day-loc">Muzeum Armii Terakotowej · Mauzoleum Qin Shi Huang</div>
-          <div class="day-chips"><span class="chip culture">UNESCO</span><span class="chip history">Dynastia Qin</span></div>
+          <div class="day-title" data-pl="Xi'an — Terakotowa Armia" data-en="Xi'an — Terracotta Army" data-de="Xi'an — Terrakottaarmee" data-de="Xi'an — Terrakottaarmee">Xi'an — Terakotowa Armia</div data-de="Xi'an — Terrakottaarmee">
+          <div class="day-loc" data-pl="Muzeum Armii Terakotowej · Mauzoleum Qin Shi Huang" data-en="Terracotta Army Museum · Qin Shi Huang Mausoleum">Muzeum Armii Terakotowej · Mauzoleum Qin Shi Huang</div>
+          <div class="day-chips"><span class="chip culture" data-pl="UNESCO" data-en="UNESCO" data-de="UNESCO">UNESCO</span><span class="chip history" data-pl="Dynastia Qin" data-en="Qin Dynasty">Dynastia Qin</span></div>
         </div>
         <div class="day-cost"><span class="cost-main">~55 €</span><span class="cost-note">Wstęp + transport</span></div>
       </div>
@@ -1731,7 +1732,7 @@
           <a class="day-link food" href="https://www.google.com/search?q=xian+liangpi+cold+noodles+chili+photos&tbm=isch" target="_blank">🥗 Liangpi — zimne kluski ryżowe z pastą chili</a>
           <a class="day-link sights" href="https://www.google.com/search?q=xian+terracotta+army+warriors+pit+1+photos&tbm=isch" target="_blank">⚔️ Terakotowa Armia — Hala 1 z 6000 wojowników</a>
           <a class="day-link sights" href="https://www.google.com/search?q=xian+terracotta+warriors+pit+2+horse+chariot+photos&tbm=isch" target="_blank">🐎 Hala 2 — kawaleria i rydwany</a>
-          <span class="day-link sleep placeholder-hotel">🛏️ Nocleg — <em>link do uzupełnienia</em></span>
+          <span class="day-link sleep placeholder-hotel">🛏️ <span data-i18n="hotel_placeholder">Nocleg — <em>link do uzupełnienia</em></span></span>
         </div>
       </div>
     </div>
@@ -1747,7 +1748,7 @@
         <div class="day-info">
           <div class="day-title">Xi'an — Stare Miasto, Mur i Wielka Meczet</div>
           <div class="day-loc">Mur miejski · Wielka Meczet · Dzielnica muzułmańska · Muzeum Shaanxi</div>
-          <div class="day-chips"><span class="chip culture">Historia</span><span class="chip city">Stare Miasto</span><span class="chip silk">Jedwabny Szlak</span></div>
+          <div class="day-chips"><span class="chip culture" data-pl="Historia" data-en="History" data-de="Geschichte">Historia</span><span class="chip city">Stare Miasto</span><span class="chip silk">Jedwabny Szlak</span></div>
         </div>
         <div class="day-cost"><span class="cost-main">~45 €</span><span class="cost-note">Wstępy + rowery</span></div>
       </div>
@@ -1803,8 +1804,8 @@
       <table class="cost-table">
       <tr><td>Noclegi (13 nocy)</td><td class="ct-muted">Ałmaty ~25 €, Chiny ~35 €, jurta ~20 €</td><td>~350 €</td></tr>
       <tr><td>Jedzenie i napoje</td><td class="ct-muted">śr. 20 €/dzień (Xi'an drożej niż Xinjiang)</td><td>~280 €</td></tr>
-      <tr><td>Bus Ałmaty → Horgos (1×)</td><td class="ct-muted">~25 $ = ~23 €</td><td>~23 €</td></tr>
-      <tr><td>Pociągi w Chinach</td><td class="ct-muted">Yining→Ürümqi + Turpan + Jiayuguan + Zhangye + Xi'an</td><td>~90 €</td></tr>
+      <tr><td data-pl="Bus Ałmaty → Horgos (1×)" data-en="Bus Almaty → Khorgos (1×)">Bus Ałmaty → Horgos (1×)</td><td class="ct-muted">~25 $ = ~23 €</td><td>~23 €</td></tr>
+      <tr><td data-pl="Pociągi w Chinach" data-en="Trains in China">Pociągi w Chinach</td><td class="ct-muted">Yining→Ürümqi + Turpan + Jiayuguan + Zhangye + Xi'an</td><td>~90 €</td></tr>
       <tr><td>Wstępy Xinjiang</td><td class="ct-muted">Sajram, Jiaohe, Bezeklik, Gaochang, Ogniste Góry</td><td>~80 €</td></tr>
       <tr><td>Wstępy Gansu + Xi'an</td><td class="ct-muted">Jiayuguan, Zhangye Danxia, Terakotowa Armia, Mur</td><td>~100 €</td></tr>
       <tr><td>Taksówki i różne</td><td class="ct-muted">Ałmaty + wszystkie miasta chińskie</td><td>~60 €</td></tr>
@@ -1906,22 +1907,22 @@ function initMap() {
     attribution: '© OpenStreetMap contributors'
   }).addTo(map);
 
-  const stops = [
-    { name: 'Ałmaty',     lat: 43.238, lng: 76.945,  days: 'Dni 1–3',  icon: '🏙️' },
-    { name: 'Horgos',     lat: 44.205, lng: 80.412,  days: 'Dzień 4',  icon: '🛂' },
-    { name: 'Sajram',     lat: 43.870, lng: 81.235,  days: 'Dzień 4',  icon: '🏔️' },
-    { name: 'Yining',     lat: 43.908, lng: 81.324,  days: 'Dni 4–5',  icon: '🕌' },
-    { name: 'Ürümqi',     lat: 43.793, lng: 87.627,  days: 'Przesiadka', icon: '🚄' },
-    { name: 'Turpan',     lat: 42.951, lng: 89.189,  days: 'Dni 6–7',  icon: '🌵' },
-    { name: 'Jiayuguan',  lat: 39.802, lng: 98.300,  days: 'Dzień 8',  icon: '🏯' },
-    { name: 'Zhangye',    lat: 38.939, lng: 100.449, days: 'Dzień 9',  icon: '🌈' },
-    { name: "Xi'an",      lat: 34.341, lng: 108.940, days: 'Dni 10–13',icon: '🏛️' },
+  const mapStops = window.mapStops = [
+    { name: 'Ałmaty',     nameEn: 'Almaty',    lat: 43.238, lng: 76.945,  days: 'Dni 1–3',   daysEn: 'Days 1–3',   icon: '🏙️' },
+    { name: 'Horgos',     nameEn: 'Khorgos',   lat: 44.205, lng: 80.412,  days: 'Dzień 4',   daysEn: 'Day 4',      icon: '🛂' },
+    { name: 'Sajram',     nameEn: 'Sayram',    lat: 43.870, lng: 81.235,  days: 'Dzień 4',   daysEn: 'Day 4',      icon: '🏔️' },
+    { name: 'Yining',     nameEn: 'Yining',    lat: 43.908, lng: 81.324,  days: 'Dni 4–5',   daysEn: 'Days 4–5',   icon: '🕌' },
+    { name: 'Ürümqi',     nameEn: 'Ürümqi',    lat: 43.793, lng: 87.627,  days: 'Przesiadka',daysEn: 'Transit',     icon: '🚄' },
+    { name: 'Turpan',     nameEn: 'Turpan',    lat: 42.951, lng: 89.189,  days: 'Dni 6–7',   daysEn: 'Days 6–7',   icon: '🌵' },
+    { name: 'Jiayuguan',  nameEn: 'Jiayuguan', lat: 39.802, lng: 98.300,  days: 'Dzień 8',   daysEn: 'Day 8',      icon: '🏯' },
+    { name: 'Zhangye',    nameEn: 'Zhangye',   lat: 38.939, lng: 100.449, days: 'Dzień 9',   daysEn: 'Day 9',      icon: '🌈' },
+    { name: "Xi'an",      nameEn: "Xi'an",    lat: 34.341, lng: 108.940, days: 'Dni 10–13', daysEn: 'Days 10–13', icon: '🏛️' },
   ];
 
-  const latlngs = stops.map(s => [s.lat, s.lng]);
+  const latlngs = mapStops.map(s => [s.lat, s.lng]);
   L.polyline(latlngs, { color: '#6a2a6a', weight: 2.5, opacity: 0.7, dashArray: '6,4' }).addTo(map);
 
-  stops.forEach((s, i) => {
+  mapStops.forEach((s, i) => {
     const isTransit = s.days === 'Przesiadka';
     const marker = L.circleMarker([s.lat, s.lng], {
       radius: isTransit ? 5 : 8,
@@ -1930,7 +1931,8 @@ function initMap() {
       weight: 2,
       fillOpacity: isTransit ? 0.5 : 0.9
     }).addTo(map);
-    marker.bindPopup(`<strong>${s.icon} ${s.name}</strong><br><span style="color:#888;font-size:11px">${s.days}</span>`);
+    const popup = marker.bindPopup(`<strong>${s.icon} ${s.name}</strong><br><span style="color:#888;font-size:11px">${s.days}</span>`);
+    s.marker = marker;
     if (!isTransit) {
       marker.bindTooltip(s.icon + ' ' + s.name, { permanent: true, direction: i % 2 === 0 ? 'right' : 'left', offset: [8, 0], className: 'map-label' });
     }
@@ -1954,6 +1956,239 @@ window.addEventListener('load', () => {
     }
   }
   initMap();
+});
+</script>
+
+
+<script>
+const i18n = {
+  pl: {
+    overline: "Jedwabny Szlak · 1 osoba · 1 – 15 sierpnia 2026",
+    h1: "Wakacje 2026",
+    badge_silk_road: "Jedwabny Szlak do Xi'anu",
+    acc_pack: "🎒 Packliste — Jedwabny Szlak",
+    acc_weather: "🌤️ Klimat sierpień — trasa Jedwabnego Szlaku",
+    acc_visa: "🛂 Wiza & Wjazd — Kazachstan + Chiny",
+    acc_apps: "📱 Aplikacje & Praktyczne wskazówki",
+    acc_map: "🗺️ Trasa — Ałmaty → Xi'an",
+    pack_cat_docs: "📄 Dokumenty & Finanse",
+    pack_cat_tech: "📱 Technika & Łączność",
+    pack_cat_clothes: "👕 Ubrania",
+    pack_cat_health: "💊 Zdrowie & Apteczka",
+    pack_cat_bag: "🎒 Bagaż & Codzienny",
+    pack_cat_yurt: "🏕️ Jurta & Nocleg polowy",
+    weather_title: "Dane klimatyczne sierpień — stacje na trasie",
+    qc_title: "Jedwabny Szlak",
+    sec_almaty: "Ałmaty — Brama Jedwabnego Szlaku",
+    sec_transit_horgos: "Tranzyt do Chin — przez Horgos",
+    sec_yining: "Yining — Serce Xinjangu",
+    sec_turpan: "Turpan — Serce Jedwabnego Szlaku",
+    sec_xian: "Xi'an — Dawna Stolica i Koniec Jedwabnego Szlaku",
+    costs_title: "Zestawienie kosztów",
+    total_label: "Jedwabny Szlak do Xi'anu · ~1.253 €",
+    map_caption: "Kliknij marker, aby zobaczyć szczegóły przystanku · © OpenStreetMap contributors",
+    hotel_placeholder: "Nocleg — <em>link do uzupełnienia</em>",
+    pack_progress: "spakowano",
+    reset_btn: "↺ Reset",
+    visa_warn_xinjiang: "⚠️ Wskazówki Xinjiang — specyfika regionu",
+  },
+  en: {
+    overline: "Silk Road · 1 person · 1 – 15 August 2026",
+    h1: "Holiday 2026",
+    badge_silk_road: "Silk Road to Xi'an",
+    acc_pack: "🎒 Packing list — Silk Road",
+    acc_weather: "🌤️ August climate — route stations",
+    acc_visa: "🛂 Visa & Entry — Kazakhstan + China",
+    acc_apps: "📱 Apps & Practical tips",
+    acc_map: "🗺️ Route — Almaty → Xi'an",
+    pack_cat_docs: "📄 Documents & Finance",
+    pack_cat_tech: "📱 Tech & Connectivity",
+    pack_cat_clothes: "👕 Clothing",
+    pack_cat_health: "💊 Health & First aid",
+    pack_cat_bag: "🎒 Luggage & Daily carry",
+    pack_cat_yurt: "🏕️ Yurt & Camping",
+    weather_title: "August climate data — route stations",
+    qc_title: "Silk Road",
+    sec_almaty: "Almaty — Gateway to the Silk Road",
+    sec_transit_horgos: "Transit to China — via Khorgos",
+    sec_yining: "Yining — Heart of Xinjiang",
+    sec_turpan: "Turpan — Heart of the Silk Road",
+    sec_xian: "Xi'an — Ancient Capital and End of the Silk Road",
+    costs_title: "Cost breakdown",
+    total_label: "Silk Road to Xi'an · ~€1,253",
+    map_caption: "Click a marker to see stop details · © OpenStreetMap contributors",
+    hotel_placeholder: "Accommodation — <em>link to be added</em>",
+    pack_progress: "packed",
+    reset_btn: "↺ Reset",
+  },
+  de: {
+    overline: "Seidenstraße · 1 Person · 1.–15. August 2026",
+    h1: "Urlaub 2026",
+    badge_silk_road: "Seidenstraße nach Xi'an",
+    acc_pack: "🧳 Packliste — Seidenstraße",
+    acc_weather: "🌤️ Klima August — Routenstationen",
+    acc_visa: "🛂 Visum & Einreise — Kasachstan + China",
+    acc_apps: "📱 Apps & Praktische Tipps",
+    acc_map: "🗺️ Route — Almaty → Xi'an",
+    pack_cat_docs: "📄 Dokumente & Finanzen",
+    pack_cat_tech: "📱 Technik & Kommunikation",
+    pack_cat_clothes: "👕 Kleidung",
+    pack_cat_health: "💊 Gesundheit & Reiseapotheke",
+    pack_cat_bag: "🧳 Gepäck & Alltägliches",
+    pack_cat_yurt: "🏕️ Jurte & Campingübernachtung",
+    weather_title: "Klimadaten August — Stationen auf der Route",
+    qc_title: "Seidenstraße",
+    sec_almaty: "Almaty — Tor zur Seidenstraße",
+    sec_transit_horgos: "Transit nach China — über Khorgos",
+    sec_yining: "Yining — Herz Xinjiangs",
+    sec_turpan: "Turpan — Herz der Seidenstraße",
+    sec_xian: "Xi'an — Alte Hauptstadt und Ende der Seidenstraße",
+    costs_title: "Kostenübersicht",
+    total_label: "Seidenstraße nach Xi'an · ~1.253 €",
+    map_caption: "Marker anklicken für Stoppdetails · © OpenStreetMap contributors",
+    hotel_placeholder: "Unterkunft — <em>Link noch einzufügen</em>",
+    pack_progress: "gepackt",
+    reset_btn: "↺ Zurücksetzen",
+  }
+};
+
+let currentLang = localStorage.getItem('lang') || 'pl';
+
+function switchLang() {
+  currentLang = currentLang === 'pl' ? 'en' : currentLang === 'en' ? 'de' : 'pl';
+  localStorage.setItem('lang', currentLang);
+  applyLang();
+}
+
+function applyLang() {
+  const t = i18n[currentLang];
+  const btn = document.getElementById('lang-toggle');
+
+  // Toggle button label
+  if (btn) btn.textContent = currentLang === 'pl' ? 'EN' : currentLang === 'en' ? 'DE' : 'PL';
+
+  // Food/sight links
+  document.querySelectorAll('a[data-pl]').forEach(el => {
+    el.innerHTML = el.getAttribute('data-' + currentLang) || el.getAttribute('data-pl');
+  });
+  // Weather card parts
+  document.querySelectorAll('.wcard-name[data-pl], .wcard-sub[data-pl], .wcard-note[data-pl], .wstat-label[data-pl], .wstat-val[data-pl]').forEach(el => {
+    el.innerHTML = el.getAttribute('data-' + currentLang) || el.getAttribute('data-pl');
+  });
+  // Day body texts
+  document.querySelectorAll('.day-body-text[data-pl]').forEach(el => {
+    el.innerHTML = el.getAttribute('data-' + currentLang) || el.getAttribute('data-pl');
+  });
+  // Fact boxes
+  document.querySelectorAll('.fact-text[data-pl]').forEach(el => {
+    el.innerHTML = el.getAttribute('data-' + currentLang) || el.getAttribute('data-pl');
+  });
+  // Swap all data-i18n elements
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (t[key] !== undefined) el.innerHTML = t[key];
+  });
+
+  // Pack items: swap label text via data-pl / data-en attributes
+  document.querySelectorAll('.pack-item label').forEach(el => {
+    const attr = 'data-' + currentLang;
+    if (el.getAttribute(attr)) el.textContent = el.getAttribute(attr);
+  });
+
+  // Pack progress
+  const packLabel = document.getElementById('pack-label');
+  if (packLabel) {
+    const match = packLabel.textContent.match(/\d+/g) || ['0','0'];
+    packLabel.textContent = match[0] + ' / ' + match[1] + ' ' + (t.pack_progress || 'spakowano');
+  }
+
+  // Reset button
+  const resetBtn = document.getElementById('pack-reset-btn');
+  if (resetBtn) resetBtn.textContent = t.reset_btn || '↺ Reset';
+
+  // Visa card labels & values — swap data-pl/data-en
+  document.querySelectorAll('[data-pl]').forEach(el => {
+    el.innerHTML = el.getAttribute('data-' + currentLang) || el.getAttribute('data-pl');
+  });
+
+  // Wcard names (weather)
+  document.querySelectorAll('.wcard-name[data-pl]').forEach(el => {
+    el.textContent = el.getAttribute('data-' + currentLang) || el.getAttribute('data-pl');
+  });
+
+  // Day titles, locs, chips
+  document.querySelectorAll('.day-title[data-pl], .day-loc[data-pl], .day-body-text[data-pl]').forEach(el => {
+    el.innerHTML = el.getAttribute('data-' + currentLang) || el.getAttribute('data-pl');
+  });
+  document.querySelectorAll('.chip[data-pl]').forEach(el => {
+    el.textContent = el.getAttribute('data-' + currentLang) || el.getAttribute('data-pl');
+  });
+
+  // Transit card labels
+  document.querySelectorAll('.tc-label[data-pl]').forEach(el => {
+    el.textContent = el.getAttribute('data-' + currentLang) || el.getAttribute('data-pl');
+  });
+  document.querySelectorAll('.tc-val[data-pl]').forEach(el => {
+    el.innerHTML = el.getAttribute('data-' + currentLang) || el.getAttribute('data-pl');
+  });
+  document.querySelectorAll('.tc-route[data-pl]').forEach(el => {
+    el.innerHTML = el.getAttribute('data-' + currentLang) || el.getAttribute('data-pl');
+  });
+  document.querySelectorAll('.tc-total[data-pl]').forEach(el => {
+    el.textContent = el.getAttribute('data-' + currentLang) || el.getAttribute('data-pl');
+  });
+  document.querySelectorAll('.tc-change[data-pl]').forEach(el => {
+    el.innerHTML = el.getAttribute('data-' + currentLang) || el.getAttribute('data-pl');
+  });
+
+  // fact-text
+  document.querySelectorAll('.fact-text[data-pl]').forEach(el => {
+    el.innerHTML = el.getAttribute('data-' + currentLang) || el.getAttribute('data-pl');
+  });
+
+  // Section cost table rows
+  document.querySelectorAll('td[data-pl]').forEach(el => {
+    el.innerHTML = el.getAttribute('data-' + currentLang) || el.getAttribute('data-pl');
+  });
+
+  // QC stats
+  document.querySelectorAll('.stat-label[data-pl], .stat-val[data-pl], .qc-subtitle[data-pl]').forEach(el => {
+    el.innerHTML = el.getAttribute('data-' + currentLang) || el.getAttribute('data-pl');
+  });
+
+  // Cost card headers
+  document.querySelectorAll('.cost-card-header[data-pl]').forEach(el => {
+    el.innerHTML = el.getAttribute('data-' + currentLang) || el.getAttribute('data-pl');
+  });
+
+  // Total desc
+  document.querySelectorAll('.total-desc[data-pl]').forEach(el => {
+    el.innerHTML = el.getAttribute('data-' + currentLang) || el.getAttribute('data-pl');
+  });
+
+  // App items
+  document.querySelectorAll('.app-name[data-pl], .app-desc[data-pl], .app-group-title[data-pl], .app-tip[data-pl]').forEach(el => {
+    el.innerHTML = el.getAttribute('data-' + currentLang) || el.getAttribute('data-pl');
+  });
+
+  // Visa rows
+  document.querySelectorAll('.visa-label[data-pl], .visa-val[data-pl], .visa-warn[data-pl], .visa-card-head[data-pl]').forEach(el => {
+    el.innerHTML = el.getAttribute('data-' + currentLang) || el.getAttribute('data-pl');
+  });
+
+  // Map stop popups - re-init map labels
+  if (typeof mapStops !== 'undefined') {
+    mapStops.forEach(s => {
+      if (s.marker) {
+        s.marker.setPopupContent('<strong>' + s.icon + ' ' + (currentLang === 'en' ? s.nameEn : s.name) + '</strong><br><span style="color:#888;font-size:11px">' + (currentLang === 'en' ? s.daysEn : s.days) + '</span>');
+      }
+    });
+  }
+}
+
+// Apply on load (respects saved preference)
+document.addEventListener('DOMContentLoaded', () => {
+  if (currentLang === 'en') applyLang();
 });
 </script>
 
