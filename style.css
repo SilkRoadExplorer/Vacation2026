@@ -325,7 +325,7 @@ a:hover { text-decoration: underline; }
   border: 1px solid var(--border);
   border-radius: 12px;
   overflow: hidden;
-  margin-bottom: 16px;
+  margin-bottom: 20px;
   background: var(--white);
   box-shadow: 0 1px 4px rgba(0,0,0,0.04);
   /* Scroll animation */
@@ -378,7 +378,7 @@ a:hover { text-decoration: underline; }
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 12px 8px;
+  padding: 14px 8px;
   flex-shrink: 0;
   border-right: 1px solid var(--border);
 }
@@ -390,10 +390,10 @@ a:hover { text-decoration: underline; }
 .dn         { font-size: 12px; font-weight: 500; }
 .dd         { font-size: 10px; opacity: 0.75; margin-top: 2px; }
 
-.day-info   { flex: 1; padding: 10px 14px; }
+.day-info   { flex: 1; padding: 13px 16px; }
 .day-title  { font-weight: 500; font-size: 13px; margin-bottom: 3px; }
 .day-loc    { font-size: 11px; color: var(--muted); margin-bottom: 6px; }
-.day-chips  { display: flex; flex-wrap: wrap; gap: 5px; }
+.day-chips  { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 2px; }
 
 .chip {
   font-size: 10px; padding: 2px 8px; border-radius: 20px;
@@ -413,7 +413,7 @@ a:hover { text-decoration: underline; }
   flex-direction: column;
   align-items: flex-end;
   justify-content: center;
-  padding: 10px 14px 10px 8px;
+  padding: 13px 16px 13px 10px;
   border-left: 1px solid var(--border);
   flex-shrink: 0;
 }
@@ -422,16 +422,16 @@ a:hover { text-decoration: underline; }
 
 /* ── Day body ─────────────────────────────────────────── */
 .day-body {
-  padding: 10px 14px 12px;
+  padding: 14px 16px 16px;
   background: var(--bg);
   font-size: 12px;
   color: var(--muted);
   line-height: 1.6;
 }
-.day-body-text { display: block; margin-bottom: 10px; }
+.day-body-text { display: block; margin-bottom: 13px; }
 
 /* ── Day links ────────────────────────────────────────── */
-.day-links { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+.day-links { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 10px; }
 
 .day-link {
   display: inline-flex;
@@ -573,12 +573,12 @@ a:hover { text-decoration: underline; }
 }
 .tc-route { font-size: 12px; font-weight: 500; color: #5a4010; display: flex; align-items: center; gap: 6px; }
 .tc-total { font-size: 11px; color: #8a6020; white-space: nowrap; }
-.tc-body { padding: 8px 12px; display: grid; grid-template-columns: 1fr 1fr; gap: 6px 16px; background: var(--white); }
+.tc-body { padding: 10px 14px; display: grid; grid-template-columns: 1fr 1fr; gap: 8px 18px; background: var(--white); }
 .tc-row { display: flex; flex-direction: column; }
 .tc-label { font-size: 10px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; }
 .tc-val { font-size: 12px; color: var(--text); font-weight: 500; margin-top: 1px; }
 .tc-val a { color: var(--b-col); }
-.tc-change { margin: 0 12px 10px; padding: 6px 10px; background: var(--bg); border-radius: 6px; font-size: 11px; color: var(--muted); border-left: 3px solid var(--gold); line-height: 1.5; }
+.tc-change { margin: 0 14px 12px; padding: 6px 10px; background: var(--bg); border-radius: 6px; font-size: 11px; color: var(--muted); border-left: 3px solid var(--gold); line-height: 1.5; }
 .tc-change a { color: var(--b-col); }
 
 /* ════════════════════════════════════════════════════════
@@ -692,7 +692,7 @@ a:hover { text-decoration: underline; }
 
 /* ── Fact boxes — stamp card design ──────────────────── */
 .fact-box {
-  margin: 12px 0 0;
+  margin: 14px 0 0;
   border-radius: 10px;
   overflow: hidden;
   display: flex;
