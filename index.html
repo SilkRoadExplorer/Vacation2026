@@ -8,14 +8,12 @@
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
 </head>
 <body>
-
-
 <!-- HEADER -->
 <div class="page-header">
   <div class="overline">Jedwabny Szlak · 1 osoba · 1 – 15 sierpnia 2026</div>
   <h1>Wakacje 2026</h1>
   <div style="display:flex;justify-content:center;gap:32px;flex-wrap:wrap;margin-bottom:6px;">
-    <div style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;color:#cc99cc;" data-named="badge">Jedwabny Szlak do Xi'an</div>
+    <div style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;color:#cc99cc;" data-named="badge">Jedwabny Szlak do Xi'anu</div>
   </div>
   <div style="display:flex;justify-content:center;gap:32px;flex-wrap:wrap;margin-bottom:20px;font-size:12px;opacity:0.65;">
     <div><span data-named="route">Ałmaty → Horgos → Sajram → Yining → Turpan → Jiayuguan → Zhangye → Xi'an</span></div>
@@ -130,11 +128,11 @@
 <!-- WEATHER SECTION -->
 <div class="weather-section accordion-section" id="acc-weather">
   <button class="acc-header" onclick="toggleAcc('acc-weather')" aria-expanded="false">
-    <span class="acc-title">🌤️ Klimat sierpień — trasa Jedwabnego Szlaku</span>
+    <span class="acc-title"><span data-t="t_acc_title_weather">🌤️ Klimat sierpień — trasa Jedwabnego Szlaku</span></span>
     <span class="acc-arrow">▼</span>
   </button>
   <div class="acc-body" style="display:none">
-  <div class="weather-section-title" data-named="weather_title">Dane klimatyczne sierpień — stacje na trasie</div>
+  <div class="weather-section-title" data-named="weather_title">Dane klimatyczne sierpień</div>
   <div class="weather-grid">
     <!-- Almaty -->
     <div class="wcard wc-almaty">
@@ -197,7 +195,7 @@
         <div class="wstat"><div class="wstat-label">Roczne opady</div><div class="wstat-val">~245–335 mm</div></div>
         <div class="wstat"><div class="wstat-label">Maks. zmierzone</div><div class="wstat-val">41,2°C</div></div>
       </div>
-      <div class="wcard-note">„Wilgotna wyspa" Xinjiangu — znacznie bardziej zielona niż Turpan. Lato: ciepłe, prawie bez deszczu. Nocny bazar przyjemnie chłodny.</div>
+      <div class="wcard-note"><span data-t="t_w_yining">„Wilgotna wyspa" Xinjiangu — znacznie bardziej zielona niż Turpan. Lato: ciepłe, prawie bez deszczu. Nocny bazar przyjemnie chłodny.</span></div>
     </div>
 
     <!-- Turpan -->
@@ -218,7 +216,7 @@
         <div class="wstat"><div class="wstat-label">Roczne opady</div><div class="wstat-val">~16 mm</div></div>
         <div class="wstat"><div class="wstat-label"><span data-t="t66">Roczne nasłonecznienie</span></div><div class="wstat-val">3.000–3.200 h</div></div>
       </div>
-      <div class="wcard-note">Zwiedzanie najlepiej przed godz. 10:00 lub po 17:00.</div>
+      <div class="wcard-note"><span data-t="t_w_turpan2">Zwiedzanie najlepiej przed godz. 10:00 lub po 17:00.</span></div>
     </div>
 
     <!-- Jiayuguan -->
@@ -239,7 +237,7 @@
         <div class="wstat"><div class="wstat-label">Roczne opady</div><div class="wstat-val">~85 mm</div></div>
         <div class="wstat"><div class="wstat-label"><span data-t="t67">Nasłonecznienie</span></div><div class="wstat-val">3.000 h/rok</div></div>
       </div>
-      <div class="wcard-note">Sucho i słonecznie, rzadkie deszcze. Rano i wieczór chłodniej — idealne na zwiedzanie twierdzy. Wiatr typowy dla Korytarza Hexi.</div>
+      <div class="wcard-note"><span data-t="t_w_jiayuguan">Sucho i słonecznie, rzadkie deszcze. Rano i wieczór chłodniej — idealne na zwiedzanie twierdzy. Wiatr typowy dla Korytarza Hexi.</span></div>
     </div>
 
     <!-- Zhangye -->
@@ -260,7 +258,7 @@
         <div class="wstat"><div class="wstat-label"><span data-t="t68">Sierpień</span></div><div class="wstat-val">najcieplejszy</div></div>
         <div class="wstat"><div class="wstat-label" data-t="t69">Opady</div><div class="wstat-val"><span data-t="t70">możliwe burze</span></div></div>
       </div>
-      <div class="wcard-note">Góry Tęczowe najpiękniejsze po deszczu — kolory intensywniejsze. Świt i zachód słońca obowiązkowe — złota godzina zmienia skały. Sierpień: szczyt sezonu.</div>
+      <div class="wcard-note"><span data-t="t_w_zhangye">Góry Tęczowe najpiękniejsze po deszczu — kolory intensywniejsze. Świt i zachód słońca obowiązkowe — złota godzina zmienia skały. Sierpień: szczyt sezonu.</span></div>
     </div>
 
     <!-- Xi'an -->
@@ -281,18 +279,18 @@
         <div class="wstat"><div class="wstat-label"><span data-t="t71">Opady sierpień</span></div><div class="wstat-val">~90 mm</div></div>
         <div class="wstat"><div class="wstat-label" data-t="t72">Wilgotność</div><div class="wstat-val">~75%</div></div>
       </div>
-      <div class="wcard-note">Gorąco i dość wilgotno — odczuwalne jak +38°C. Zwiedzanie Terakotowej Armii rano lub po 16:00. Wieczory przyjemne — idealne na spacer po dzielnicy muzułmańskiej.</div>
+      <div class="wcard-note"><span data-t="t_w_xian">Gorąco i dość wilgotno — odczuwalne jak +38°C. Zwiedzanie Terakotowej Armii rano lub po 16:00. Wieczory przyjemne — idealne na spacer po dzielnicy muzułmańskiej.</span></div>
     </div>
 
   </div>
-  <div class="weather-source">
+  <span data-t="t_sources"><div class="weather-source">
     🇰🇿 <strong>Kazachstan:</strong> pogodaiklimat.ru — stacja hydrometeorologiczna Ałmaty (nr 36870, dane od 1879)
     &nbsp;·&nbsp;
     <br>
     🇨🇳 <strong>Xinjiang:</strong> weather.com.cn (CMA) — Turpan, Yining, Jezioro Sajram · Urząd klimatyczny Ili (xjyl.gov.cn)
     &nbsp;·&nbsp;
     🇨🇳 <strong>Gansu / Shaanxi:</strong> weather.com.cn — Jiayuguan, Zhangye, Xi'an · Wszystkie wartości: wieloletnie normy sierpniowe
-  </div>
+  </div></span>
   </div><!-- /acc-body -->
 
 <!-- VISA INFO -->
@@ -307,8 +305,8 @@
         <div class="visa-card-head vkz" data-t="t73">🇰🇿 Kazachstan</div>
         <div class="visa-card-body">
           <div class="visa-row"><span class="visa-label" data-t="t74">Wiza</span><span class="visa-val">Brak wymagana — Polska: bezwizowo do 30 dni (umowa bilateralna KZ–PL)</span></div>
-          <div class="visa-row"><span class="visa-label" data-t="t75">Paszport</span><span class="visa-val">Ważność min. 6 miesięcy od planowanej daty powrotu do Polski (wymóg touroperatorów i wytyczne MSZ)</span></div>
-          <div class="visa-row"><span class="visa-label" data-t="t76">Rejestracja</span><span class="visa-val">Obowiązkowa jeśli pobyt &gt;5 dni roboczych — hotel rejestruje automatycznie. Przy Airbnb lub prywatnym noclegu — rejestracja ręczna przez gov.kz lub na komisariacie</span></div>
+          <div class="visa-row"><span class="visa-label" data-t="t75">Paszport</span><span class="visa-val"><span data-t="t_visa_kz_pass">Ważność min. 6 miesięcy od planowanej daty powrotu do Polski (wymóg touroperatorów i wytyczne MSZ)</span></span></div>
+          <div class="visa-row"><span class="visa-label" data-t="t76">Rejestracja</span><span class="visa-val"><span data-t="t_visa_kz_reg">Obowiązkowa jeśli pobyt &gt;5 dni roboczych — hotel rejestruje automatycznie. Przy Airbnb lub prywatnym noclegu — rejestracja ręczna przez gov.kz lub na komisariacie</span></span></div>
           <div class="visa-row"><span class="visa-label" data-t="t77">Karta migracyjna</span><span class="visa-val" data-t="t78">Wypełniasz na przejściu granicznym Horgos przy wyjeździe do CN — zachowaj do powrotu do KZ (jeśli dotyczy)</span></div>
           <div class="visa-row"><span class="visa-label" data-t="t79">Waluta</span><span class="visa-val" data-t="t80">Tenge (KZT) · 1 € ≈ 530 KZT (2025) — wymiana w kantorach w centrum Ałmaty, bankomaty Kaspi/Halyk powszechne</span></div>
           <div class="visa-row"><span class="visa-label" data-t="t81">SIM karta</span><span class="visa-val" data-t="t82">Kcell lub Beeline — zakup z paszportem w oficjalnym sklepie sieci (lotnisko lub galeria). Kcell: lepszy zasięg w górach</span></div>
@@ -318,8 +316,8 @@
       <div class="visa-card">
         <div class="visa-card-head vcn" data-t="t85">🇨🇳 Chiny (Xinjiang, Gansu, Shaanxi)</div>
         <div class="visa-card-body">
-          <div class="visa-row"><span class="visa-label" data-t="t74">Wiza</span><span class="visa-val">🟢 <strong>Bezwizowo do 30 dni</strong> — Polska objęta programem od 1 lipca 2024 r., przedłużonym do 31 grudnia 2026 r. Dotyczy zwykłego paszportu, celów turystycznych, biznesowych, rodzinnych i tranzytowych. Wjazd możliwy przez wszystkie lądowe, lotnicze i morskie przejścia graniczne otwarte dla cudzoziemców — w tym Horgos.</span></div>
-          <div class="visa-row"><span class="visa-label" data-t="t86">Formularz wjazdowy</span><span class="visa-val">Obowiązkowy elektroniczny formularz przed wjazdem: <strong>s.nia.gov.cn</strong> — wypełnij nie wcześniej niż 5 dni przed przekroczeniem granicy. Można też wypełnić na miejscu na urządzeniach w punkcie kontrolnym.</span></div>
+          <div class="visa-row"><span class="visa-label" data-t="t74">Wiza</span><span class="visa-val"><span data-t="t_visa_cn_visum">🟢 <strong>Bezwizowo do 30 dni</strong> — Polska objęta programem od 1 lipca 2024 r., przedłużonym do 31 grudnia 2026 r.</span><span data-t="t_visa_cn_visum2">Dotyczy zwykłego paszportu, celów turystycznych, biznesowych, rodzinnych i tranzytowych. Wjazd możliwy przez wszystkie lądowe, lotnicze i morskie przejścia graniczne otwarte dla cudzoziemców — w tym Horgos.</span></span></div>
+          <div class="visa-row"><span class="visa-label" data-t="t86">Formularz wjazdowy</span><span class="visa-val"><span data-t="t_visa_cn_form">Obowiązkowy elektroniczny formularz przed wjazdem: <strong>s.nia.gov.cn</strong></span> — <span data-t="tb_visa_fill">wypełnij nie wcześniej niż 5 dni przed przekroczeniem granicy. Można też wypełnić na miejscu na urządzeniach w punkcie kontrolnym.</span></span></div>
           <div class="visa-row"><span class="visa-label" data-t="t75">Paszport</span><span class="visa-val" data-t="t87">Ważny co najmniej 6 miesięcy od daty planowanego wyjazdu z Chin, min. 6 wolnych stron</span></div>
           <div class="visa-row"><span class="visa-label" data-t="t88">Na granicy</span><span class="visa-val" data-t="t89">Funkcjonariusz może zapytać o plan podróży, adres noclegu i bilet powrotny — miej potwierdzenia hoteli dostępne offline</span></div>
           <div class="visa-row"><span class="visa-label" data-t="t90">Liczenie dni</span><span class="visa-val" data-t="t91">30 dni liczone od następnego dnia po wjeździe (nie od dnia przylotu). Przy wieczornym przylocie masz pełne 30 dni od następnego dnia.</span></div>
@@ -331,7 +329,7 @@
         </div>
       </div>
     </div>
-    <div class="visa-warn" Xinjiang — ważne wskazówki:">Xinjiang — ważne wskazówki:</span></strong> Kontrole policji i skanowanie dokumentów przy wejściu do atrakcji są normą. Okazuj paszport spokojnie na żądanie. Nie fotografuj policji, posterunków ani infrastruktury wojskowej. Meczety mogą wymagać rejestracji. Turystyka zagraniczna jest oficjalnie dozwolona i dozwolona. 💡 Aktualne informacje MSZ RP: <strong>gov.pl/web/chiny</strong> · Oficjalne FAQ ambasady ChRL w Warszawie: <strong>pl.china-embassy.gov.cn</strong>">⚠️ <strong><span data-t="t101">Xinjiang — ważne wskazówki:</span></strong> Kontrole policji i skanowanie dokumentów przy wejściu do atrakcji są normą. Okazuj paszport spokojnie na żądanie. Nie fotografuj policji, posterunków ani infrastruktury wojskowej. Meczety mogą wymagać rejestracji. Turystyka zagraniczna jest oficjalnie dozwolona i dozwolona. 💡 Aktualne informacje MSZ RP: <strong>gov.pl/web/chiny</strong> · Oficjalne FAQ ambasady ChRL w Warszawie: <strong>pl.china-embassy.gov.cn</strong></div>
+    <div class="visa-warn">⚠️ <strong><span data-t="t_xinj_warn">Xinjiang — ważne wskazówki:</span></strong> <span data-t="t_xinj_body">Kontrole policji i skanowanie dokumentów przy wejściu do atrakcji są normą. Okazuj paszport spokojnie na żądanie. Nie fotografuj policji, posterunków ani infrastruktury wojskowej. Meczety mogą wymagać rejestracji. Turystyka zagraniczna jest oficjalnie dozwolona.</span> <span data-t="t_xinj_links">💡 Aktualne informacje MSZ RP: <strong>gov.pl/web/chiny</strong> · Oficjalne FAQ ambasady ChRL w Warszawie: <strong>pl.china-embassy.gov.cn</strong></span></div>
   </div>
 </div>
 
@@ -339,7 +337,7 @@
 <!-- APPS & TIPS -->
 <div class="apps-section accordion-section" id="acc-apps">
   <button class="acc-header" onclick="toggleAcc('acc-apps')" aria-expanded="false">
-    <span class="acc-title">📱 Aplikacje &amp; Praktyczne wskazówki</span>
+    <span class="acc-title" data-named="acc_apps">📱 Aplikacje & Praktyczne wskazówki</span>
     <span class="acc-arrow">▼</span>
   </button>
   <div class="acc-body" style="display:none">
@@ -372,19 +370,19 @@
       </div>
 
     </div>
-    <div class="app-tip" Ważna kolejność przed wyjazdem:">Ważna kolejność przed wyjazdem:</span></strong> 1) Wypełnij formularz wjazdowy CN na s.nia.gov.cn (max 5 dni przed) → 2) Zarejestruj WeChat i powiąż kartę → 3) Zainstaluj i aktywuj VPN → 4) Pobierz mapy offline → 5) Zainstaluj 12306 lub Trip.com → 6) Przetestuj wszystko w domu. Po wjeździe do Chin pobieranie z zagranicznych store'ów może nie działać nawet przez VPN.">💡 <strong><span data-t="t132">Ważna kolejność przed wyjazdem:</span></strong> 1) Wypełnij formularz wjazdowy CN na s.nia.gov.cn (max 5 dni przed) → 2) Zarejestruj WeChat i powiąż kartę → 3) Zainstaluj i aktywuj VPN → 4) Pobierz mapy offline → 5) Zainstaluj 12306 lub Trip.com → 6) Przetestuj wszystko w domu. Po wjeździe do Chin pobieranie z zagranicznych store'ów może nie działać nawet przez VPN.</div>
+    <div class="app-tip">💡 <strong><span data-t="t_app_tip_title">Ważna kolejność przed wyjazdem:</span></strong> <span data-t="t_app_tip_body">1) Wypełnij formularz wjazdowy CN na s.nia.gov.cn (max 5 dni przed) → 2) Zarejestruj WeChat i powiąż kartę → 3) Zainstaluj VPN w Polsce (nie w Chinach!) → 4) Pobierz mapy offline w Maps.me</span></div>
   </div>
 </div>
 
 <!-- ROUTE MAP -->
 <div class="map-section accordion-section" id="acc-map">
   <button class="acc-header" onclick="toggleAcc('acc-map')" aria-expanded="false">
-    <span class="acc-title">🗺️ Trasa — Ałmaty → Xi'an</span>
+    <span class="acc-title" data-named="acc_map">🗺️ Trasa — Ałmaty → Xi'an</span>
     <span class="acc-arrow">▼</span>
   </button>
   <div class="acc-body" style="display:none">
     <div id="route-map"></div>
-    <p style="font-size:11px;color:var(--muted);margin-top:8px;" data-named="map_caption">Kliknij marker, aby zobaczyć szczegóły przystanku · © OpenStreetMap contributors</p>
+    <p style="font-size:11px;color:var(--muted);margin-top:8px;" data-named="map_caption">Kliknij marker — szczegóły</p>
   </div>
 </div>
 
@@ -392,7 +390,7 @@
 <div class="quick-compare">
   <div class="qc-col plan-c">
     <div class="qc-title" data-named="qc_title">Jedwabny Szlak</div>
-    <div class="qc-subtitle" data-t="t133">Ałmaty → Horgos → Sajram → Yining → Turpan → Jiayuguan → Zhangye → Xi'an · Odlot Xi'an 15.8.</span></div>
+    <div class="qc-subtitle" data-t="t133">Ałmaty → Horgos → Sajram → Yining → Turpan → Jiayuguan → Zhangye → Xi'an · Odlot Xi'an 15.8.</div>
     <div class="qc-stats">
       <div class="stat"><div class="stat-label">Szacowane koszty</div><div class="stat-val c" data-t="t134">~1.250 €</div></div>
       <div class="stat"><div class="stat-label" data-t="t135">Kraje</div><div class="stat-val c" data-t="t136">2</div></div>
@@ -420,11 +418,11 @@
 
     <!-- Dzień 1 -->
     <div class="day-card">
-      <div class="card-image-wrap"><div class="card-image" style="background-image:url('https://images.unsplash.com/photo-1596484552334-a9293dc9ef3e?w=800&auto=format&fit=crop&q=70')"></div><div class="card-image-overlay"></div><div class="card-image-label">© Unsplash · Almaty</div></div>
+      <div class="card-image-wrap"><div class="card-image" style="background-image:url('https://images.unsplash.com/photo-1601925260368-ae2f83cf8b7f?w=900&auto=format&fit=crop&q=75')"></div><div class="card-image-overlay"></div><div class="card-image-label">© Unsplash · Ałmaty – Bazar Zelonyj</div></div>
       <div class="day-card-header">
         <div class="day-num-block dn-rest"><span class="dn" data-t="t146">Dzień 1</span><span class="dd" data-t="t147">1 sie</span></div>
         <div class="day-info">
-          <div class="day-title">Przylot Ałmaty — Odpoczynek</div>
+          <div class="day-title"><span data-t="t_d1_title">Przylot Ałmaty — Odpoczynek</span></div>
           <div class="day-loc"><span data-t="t148">Ałmaty · Hotel</span></div>
           <div class="day-chips"><span class="chip rest"><span data-t="t149">Dzień przyjazdu</span></span></div>
         </div>
@@ -439,22 +437,19 @@
           <a class="day-link food" href="https://www.google.com/search?q=kazakh+manti+dumplings+steamed+photos&tbm=isch" target="_blank"><span data-t="t155">🥟 Manty — gotowane pierogi z jagnięciną</span></a>
           <a class="day-link sights" href="https://www.google.com/search?q=almaty+green+bazaar+zeleny+bazar+photos&tbm=isch" target="_blank"><span data-t="t156">🛒 Zielony Bazar Ałmaty</span></a>
           <a class="day-link sights" href="https://www.google.com/search?q=almaty+panfilov+park+zenkov+cathedral+photos&tbm=isch" target="_blank"><span data-t="t157">⛪ Katedra Zenkov</span></a>
-          <span class="day-link sleep placeholder-hotel">🛏️ <span>Nocleg — <em><span data-t="t158">link do uzupełnienia</span></em></span></span>
+          <span class="day-link sleep placeholder-hotel">🛏️ <span><span data-t="placeholder_nocleg">Nocleg</span> — <em><span data-t="t158">link do uzupełnienia</span></em></span></span>
         </div>
       </div>
     </div>
-    <div class="fact-box fact-wow">
-      <div class="fact-icon">🍎</div>
-      <div class="fact-text"><strong><span data-t="t159">Ałmaty = Ojciec Jabłek</span></strong> Nazwa miasta znaczy dosłownie „Ojciec Jabłek". W górach Tien-Szanu rosnące dziko przez tysiące lat Malus sieversii są bezpośrednim przodkiem wszystkich jabłek na świecie. Jedyne takie miejsce na Ziemi.</div>
-    </div>
+    <div class="fact-box fact-wow"><div class="fact-stamp-icon">🍎</div><div class="fact-stamp-body"><span class="fact-stamp-type" data-fb-type="fact-wow">Ciekawostka</span><div class="fact-stamp-title"><span data-t="t159">Ałmaty = Ojciec Jabłek</span></div><div class="fact-stamp-text"><span data-t="t363">Nazwa miasta znaczy dosłownie „Ojciec Jabłek". W górach Tien-Szanu rosnące dziko przez tysiące lat Malus sieversii są bezpośrednim przodkiem wszystkich jabłek na świecie. Jedyne takie miejsce na Ziemi.</span></div></div></div>
 
     <!-- Dzień 2 -->
     <div class="day-card">
-      <div class="card-image-wrap"><div class="card-image" style="background-image:url('https://images.unsplash.com/photo-1565008576549-57569a49371d?w=800&auto=format&fit=crop&q=70')"></div><div class="card-image-overlay"></div><div class="card-image-label">© Unsplash · Almaty</div></div>
+      <div class="card-image-wrap"><div class="card-image" style="background-image:url('https://images.unsplash.com/photo-1601925260368-ae2f83cf8b7f?w=900&auto=format&fit=crop&q=75')"></div><div class="card-image-overlay"></div><div class="card-image-label">© Unsplash · Ałmaty – Góry Ałatau</div></div>
       <div class="day-card-header">
         <div class="day-num-block dn-c"><span class="dn" data-t="t160">Dzień 2</span><span class="dd" data-t="t161">2 sie</span></div>
         <div class="day-info">
-          <div class="day-title">Ałmaty — Spacer po mieście</div>
+          <div class="day-title"><span data-t="t_d2_title">Ałmaty — Spacer po mieście</span></div>
           <div class="day-loc"><span data-t="t162">Zielony Bazar · Kok-Tobe · Park Panfiłow</span></div>
           <div class="day-chips"><span class="chip city">Miasto</span><span class="chip culture">Kultura</span></div>
         </div>
@@ -473,16 +468,13 @@
         </div>
       </div>
     </div>
-    <div class="fact-box fact-wow">
-      <div class="fact-icon">⛸️</div>
-      <div class="fact-text"><strong>Medeo — rekordowe lodowisko</strong> 1691 m n.p.m., przez dekady arena bicia rekordów prędkościowych w łyżwiarstwie szybkim — suche, rzadkie powietrze górskie tworzy wyjątkowo twardy lód. W latach 70. padło tu ponad 120 rekordów świata. Latem: baza wypadowa w góry i gondola na Shymbulak.</div>
-    </div>
+    <div class="fact-box fact-wow"><div class="fact-stamp-icon">⛸️</div><div class="fact-stamp-body"><span class="fact-stamp-type" data-fb-type="fact-wow">Ciekawostka</span><div class="fact-stamp-title" data-t="ft_medeo_title">Medeo — rekordowe lodowisko</div><div class="fact-stamp-text"><span data-t="t360">1691 m n.p.m., przez dekady arena bicia rekordów prędkościowych w łyżwiarstwie szybkim — suche, rzadkie powietrze górskie tworzy wyjątkowo twardy lód. W latach 70. padło tu ponad 120 rekordów świata. Latem: baza wypadowa w góry i gondola na Shymbulak.</span></div></div></div>
 
-    <div class="section-label">Tranzyt do Chin — przez Horgos</div>
+    <div class="section-label"><span data-t="sl_transit">Tranzyt do Chin — przez Horgos</span></div>
 
     <!-- Dzień 3 -->
     <div class="day-card">
-      <div class="card-image-wrap"><div class="card-image" style="background-image:url('https://images.unsplash.com/photo-1474487548417-781cb71495f3?w=800&auto=format&fit=crop&q=70')"></div><div class="card-image-overlay"></div><div class="card-image-label">© Unsplash · Seidenstraße</div></div>
+      <div class="card-image-wrap"><div class="card-image" style="background-image:url('https://images.unsplash.com/photo-1601925260368-ae2f83cf8b7f?w=900&auto=format&fit=crop&q=75')"></div><div class="card-image-overlay"></div><div class="card-image-label">© Unsplash · Step kazachski</div></div>
       <div class="day-card-header">
         <div class="day-num-block dn-transit"><span class="dn" data-t="t172">Dzień 3</span><span class="dd" data-t="t173">3 sie</span></div>
         <div class="day-info">
@@ -490,17 +482,17 @@
           <div class="day-loc">Dworzec Sajran → Horgos (6,5h) → Granica → Sajram Lake</div>
           <div class="day-chips"><span class="chip transit" data-t="t175">Długi dzień podróży</span><span class="chip border" data-t="t176">Przejście graniczne</span></div>
         </div>
-        <div class="day-cost"><span class="cost-main">~35 €</span><span class="cost-note">Bus + transfer</span></div>
+        <div class="day-cost"><span class="cost-main">~35 €</span><span class="cost-note" data-t="cn_bus_transfer">Bus + transfer</span></div>
       </div>
-      <div class="day-body">Bus z Ałmaty wczesnym rankiem — długi ale spektakularny dzień: step, góry, granica i pierwsze jurty.
+      <div class="day-body"><span class="day-body-text" data-t="tb_day3_bus">Bus z Ałmaty wczesnym rankiem — długi ale spektakularny dzień: step, góry, granica i pierwsze jurty.</span>
         <div class="transit-card">
           <div class="tc-header">
             <div class="tc-route" data-t="t177">🚌 Ałmaty → Horgos → Jezioro Sajram</div>
             <div class="tc-total" data-t="t178">~9–10 h łącznie</div>
           </div>
           <div class="tc-body">
-            <div class="tc-row"><span class="tc-label" data-t="t179">Odjazd</span><span class="tc-val">07:00 · <a href="https://maps.app.goo.gl/4V6M1q9mPxDGbCEn7" target="_blank">Dw. autobusowy Sayran</a></span></div>
-            <div class="tc-row"><span class="tc-label">Przyjazd Horgos</span><span class="tc-val">~13:30 · <a href="https://maps.app.goo.gl/jVRo5Gi2hDuALtzo7" target="_blank"><span data-t="t176">Przejście graniczne</span></a></span></div>
+            <div class="tc-row"><span class="tc-label" data-t="t179">Odjazd</span><span class="tc-val">07:00 · <a href="https://maps.app.goo.gl/4V6M1q9mPxDGbCEn7" target="_blank"><span data-t="tc_sayran_station">Dw. autobusowy Sayran</span></a></span></div>
+            <div class="tc-row"><span class="tc-label" data-t="tcl_przyjazd_horgos">Przyjazd Horgos</span><span class="tc-val">~13:30 · <a href="https://maps.app.goo.gl/jVRo5Gi2hDuALtzo7" target="_blank"><span data-t="t176">Przejście graniczne</span></a></span></div>
             <div class="tc-row"><span class="tc-label" data-t="t180">Środek</span><span class="tc-val" data-t="t181">Bus bezpośredni (~25 $, ~6,5 h)</span></div>
             <div class="tc-row"><span class="tc-label" data-t="t182">Po odprawie</span><span class="tc-val" data-t="t183">Taxi/bus Horgos → Sajram (~1 h, ~110 km)</span></div>
           </div>
@@ -511,7 +503,7 @@
 
     <div class="naadam-box">
       <div class="naadam-title">Festiwal Nadam nad Jeziorem Sajram</div>
-      Pobyt nad Jeziorem Sajram na początku sierpnia przypada na <strong><span data-t="t185">sezon Nadam Kazachów w Xinjangu</span></strong> — wyścigi konne, zapasy, łucznictwo, ogniska, śpiew. Bez stałej daty, według kalendarza koczowniczego. Lokalne, autentyczne święto niemal bez zachodnich turystów. Jurty nad brzegiem jeziora ~15–25 € z posiłkami.
+      <span data-t="tb_sayram_before">Pobyt nad Jeziorem Sajram na początku sierpnia przypada na</span> <strong><span data-t="t185">sezon Nadam Kazachów w Xinjangu</span></strong> — <span data-t="tb_naadam_desc">wyścigi konne, zapasy, łucznictwo, ogniska, śpiew. Bez stałej daty, według kalendarza koczowniczego. Lokalne, autentyczne święto niemal bez zachodnich turystów. Jurty nad brzegiem jeziora ~15–25 € z posiłkami.</span>
     </div>
 
     <!-- Dzień 4 -->
@@ -526,7 +518,7 @@
         <div class="day-cost"><span class="cost-main">~45 €</span><span class="cost-note"><span data-t="t188">Jurta + wstęp</span></span></div>
       </div>
       <div class="day-body">
-        „Ostatnia łza Atlantyku" — turkusowe jezioro otoczone ośnieżonymi górami. Autobus wahadłowy (130 CNY) wokół jeziora. Obserwowanie wyścigów konnych i festiwalu nomadów. Posiłki w jurtach.
+        <span class="day-body-text" data-t="tb_day4_lake">„Ostatnia łza Atlantyku" — turkusowe jezioro otoczone ośnieżonymi górami. Autobus wahadłowy (130 CNY) wokół jeziora. Obserwowanie wyścigów konnych i festiwalu nomadów. Posiłki w jurtach.</span>
         <div class="day-links">
           <a class="day-link food" href="https://www.google.com/search?q=kazakh+nomad+yurt+food+boiled+lamb+bread+photos&tbm=isch" target="_blank"><span data-t="t189">🥩 Gotowana baranina z chlebem — klasyczny posiłek jurty</span></a>
           <a class="day-link food" href="https://www.google.com/search?q=kumys+mare+milk+fermented+nomad+bowl+xinjiang+photos&tbm=isch" target="_blank"><span data-t="t190">🥛 Kumys — obowiązkowy napój nomadów</span></a>
@@ -535,19 +527,16 @@
           <a class="day-link food" href="https://www.google.com/search?q=dried+apricots+xinjiang+ili+valley+market+photos&tbm=isch" target="_blank"><span data-t="t193">🍑 Suszone morele z doliny Ili — od nomadów przy drodze</span></a>
           <a class="day-link sights" href="https://www.google.com/search?q=sayram+lake+xinjiang+turquoise+mountains+photos&tbm=isch" target="_blank"><span data-t="t194">💙 Jezioro Sajram — turkus na 2073 m n.p.m.</span></a>
           <a class="day-link sights" href="https://www.google.com/search?q=kazakh+nadam+horse+racing+xinjiang+festival+photos&tbm=isch" target="_blank"><span data-t="t195">🐎 Nadam — wyścigi konne nomadów Xinjangu</span></a>
-          <span class="day-link sleep placeholder-hotel">🛏️ <span>Nocleg — <em><span data-t="t158">link do uzupełnienia</span></em></span></span>
+          <span class="day-link sleep placeholder-hotel">🛏️ <span><span data-t="placeholder_nocleg">Nocleg</span> — <em><span data-t="t158">link do uzupełnienia</span></em></span></span>
         </div>
       </div>
     </div>
-    <div class="fact-box fact-history">
-      <div class="fact-icon">🐎</div>
-      <div class="fact-text"><strong><span data-t="t196">Nadam — najstarszy festiwal nomadów</span></strong> Nadam (Нaaдам) po mongolsku i kazachsku znaczy „zabawa, igrzyska". Obejmuje trzy gry mężczyzn: zapasy, łucznictwo i wyścigi konne. Najstarsze zapisy sięgają XIII w. Wersja przy Sajram — bez agencji turystycznych, bez scen — jest jedną z najbardziej autentycznych w Chinach.</div>
-    </div>
+    <div class="fact-box fact-history"><div class="fact-stamp-icon">🐎</div><div class="fact-stamp-body"><span class="fact-stamp-type" data-fb-type="fact-history">Ciekawostka</span><div class="fact-stamp-title"><span data-t="t196">Nadam — najstarszy festiwal nomadów</span></div><div class="fact-stamp-text"><span data-t="t361">Nadam (Нaaдам) po mongolsku i kazachsku znaczy „zabawa, igrzyska". Obejmuje trzy gry mężczyzn: zapasy, łucznictwo i wyścigi konne. Najstarsze zapisy sięgają XIII w. Wersja przy Sajram — bez agencji turystycznych, bez scen — jest jedną z najbardziej autentycznych w Chinach.</span></div></div></div>
 
     <!-- Dzień 5 -->
     <div class="day-card">
-      <div class="card-image-wrap"><div class="card-image" style="background-image:url('https://images.unsplash.com/photo-1601425937738-b06b9dff9a4f?w=800&auto=format&fit=crop&q=70')"></div><div class="card-image-overlay"></div><div class="card-image-label">© Unsplash · Yining</div></div>
-      <div class="card-image-wrap"><div class="card-image" style="background-image:url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&auto=format&fit=crop&q=70')"></div><div class="card-image-overlay"></div><div class="card-image-label">© Unsplash · Sayram Lake</div></div>
+      <div class="card-image-wrap"><div class="card-image" style="background-image:url('https://images.unsplash.com/photo-1601925260368-ae2f83cf8b7f?w=900&auto=format&fit=crop&q=75')"></div><div class="card-image-overlay"></div><div class="card-image-label">© Unsplash · Jezioro Sajram</div></div>
+      <div class="card-image-wrap"><div class="card-image" style="background-image:url('https://images.unsplash.com/photo-1601925260368-ae2f83cf8b7f?w=900&auto=format&fit=crop&q=75')"></div><div class="card-image-overlay"></div><div class="card-image-label">© Unsplash · Yining / Dolina Ili</div></div>
       <div class="day-card-header">
         <div class="day-num-block dn-transit"><span class="dn" data-t="t197">Dzień 5</span><span class="dd" data-t="t198">5 sie</span></div>
         <div class="day-info">
@@ -555,20 +544,20 @@
           <div class="day-loc" data-t="t200">Jezioro Sajram → Kanion Guozigou → Yining · ~2,5h</div>
           <div class="day-chips"><span class="chip transit" data-t="t201">Przejazd</span><span class="chip nature" data-t="t202">Kanion Guozigou</span><span class="chip culture" data-t="t203">Yining nocleg</span></div>
         </div>
-        <div class="day-cost"><span class="cost-main">~38 €</span><span class="cost-note">Transfer + hotel</span></div>
+        <div class="day-cost"><span class="cost-main">~38 €</span><span class="cost-note" data-t="cn_transfer_hotel">Transfer + hotel</span></div>
       </div>
       <div class="day-body">
-        Przejazd przez spektakularny kanion Guozigou z najwyższym mostem wiszącym Xinjiangu. Wieczór w Yining — nocny targ, ujgurski szaszłyk, naan.
+        <span class="day-body-text" data-t="tb_day5_canyon">Przejazd przez spektakularny kanion Guozigou z najwyższym mostem wiszącym Xinjiangu. Wieczór w Yining — nocny targ, ujgurski szaszłyk, naan.</span>
         <div class="transit-card">
           <div class="tc-header">
             <div class="tc-route" data-t="t204">🚐 Sajram → Yining przez Guozigou</div>
             <div class="tc-total" data-t="t205">~2,5 h</div>
           </div>
           <div class="tc-body">
-            <div class="tc-row"><span class="tc-label">Odjazd</span><span class="tc-val">Rano · <a href="https://maps.app.goo.gl/QW1NuAHNPodYhiCW6" target="_blank">Jezioro Sajram</a></span></div>
-            <div class="tc-row"><span class="tc-label">Przyjazd</span><span class="tc-val">~Południe · <a href="https://maps.app.goo.gl/Kk3hHpY4nHpZyMBx9" target="_blank">Yining centrum</a></span></div>
-            <div class="tc-row"><span class="tc-label">Środek</span><span class="tc-val">Taxi zbiorowe lub bus (~20–30 CNY)</span></div>
-            <div class="tc-row"><span class="tc-label">Trasa</span><span class="tc-val" data-t="t206">Przez Kanion Guozigou + most wiszący</span></div>
+            <div class="tc-row"><span class="tc-label" data-t="tcl_odjazd">Odjazd</span><span class="tc-val" data-t="tc_val_morning">Rano · </span></div>
+            <div class="tc-row"><span class="tc-label" data-t="tcl_przyjazd">Przyjazd</span><span class="tc-val">~<span data-t="tb_noon">Południe</span> · <a href="https://maps.app.goo.gl/Kk3hHpY4nHpZyMBx9" target="_blank"><span data-t="tc_yining_centre">Yining centrum</span></a></span></div>
+            <div class="tc-row"><span class="tc-label" data-t="tcl_srodek">Środek</span><span class="tc-val" data-t="tc_val_taxi">Taxi zbiorowe lub bus (~20–30 CNY)</span></div>
+            <div class="tc-row"><span class="tc-label" data-t="tcl_trasa">Trasa</span><span class="tc-val" data-t="t206">Przez Kanion Guozigou + most wiszący</span></div>
           </div>
           <div class="tc-change" data-t="t331">💡 Kanion Guozigou to atrakcja sama w sobie — siedź po prawej stronie</div>
         </div>
@@ -579,20 +568,17 @@
           <a class="day-link food" href="https://www.google.com/search?q=xinjiang+yogurt+ayran+milk+drink+yining+photos&tbm=isch" target="_blank"><span data-t="t211">🥛 Kazachski jogurt — świeży przy nocnym targu</span></a>
           <a class="day-link sights" href="https://www.google.com/search?q=guozigou+bridge+canyon+xinjiang+suspension+photos&tbm=isch" target="_blank"><span data-t="t212">🌉 Most wiszący Guozigou — najwyższy w Xinjangu</span></a>
           <a class="day-link sights" href="https://www.google.com/search?q=yining+night+market+xinjiang+uyghur+photos&tbm=isch" target="_blank"><span data-t="t213">🌙 Nocny targ Yining — uliczne życie</span></a>
-          <span class="day-link sleep placeholder-hotel">🛏️ <span>Nocleg — <em><span data-t="t158">link do uzupełnienia</span></em></span></span>
+          <span class="day-link sleep placeholder-hotel">🛏️ <span><span data-t="placeholder_nocleg">Nocleg</span> — <em><span data-t="t158">link do uzupełnienia</span></em></span></span>
         </div>
       </div>
     </div>
-    <div class="fact-box fact-wow">
-      <div class="fact-icon">🌉</div>
-      <div class="fact-text"><strong><span data-t="t214">Przełęcz Guozigou — dawna droga śmierci</span></strong> Przez wieki Guozigou (果子沟) była jedną z najtrudniejszych przepraw w Xinjangu — lawinowa, oblodzona, podmywana. Nowoczesna autostrada i most wiszący z 2011 roku skróciły przejazd z kilku godzin do 20 minut. Po starej drodze możesz wciąż przejść pieszo.</div>
-    </div>
+    <div class="fact-box fact-wow"><div class="fact-stamp-icon">🌉</div><div class="fact-stamp-body"><span class="fact-stamp-type" data-fb-type="fact-wow">Ciekawostka</span><div class="fact-stamp-title"><span data-t="t214">Przełęcz Guozigou — dawna droga śmierci</span></div><div class="fact-stamp-text"><span data-t="t362">Przez wieki Guozigou (果子沟) była jedną z najtrudniejszych przepraw w Xinjangu — lawinowa, oblodzona, podmywana. Nowoczesna autostrada i most wiszący z 2011 roku skróciły przejazd z kilku godzin do 20 minut. Po starej drodze możesz wciąż przejść pieszo.</span></div></div></div>
 
-    <div class="section-label">Turpan — Serce Jedwabnego Szlaku</div>
+    <div class="section-label"><span data-t="sl_turpan">Turpan — Serce Jedwabnego Szlaku</span></div>
 
     <!-- Dzień 6 -->
     <div class="day-card">
-      <div class="card-image-wrap"><div class="card-image" style="background-image:url('https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=800&auto=format&fit=crop&q=70')"></div><div class="card-image-overlay"></div><div class="card-image-label">© Unsplash · Train</div></div>
+      <div class="card-image-wrap"><div class="card-image" style="background-image:url('https://images.unsplash.com/photo-1601925260368-ae2f83cf8b7f?w=900&auto=format&fit=crop&q=75')"></div><div class="card-image-overlay"></div><div class="card-image-label">© Unsplash · Kolej dużych prędkości CN</div></div>
       <div class="day-card-header">
         <div class="day-num-block dn-transit"><span class="dn" data-t="t215">Dzień 6</span><span class="dd" data-t="t216">6 sie</span></div>
         <div class="day-info">
@@ -602,26 +588,26 @@
         </div>
         <div class="day-cost"><span class="cost-main">~28 €</span><span class="cost-note"><span data-t="t221">2 bilety pociąg</span></span></div>
       </div>
-      <div class="day-body">Dzień w pociągu przez pustynię Taklamakan — krajobraz zmienia się z zielonych dolin w ergi i skalne masywy.
+      <div class="day-body"><span class="day-body-text" data-t="tb_day6_train">Dzień w pociągu przez pustynię Taklamakan — krajobraz zmienia się z zielonych dolin w ergi i skalne masywy.</span>
         <div class="transit-card">
           <div class="tc-header">
             <div class="tc-route" data-t="t222">🚄 Yining → Ürümqi → Turpan</div>
             <div class="tc-total" data-t="t223">~9 h łącznie</div>
           </div>
           <div class="tc-body">
-            <div class="tc-row"><span class="tc-label">Odjazd</span><span class="tc-val">~07:00 · <a href="https://maps.app.goo.gl/8fCyFAMxpQkGVtHr5" target="_blank">Yining Railway Station</a></span></div>
-            <div class="tc-row"><span class="tc-label">Przyjazd Ürümqi</span><span class="tc-val">~15:00 · przesiadka ~1 h</span></div>
-            <div class="tc-row"><span class="tc-label">1. odcinek</span><span class="tc-val" data-t="t224">Yining → Ürümqi (~11 €, ~8 h, pociąg K/T)</span></div>
-            <div class="tc-row"><span class="tc-label">2. odcinek</span><span class="tc-val" data-t="t225">Ürümqi → Turpan North (~7 €, ~1 h, szybki D)</span></div>
+            <div class="tc-row"><span class="tc-label" data-t="tcl_odjazd">Odjazd</span><span class="tc-val">~07:00 · <a href="https://maps.app.goo.gl/8fCyFAMxpQkGVtHr5" target="_blank">Yining Railway Station</a></span></div>
+            <div class="tc-row"><span class="tc-label" data-t="tcl_przyjazd_ürümqi">Przyjazd Ürümqi</span><span class="tc-val" data-t="tc_val_transit1h">~15:00 · przesiadka ~1 h</span></div>
+            <div class="tc-row"><span class="tc-label" data-t="tcl_1_odcinek">1. odcinek</span><span class="tc-val" data-t="t224">Yining → Ürümqi (~11 €, ~8 h, pociąg K/T)</span></div>
+            <div class="tc-row"><span class="tc-label" data-t="tcl_2_odcinek">2. odcinek</span><span class="tc-val" data-t="t225">Ürümqi → Turpan North (~7 €, ~1 h, szybki D)</span></div>
           </div>
-          <div class="tc-change">💡 Kup oba bilety razem na <a href="https://www.trip.com" target="_blank">Trip.com</a> lub 12306 · Przy przesiadce w Ürümqi masz ok. 1 h — bagaż zostaje przy Tobie, nie trzeba odprawy · <a href="https://maps.app.goo.gl/4tRQmZN9nwdqcX517" target="_blank">📍 Ürümqi Railway Station</a></div>
+          <div class="tc-change"><span data-t="t_tc6">💡 Kup oba bilety razem na <a href="https://www.trip.com" target="_blank">Trip.com</a> lub 12306 · Przy przesiadce w Ürümqi masz ok. 1 h — bagaż zostaje przy Tobie, nie trzeba odprawy · <a href="https://maps.app.goo.gl/4tRQmZN9nwdqcX517" target="_blank">📍 Ürümqi Railway Station</a></span></div>
         </div>
       </div>
     </div>
 
     <!-- Dzień 7 -->
     <div class="day-card">
-      <div class="card-image-wrap"><div class="card-image" style="background-image:url('https://images.unsplash.com/photo-1529408686214-b48b8532f72c?w=800&auto=format&fit=crop&q=70')"></div><div class="card-image-overlay"></div><div class="card-image-label">© Unsplash · Turpan</div></div>
+      <div class="card-image-wrap"><div class="card-image" style="background-image:url('https://images.unsplash.com/photo-1601925260368-ae2f83cf8b7f?w=900&auto=format&fit=crop&q=75')"></div><div class="card-image-overlay"></div><div class="card-image-label">© Unsplash · Jiaohe – Xinjiang</div></div>
       <div class="day-card-header">
         <div class="day-num-block dn-china"><span class="dn" data-t="t226">Dzień 7</span><span class="dd" data-t="t227">7 sie</span></div>
         <div class="day-info">
@@ -632,7 +618,7 @@
         <div class="day-cost"><span class="cost-main">~45 €</span><span class="cost-note"><span data-t="t230">Wstępy ~25 €</span></span></div>
       </div>
       <div class="day-body">
-        Jiaohe: 2300-letnie miasto z cegły mułowej na plateau. Bezeklik: jaskinie buddyjskie z freskami VI–XIV w. Minaret Emina — najwyższy minaret w Chinach (44 m, 1777 r.). Wieczór: targ winogronowy.
+        <span class="day-body-text" data-t="tb_day7_jiaohe">Jiaohe: 2300-letnie miasto z cegły mułowej na plateau. Bezeklik: jaskinie buddyjskie z freskami VI–XIV w. Minaret Emina — najwyższy minaret w Chinach (44 m, 1777 r.). Wieczór: targ winogronowy.</span>
         <div class="day-links">
           <a class="day-link food" href="https://www.google.com/search?q=turpan+grape+valley+fresh+grapes+hundred+varieties+photos&tbm=isch" target="_blank"><span data-t="t231">🍇 Winogrona turpańskie — setki odmian, słodsze niż gdziekolwiek</span></a>
           <a class="day-link food" href="https://www.google.com/search?q=turpan+laghman+noodles+raisins+dried+fruit+xinjiang+photos&tbm=isch" target="_blank"><span data-t="t232">🍜 Laghman turpański — z rodzynkami i suszonymi owocami</span></a>
@@ -642,18 +628,15 @@
           <a class="day-link sights" href="https://www.google.com/search?q=jiaohe+ancient+ruins+turpan+plateau+aerial+photos&tbm=isch" target="_blank">🏛️ Ruiny Jiaohe — „Orientalne Pompeje"</a>
           <a class="day-link sights" href="https://www.google.com/search?q=bezeklik+thousand+buddha+caves+murals+turpan+photos&tbm=isch" target="_blank">🙏 Jaskinie Bezeklik — freski buddyjskie</a>
           <a class="day-link sights" href="https://www.google.com/search?q=turpan+emin+minaret+mosque+1777+photos&tbm=isch" target="_blank"><span data-t="t236">🕌 Minaret Emina — najwyższy minaret Chin</span></a>
-          <span class="day-link sleep placeholder-hotel">🛏️ <span>Nocleg — <em><span data-t="t158">link do uzupełnienia</span></em></span></span>
+          <span class="day-link sleep placeholder-hotel">🛏️ <span><span data-t="placeholder_nocleg">Nocleg</span> — <em><span data-t="t158">link do uzupełnienia</span></em></span></span>
         </div>
       </div>
     </div>
-    <div class="fact-box fact-history">
-      <div class="fact-icon">🖼️</div>
-      <div class="fact-text"><strong>Freski Bezeklik w Berlinie</strong> Na początku XX w. niemieccy archeolodzy von Le Coq i Grünwedel wycięli ze ścian jaskiń setki metrów bezcennych fresków i wywieźli do Berlina. Większość spłonęła podczas bombardowań w 1944 r. W jaskiniach są dziś fotografie oryginałów — zdjęcia dosłownie lepsze niż oryginały na miejscu.</div>
-    </div>
+    <div class="fact-box fact-history"><div class="fact-stamp-icon">🖼️</div><div class="fact-stamp-body"><span class="fact-stamp-type" data-fb-type="fact-history">Ciekawostka</span><div class="fact-stamp-title" data-t="ft_bezeklik_title">Freski Bezeklik w Berlinie</div><div class="fact-stamp-text"><span data-t="t348">Na początku XX w. niemieccy archeolodzy von Le Coq i Grünwedel wycięli ze ścian jaskiń tysiące fragmentów fresków i wywieźli do Berlina. Dzisiaj większość zbiorów bezeklikańskich jest poza Chinami — w berlińskim Museum für Asiatische Kunst i Metropolitan Museum w Nowym Jorku.</span></div></div></div>
 
     <!-- Dzień 8 -->
     <div class="day-card">
-      <div class="card-image-wrap"><div class="card-image" style="background-image:url('https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=800&auto=format&fit=crop&q=70')"></div><div class="card-image-overlay"></div><div class="card-image-label">© Unsplash · Xinjiang</div></div>
+      <div class="card-image-wrap"><div class="card-image" style="background-image:url('https://images.unsplash.com/photo-1601925260368-ae2f83cf8b7f?w=900&auto=format&fit=crop&q=75')"></div><div class="card-image-overlay"></div><div class="card-image-label">© Unsplash · Ogniste Góry – Turpan</div></div>
       <div class="day-card-header">
         <div class="day-num-block dn-china"><span class="dn" data-t="t237">Dzień 8</span><span class="dd" data-t="t238">8 sie</span></div>
         <div class="day-info">
@@ -664,9 +647,9 @@
         <div class="day-cost"><span class="cost-main">~80 €</span><span class="cost-note"><span data-t="t242">Wstępy + bilet pociąg</span></span></div>
       </div>
       <div class="day-body">
-        Rano: Gaochang (stolica Kaganatu Ujgurów VII–XIII w.), Ogniste Góry (do 70°C na skałach!), system Karez. Po południu pociąg do Jiayuguan (~5h). Wyruszyć wcześnie!
+        <span class="day-body-text" data-t="tb_day8_gaochang">Rano: Gaochang (stolica Kaganatu Ujgurów VII–XIII w.), Ogniste Góry (do 70°C na skałach!), system Karez. Po południu pociąg do Jiayuguan (~5h). Wyruszyć wcześnie!</span>
         <div class="day-links">
-          <a class="day-link food" href="https://www.google.com/search?q=xinjiang+dapanji+big+plate+chicken+spicy+noodles+photos&tbm=isch" target="_blank">🍗 Dapanji — kurczak na wielkim talerzu z makaronem</a>
+          <a class="day-link food" href="https://www.google.com/search?q=xinjiang+dapanji+big+plate+chicken+spicy+noodles+photos&tbm=isch" target="_blank"><span data-t="dl_dapanji">🍗 Dapanji — kurczak na wielkim talerzu z makaronem</span></a>
           <a class="day-link food" href="https://www.google.com/search?q=turpan+roasted+mutton+leg+jiazi+rou+photos&tbm=isch" target="_blank"><span data-t="t243">🦵 Pieczony udziec jagnięcy — tradycja Czyngis-chana</span></a>
           <a class="day-link food" href="https://www.google.com/search?q=turpan+grape+raisin+dried+market+variety+photos&tbm=isch" target="_blank"><span data-t="t244">🍇 Rodzynki turpańskie — kupowane wiadrami (do domu!)</span></a>
           <a class="day-link food" href="https://www.google.com/search?q=xinjiang+cold+beer+wusu+summer+heat+photos&tbm=isch" target="_blank"><span data-t="t245">🍺 Piwo Wusu — lokalne xinjiańskie (po 40°C upale)</span></a>
@@ -676,16 +659,13 @@
         </div>
       </div>
     </div>
-    <div class="fact-box fact-wow">
-      <div class="fact-icon">💧</div>
-      <div class="fact-text"><strong><span data-t="t249">Karez — 2000-letnia inżynieria bez elektryczności</span></strong> System Karez to ponad 1600 km podziemnych kanałów wykutych ręcznie, prowadzących wodę z lodowców gór do pustyni wyłącznie siłą grawitacji. Działa do dziś bez ani jednej pompy. UNESCO uznaje go za jeden z największych osiągnięć inżynierskich starożytności.</div>
-    </div>
+    <div class="fact-box fact-wow"><div class="fact-stamp-icon">💧</div><div class="fact-stamp-body"><span class="fact-stamp-type" data-fb-type="fact-wow">Ciekawostka</span><div class="fact-stamp-title"><span data-t="t249">Karez — 2000-letnia inżynieria bez elektryczności</span></div><div class="fact-stamp-text"><span data-t="t367">System Karez to ponad 1600 km podziemnych kanałów wykutych ręcznie, prowadzących wodę z lodowców gór do pustyni wyłącznie siłą grawitacji. Działa do dziś bez ani jednej pompy. UNESCO uznaje go za jeden z największych osiągnięć inżynierskich starożytności.</span></div></div></div>
 
-    <div class="section-label">Jiayuguan — Zachodni Kraniec Wielkiego Muru</div>
+    <div class="section-label"><span data-t="sl_jiayuguan">Jiayuguan — Zachodni Kraniec Wielkiego Muru</span></div>
 
     <!-- Dzień 9 -->
     <div class="day-card">
-      <div class="card-image-wrap"><div class="card-image" style="background-image:url('https://images.unsplash.com/photo-1508804185872-d7badad00f7d?w=800&auto=format&fit=crop&q=70')"></div><div class="card-image-overlay"></div><div class="card-image-label">© Unsplash · Great Wall</div></div>
+      <div class="card-image-wrap"><div class="card-image" style="background-image:url('https://images.unsplash.com/photo-1601925260368-ae2f83cf8b7f?w=900&auto=format&fit=crop&q=75')"></div><div class="card-image-overlay"></div><div class="card-image-label">© Unsplash · Wielki Mur – Jiayuguan</div></div>
       <div class="day-card-header">
         <div class="day-num-block dn-gansu"><span class="dn" data-t="t250">Dzień 9</span><span class="dd" data-t="t251">9 sie</span></div>
         <div class="day-info">
@@ -696,7 +676,7 @@
         <div class="day-cost"><span class="cost-main">~55 €</span><span class="cost-note"><span data-t="t253">Wstępy + hotel</span></span></div>
       </div>
       <div class="day-body">
-        Twierdza Jiayuguan (XIV w.) — zachodnia brama Chin i Jedwabnego Szlaku, przez 600 lat tu kończyła się cywilizacja. Wisząca Ściana wspina się stromym grzbietem pod kątem 45°. Podziemna galeria malowideł grobowych Wei-Jin (220–419 n.e.). Wieczór pociąg do Zhangye (~1,5h).
+        <span class="day-body-text" data-t="tb_day9_fortress">Twierdza Jiayuguan (XIV w.) — zachodnia brama Chin i Jedwabnego Szlaku, przez 600 lat tu kończyła się cywilizacja. Wisząca Ściana wspina się stromym grzbietem pod kątem 45°. Podziemna galeria malowideł grobowych Wei–Jin (3–4 w.). Wieczór: kolacja i nocleg.</span>
         <div class="day-links">
           <a class="day-link food" href="https://www.google.com/search?q=jiayuguan+gansu+lamb+noodles+local+food+photos&tbm=isch" target="_blank"><span data-t="t254">🍜 Makaron jagnięcy Gansu — kluski ręcznie ciągnięte</span></a>
           <a class="day-link food" href="https://www.google.com/search?q=gansu+beef+noodles+lanzhou+style+photos&tbm=isch" target="_blank"><span data-t="t255">🥩 Wołowina z makaronem — styl Lanzhou (najsłynniejsza zupa Chin)</span></a>
@@ -705,31 +685,28 @@
           <a class="day-link sights" href="https://www.google.com/search?q=jiayuguan+pass+fortress+great+wall+western+end+photos&tbm=isch" target="_blank"><span data-t="t258">🏯 Twierdza Jiayuguan — zachodni kraniec Muru Chińskiego</span></a>
           <a class="day-link sights" href="https://www.google.com/search?q=jiayuguan+overhanging+great+wall+cliff+photos&tbm=isch" target="_blank"><span data-t="t259">⛰️ Wisząca Ściana — Mur wspinający się pionowym urwiskiem</span></a>
           <a class="day-link sights" href="https://www.google.com/search?q=jiayuguan+wei+jin+underground+tombs+murals+photos&tbm=isch" target="_blank"><span data-t="t260">🎨 Groby Wei-Jin — podziemna galeria malowideł (III–V w.)</span></a>
-          <span class="day-link sleep placeholder-hotel">🛏️ <span>Nocleg — <em><span data-t="t158">link do uzupełnienia</span></em></span></span>
+          <span class="day-link sleep placeholder-hotel">🛏️ <span><span data-t="placeholder_nocleg">Nocleg</span> — <em><span data-t="t158">link do uzupełnienia</span></em></span></span>
         </div>
       </div>
     </div>
-    <div class="fact-box fact-history">
-      <div class="fact-icon">🏯</div>
-      <div class="fact-text"><strong><span data-t="t261">Jiayuguan — „Pierwsze Przejście pod Niebem&quot;</span></strong> Przez ponad 600 lat ta twierdza z dynastii Ming (XIV w.) była dosłownym końcem Chin i cywilizacji dla każdego, kto ją przekraczał. Żołnierze skazani na służbę poza murem wiedzieli, że mogą już nigdy nie wrócić. Stąd pochodzi chiński idiom „przejść przez bramę" — oznaczający pożegnanie na zawsze.</div>
-    </div>
+    <div class="fact-box fact-history"><div class="fact-stamp-icon">🏯</div><div class="fact-stamp-body"><span class="fact-stamp-type" data-fb-type="fact-history">Ciekawostka</span><div class="fact-stamp-title"><span data-t="t261">Jiayuguan — „Pierwsze Przejście pod Niebem&quot;</span></div><div class="fact-stamp-text"><span data-t="t368">Przez ponad 600 lat ta twierdza z dynastii Ming (XIV w.) była dosłownym końcem Chin i cywilizacji dla każdego, kto ją przekraczał. Żołnierze skazani na służbę poza murem wiedzieli, że mogą już nigdy nie wrócić. Stąd pochodzi chiński idiom „przejść przez bramę" — oznaczający pożegnanie na zawsze.</span></div></div></div>
 
     <div class="section-label"><span data-t="t262">Zhangye — Góry Tęczowe</span></div>
 
     <!-- Dzień 10 -->
     <div class="day-card">
-      <div class="card-image-wrap"><div class="card-image" style="background-image:url('https://images.unsplash.com/photo-1586816879360-004f5b0c51e3?w=800&auto=format&fit=crop&q=70')"></div><div class="card-image-overlay"></div><div class="card-image-label">© Unsplash · Zhangye Danxia</div></div>
+      <div class="card-image-wrap"><div class="card-image" style="background-image:url('https://images.unsplash.com/photo-1601925260368-ae2f83cf8b7f?w=900&auto=format&fit=crop&q=75')"></div><div class="card-image-overlay"></div><div class="card-image-label">© Unsplash · Zhangye Danxia</div></div>
       <div class="day-card-header">
         <div class="day-num-block dn-gansu"><span class="dn" data-t="t263">Dzień 10</span><span class="dd" data-t="t264">10 sie</span></div>
         <div class="day-info">
-          <div class="day-title">Zhangye — Góry Tęczowe i Leżący Budda</div>
+          <div class="day-title"><span data-t="tb_zhangye_title">Zhangye — Góry Tęczowe i Leżący Budda</span></div>
           <div class="day-loc" data-t="t265">Zhangye Danxia Geopark · Świątynia Dafo (34,5 m Budda)</div>
           <div class="day-chips"><span class="chip nature" data-t="t266">Danxia UNESCO</span><span class="chip culture" data-t="t229">Buddyzm</span></div>
         </div>
         <div class="day-cost"><span class="cost-main">~55 €</span><span class="cost-note"><span data-t="t253">Wstępy + hotel</span></span></div>
       </div>
       <div class="day-body">
-        Zhangye Danxia — multikolorowe skały piaskowcowe wyglądające jak namalowane akwarelą (film Mulan, Wielki Mur z Mattem Damonem). Najlepsze o wschodzie lub zachodzie słońca. Świątynia Dafo: 34,5-metrowy leżący Budda z dynastii Western Xia (1098 r.).
+        <span data-t="t_zhg2">Zhangye Danxia — multikolorowe skały piaskowcowe wyglądające jak namalowane akwarelą (film Mulan, Wielki Mur z Mattem Damonem). Najlepsze o wschodzie lub zachodzie słońca. Świątynia Dafo: 34,5-metrowy leżący Budda z dynastii Western Xia (1098 r.).</span>
         <div class="day-links">
           <a class="day-link food" href="https://www.google.com/search?q=zhangye+gansu+beef+noodles+local+restaurant+photos&tbm=isch" target="_blank"><span data-t="t267">🍜 Wołowina z makaronem — specjalność Zhangye</span></a>
           <a class="day-link food" href="https://www.google.com/search?q=gansu+lamb+stew+braised+local+food+photos&tbm=isch" target="_blank"><span data-t="t268">🥘 Duszona jagnięcina Gansu — sycące danie stepowe</span></a>
@@ -739,20 +716,17 @@
           <a class="day-link sights" href="https://www.google.com/search?q=zhangye+danxia+rainbow+mountains+colorful+rock+photos&tbm=isch" target="_blank"><span data-t="t270">🌈 Góry Tęczowe — multikolorowe skały Danxia</span></a>
           <a class="day-link sights" href="https://www.google.com/search?q=zhangye+danxia+sunrise+sunset+golden+hour+photos&tbm=isch" target="_blank"><span data-t="t271">🌅 Złota godzina w Danxia — o świcie lub zachodzie</span></a>
           <a class="day-link sights" href="https://www.google.com/search?q=zhangye+dafo+temple+giant+reclining+buddha+photos&tbm=isch" target="_blank"><span data-t="t272">🙏 Świątynia Dafo — 34,5 m leżący Budda (1098 r.)</span></a>
-          <span class="day-link sleep placeholder-hotel">🛏️ <span>Nocleg — <em><span data-t="t158">link do uzupełnienia</span></em></span></span>
+          <span class="day-link sleep placeholder-hotel">🛏️ <span><span data-t="placeholder_nocleg">Nocleg</span> — <em><span data-t="t158">link do uzupełnienia</span></em></span></span>
         </div>
       </div>
     </div>
-    <div class="fact-box fact-wow">
-      <div class="fact-icon">🌈</div>
-      <div class="fact-text"><strong><span data-t="t273">Góry Tęczowe — kinowe arcydzieło</span></strong> Zhangye Danxia (张掖丹霞) — wielokolorowe formacje piaskowcowe przez miliony lat wyrzeźbione przez wiatr i deszcz. Wyróżnienie na 74. Festiwalu Filmowym w Wenecji jako jedno z najpiękniejszych miejsc zdjęciowych świata. Tu kręcono animację Mulan (Disney) i film „Wielki Mur" z Mattem Damonem.</div>
-    </div>
+    <div class="fact-box fact-wow"><div class="fact-stamp-icon">🌈</div><div class="fact-stamp-body"><span class="fact-stamp-type" data-fb-type="fact-wow">Ciekawostka</span><div class="fact-stamp-title"><span data-t="t273">Góry Tęczowe — kinowe arcydzieło</span></div><div class="fact-stamp-text"><span data-t="t369">Zhangye Danxia (张掖丹霞) — wielokolorowe formacje piaskowcowe przez miliony lat wyrzeźbione przez wiatr i deszcz. Wyróżnienie na 74. Festiwalu Filmowym w Wenecji jako jedno z najpiękniejszych miejsc zdjęciowych świata. Tu kręcono animację Mulan (Disney) i film „Wielki Mur" z Mattem Damonem.</span></div></div></div>
 
-    <div class="section-label">Xi'an — Dawna Stolica i Koniec Jedwabnego Szlaku</div>
+    <div class="section-label"><span data-t="sl_xian">Xi'an — Dawna Stolica i Koniec Jedwabnego Szlaku</span></div>
 
     <!-- Dzień 11 -->
     <div class="day-card">
-      <div class="card-image-wrap"><div class="card-image" style="background-image:url('https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=800&auto=format&fit=crop&q=70')"></div><div class="card-image-overlay"></div><div class="card-image-label">© Unsplash · Train</div></div>
+      <div class="card-image-wrap"><div class="card-image" style="background-image:url('https://images.unsplash.com/photo-1601925260368-ae2f83cf8b7f?w=900&auto=format&fit=crop&q=75')"></div><div class="card-image-overlay"></div><div class="card-image-label">© Unsplash · Jedwabny Szlak</div></div>
       <div class="day-card-header">
         <div class="day-num-block dn-transit"><span class="dn" data-t="t274">Dzień 11</span><span class="dd" data-t="t275">11 sie</span></div>
         <div class="day-info">
@@ -760,28 +734,28 @@
           <div class="day-loc" data-t="t277">Zhangye West → Xi'an North · ~6,5 godz.</div>
           <div class="day-chips"><span class="chip transit" data-t="t219">Dzień pociągiem</span><span class="chip city" data-t="t278">Przyjazd Xi'an wieczór</span></div>
         </div>
-        <div class="day-cost"><span class="cost-main">~35 €</span><span class="cost-note">Bilet D-train 2kl</span></div>
+        <div class="day-cost"><span class="cost-main">~35 €</span><span class="cost-note" data-t="cn_ticket_dtrain">Bilet D-train 2kl</span></div>
       </div>
-      <div class="day-body">Ostatni odcinek Jedwabnego Szlaku — przez Korytarz Hexi prosto do dawnej stolicy Chin.
+      <div class="day-body"><span class="day-body-text" data-t="tb_day11_hexi">Ostatni odcinek Jedwabnego Szlaku — przez Korytarz Hexi prosto do dawnej stolicy Chin.</span>
         <div class="transit-card">
           <div class="tc-header">
             <div class="tc-route" data-t="t279">🚄 Zhangye → Xi'an</div>
             <div class="tc-total" data-t="t280">~6,5 h · bez przesiadki</div>
           </div>
           <div class="tc-body">
-            <div class="tc-row"><span class="tc-label">Odjazd</span><span class="tc-val">~08:00–09:00 · <a href="https://maps.app.goo.gl/3e6J6nFt7Nxbmdpw9" target="_blank">Zhangye West Station</a></span></div>
-            <div class="tc-row"><span class="tc-label">Przyjazd</span><span class="tc-val">~15:00–16:00 · <a href="https://maps.app.goo.gl/8xDtSJkbLHr5Aeq6A" target="_blank">Xi'an North Station</a></span></div>
+            <div class="tc-row"><span class="tc-label" data-t="tcl_odjazd">Odjazd</span><span class="tc-val">~08:00–09:00 · <a href="https://maps.app.goo.gl/3e6J6nFt7Nxbmdpw9" target="_blank">Zhangye West Station</a></span></div>
+            <div class="tc-row"><span class="tc-label" data-t="tcl_przyjazd">Przyjazd</span><span class="tc-val">~15:00–16:00 · <a href="https://maps.app.goo.gl/8xDtSJkbLHr5Aeq6A" target="_blank">Xi'an North Station</a></span></div>
             <div class="tc-row"><span class="tc-label"><span data-t="t281">Pociąg</span></span><span class="tc-val" data-t="t282">D-train (动车) 2. klasa · bez przesiadki</span></div>
-            <div class="tc-row"><span class="tc-label">Koszt</span><span class="tc-val" data-t="t283">~35 € (2. klasa) · rezerwuj z wyprzedzeniem</span></div>
+            <div class="tc-row"><span class="tc-label" data-t="tcl_koszt">Koszt</span><span class="tc-val" data-t="t283">~35 € (2. klasa) · rezerwuj z wyprzedzeniem</span></div>
           </div>
-          <div class="tc-change">💡 Kup bilet przez <a href="https://www.trip.com" target="_blank">Trip.com</a> · Z Xi'an North do centrum metro linia 2 (20 min, ~5 CNY) · <a href="https://maps.app.goo.gl/tz7rLg9bFxHsGyvS8" target="_blank">📍 Xi'an North Station na mapie</a></div>
+          <div class="tc-change"><span data-t="tc_xian_tip">💡 Kup bilet przez <a href="https://www.trip.com" target="_blank">Trip.com</a> · Z Xi'an North do centrum metro linia 2 (20 min, ~5 CNY) · <a href="https://maps.app.goo.gl/tz7rLg9bFxHsGyvS8" target="_blank">📍 Xi'an North Station na mapie</a></span></div>
         </div>
       </div>
     </div>
 
     <!-- Dzień 12 -->
     <div class="day-card">
-      <div class="card-image-wrap"><div class="card-image" style="background-image:url('https://images.unsplash.com/photo-1531750026848-8ada78f641c2?w=800&auto=format&fit=crop&q=70')"></div><div class="card-image-overlay"></div><div class="card-image-label">© Unsplash · Xi'an</div></div>
+      <div class="card-image-wrap"><div class="card-image" style="background-image:url('https://images.unsplash.com/photo-1601925260368-ae2f83cf8b7f?w=900&auto=format&fit=crop&q=75')"></div><div class="card-image-overlay"></div><div class="card-image-label">© Unsplash · Xi'an – Armia Terakotowa</div></div>
       <div class="day-card-header">
         <div class="day-num-block dn-xian"><span class="dn" data-t="t284">Dzień 12</span><span class="dd" data-t="t285">12 sie</span></div>
         <div class="day-info">
@@ -792,7 +766,7 @@
         <div class="day-cost"><span class="cost-main">~55 €</span><span class="cost-note"><span data-t="t290">Wstęp + transport</span></span></div>
       </div>
       <div class="day-body">
-        Odkryta w 1974 r. przez rolnika kopiącego studnię. Ponad 8000 żołnierzy, 670 koni i 130 rydwanów — każdy z unikalną twarzą. Prace wykopaliskowe trwają do dziś. Powrót do centrum, wieczór w dzielnicy muzułmańskiej.
+        <span data-t="t_xian_tera">Odkryta w 1974 r. przez rolnika kopiącego studnię. Ponad 8000 żołnierzy, 670 koni i 130 rydwanów — każdy z unikalną twarzą. Prace wykopaliskowe trwają do dziś. Powrót do centrum, wieczór w dzielnicy muzułmańskiej.</span>
         <div class="day-links">
           <a class="day-link food" href="https://www.google.com/search?q=xian+roujiamo+pork+burger+street+food+photos&tbm=isch" target="_blank"><span data-t="t291">🥙 Roujiamo — „chiński hamburger&quot; z wieprzowiną (Xi'an street food)</span></a>
           <a class="day-link food" href="https://www.google.com/search?q=xian+biang+biang+noodles+wide+belt+photos&tbm=isch" target="_blank">🍜 Biang Biang Mian — szerokie pasy makaronu z chili i octem</a>
@@ -801,18 +775,15 @@
           <a class="day-link food" href="https://www.google.com/search?q=xian+liangpi+cold+noodles+chili+photos&tbm=isch" target="_blank"><span data-t="t294">🥗 Liangpi — zimne kluski ryżowe z pastą chili</span></a>
           <a class="day-link sights" href="https://www.google.com/search?q=xian+terracotta+army+warriors+pit+1+photos&tbm=isch" target="_blank"><span data-t="t295">⚔️ Terakotowa Armia — Hala 1 z 6000 wojowników</span></a>
           <a class="day-link sights" href="https://www.google.com/search?q=xian+terracotta+warriors+pit+2+horse+chariot+photos&tbm=isch" target="_blank">🐎 Hala 2 — kawaleria i rydwany</a>
-          <span class="day-link sleep placeholder-hotel">🛏️ <span>Nocleg — <em><span data-t="t158">link do uzupełnienia</span></em></span></span>
+          <span class="day-link sleep placeholder-hotel">🛏️ <span><span data-t="placeholder_nocleg">Nocleg</span> — <em><span data-t="t158">link do uzupełnienia</span></em></span></span>
         </div>
       </div>
     </div>
-    <div class="fact-box fact-history">
-      <div class="fact-icon">⚔️</div>
-      <div class="fact-text"><strong>Terakotowa Armia — odkryta przez przypadek</strong> W 1974 roku rolnik Yang Zhifa kopał studnię i trafił na głowę terakotowego wojownika. Przez 2200 lat nikt nie wiedział, że pod ziemią leży cała armia cesarza Qin Shi Huanga. Szacuje się, że odkopano mniej niż 30% kompleksu — prace trwają. Yang Zhifa dożył 86 lat jako lokalny bohater i podpisywał książki o odkryciu.</div>
-    </div>
+    <div class="fact-box fact-history"><div class="fact-stamp-icon">⚔️</div><div class="fact-stamp-body"><span class="fact-stamp-type" data-fb-type="fact-history">Ciekawostka</span><div class="fact-stamp-title" data-t="ft_terracotta_title">Terakotowa Armia — odkryta przez przypadek</div><div class="fact-stamp-text"><span data-t="t370">W 1974 roku rolnik Yang Zhifa kopał studnię i trafił na głowę terakotowego wojownika. Przez 2200 lat nikt nie wiedział, że pod ziemią leży cała armia cesarza Qin Shi Huanga. Szacuje się, że odkopano mniej niż 30% kompleksu — prace trwają. Yang Zhifa dożył 86 lat jako lokalny bohater i podpisywał książki o odkryciu.</span></div></div></div>
 
     <!-- Dzień 13 -->
     <div class="day-card">
-      <div class="card-image-wrap"><div class="card-image" style="background-image:url('https://images.unsplash.com/photo-1516738901171-8eb4fc13bd20?w=800&auto=format&fit=crop&q=70')"></div><div class="card-image-overlay"></div><div class="card-image-label">© Unsplash · Xi'an</div></div>
+      <div class="card-image-wrap"><div class="card-image" style="background-image:url('https://images.unsplash.com/photo-1601925260368-ae2f83cf8b7f?w=900&auto=format&fit=crop&q=75')"></div><div class="card-image-overlay"></div><div class="card-image-label">© Unsplash · Xi'an – Mury Miasta</div></div>
       <div class="day-card-header">
         <div class="day-num-block dn-xian"><span class="dn" data-t="t296">Dzień 13</span><span class="dd" data-t="t297">13 sie</span></div>
         <div class="day-info">
@@ -823,7 +794,7 @@
         <div class="day-cost"><span class="cost-main">~45 €</span><span class="cost-note"><span data-t="t300">Wstępy + rowery</span></span></div>
       </div>
       <div class="day-body">
-        Rower na murze miejskim (14 km, kompletny obwód) — widok na stare miasto. Wielka Meczet (742 r.) — architektura chińsko-islamska, działa do dziś. Muzeum Shaanxi: ponad 370 tys. eksponatów, w tym „Złoty Garnek Tang" i zbroja z brązu.
+        <span class="day-body-text" data-t="tb_day13_wall">Rower na murze miejskim (14 km, kompletny obwód) — widok na stare miasto. Wielka Meczet (742 r.) — architektura chińsko-islamska, działa do dziś. Muzeum Shaanxi: ponad 370 tys. eksponatów, w tym „Złoty Czajnik".</span>
         <div class="day-links">
           <a class="day-link food" href="https://www.google.com/search?q=xian+dumpling+banquet+tang+dynasty+photos&tbm=isch" target="_blank"><span data-t="t301">🥟 Bankiet Pierogów — 20 odmian pierogów z dynastii Tang</span></a>
           <a class="day-link food" href="https://www.google.com/search?q=xian+muslim+quarter+skewers+lamb+persimmon+cake+photos&tbm=isch" target="_blank"><span data-t="t302">🫐 Persimmon Cake — placki z kaki, specjalność Xi'anu</span></a>
@@ -835,14 +806,11 @@
         </div>
       </div>
     </div>
-    <div class="fact-box fact-wow">
-      <div class="fact-icon">🏯</div>
-      <div class="fact-text"><strong>Xi'an — miasto pod 13 dynastiami</strong> Xi'an (dawniej Chang'an) było stolicą Chin przez ponad 1100 lat i 13 dynastii, w tym dynastię Han i Tang — złoty wiek Jedwabnego Szlaku. W szczytowym okresie dynastii Tang (VII–X w.) Chang'an miało ok. 1 miliona mieszkańców i było największym miastem świata. Stąd wychodziły karawany z jedwabiem w kierunku Persji i Rzymu.</div>
-    </div>
+    <div class="fact-box fact-wow"><div class="fact-stamp-icon">🏯</div><div class="fact-stamp-body"><span class="fact-stamp-type" data-fb-type="fact-wow">Ciekawostka</span><div class="fact-stamp-title" data-t="ft_xian_city_title">Xi'an — miasto pod 13 dynastiami</div><div class="fact-stamp-text"><span data-t="t371">Xi'an (dawniej Chang'an) było stolicą Chin przez ponad 1100 lat i 13 dynastii, w tym dynastię Han i Tang — złoty wiek Jedwabnego Szlaku. W szczytowym okresie dynastii Tang (VII–X w.) Chang'an miało ok. 1 miliona mieszkańców i było największym miastem świata. Stąd wychodziły karawany z jedwabiem w kierunku Persji i Rzymu.</span></div></div></div>
 
     <!-- Dzień 14 -->
     <div class="day-card">
-      <div class="card-image-wrap"><div class="card-image" style="background-image:url('https://images.unsplash.com/photo-1598874399498-8a5ba8fef2e7?w=800&auto=format&fit=crop&q=70')"></div><div class="card-image-overlay"></div><div class="card-image-label">© Unsplash · Xi'an</div></div>
+      <div class="card-image-wrap"><div class="card-image" style="background-image:url('https://images.unsplash.com/photo-1601925260368-ae2f83cf8b7f?w=900&auto=format&fit=crop&q=75')"></div><div class="card-image-overlay"></div><div class="card-image-label">© Unsplash · Xi'an – Pagoda Dzikich Gęsi</div></div>
       <div class="day-card-header">
         <div class="day-num-block dn-rest"><span class="dn" data-t="t307">Dzień 14</span><span class="dd" data-t="t308">14 sie</span></div>
         <div class="day-info">
@@ -850,10 +818,10 @@
           <div class="day-loc"><span data-t="t309">Xi'an · Lotnisko Xianyang → Wiedeń</span></div>
           <div class="day-chips"><span class="chip rest"><span data-t="t310">Dzień wylotu</span></span></div>
         </div>
-        <div class="day-cost"><span class="cost-main">~15 €</span><span class="cost-note">Transfer na lotnisko</span></div>
+        <div class="day-cost"><span class="cost-main">~15 €</span><span class="cost-note" data-t="cn_transfer_airport">Transfer na lotnisko</span></div>
       </div>
       <div class="day-body">
-        Wolny poranek — ostatnie zakupy, kawiarnia, spacer. Lot MU5064 wylatuje o 13:30 z Xi'an Xianyang Airport — przyjazd do Wiednia 06:10 następnego dnia rano (15 sie).
+        <span class="day-body-text" data-t="tb_day15_fly">Wolny poranek — ostatnie zakupy, kawiarnia, spacer. Lot MU5064 wylatuje o 13:30 z Xi'an Xianyang Airport — przyjazd do Wiednia 06:10 następnego dnia rano (15 sie).</span> Lot MU5064 wylatuje o 13:30 z Xi'an Xianyang Airport — <span data-t="tb_day15_arrival">przyjazd do Wiednia 06:10 następnego dnia rano (15 sie).</span>
         <div class="day-links">
           <a class="day-link food" href="https://www.google.com/search?q=xian+airport+breakfast+local+noodles+photos&tbm=isch" target="_blank"><span data-t="t311">🍜 Biang Biang na śniadanie — ostatnia miska przed lotem</span></a>
           <a class="day-link food" href="https://www.google.com/search?q=xian+souvenir+food+dates+walnuts+dried+fruit+photos&tbm=isch" target="_blank"><span data-t="t312">🎁 Pamiątkowe jedzenie — daktyle, orzechy, herbata Xi'an</span></a>
@@ -868,7 +836,7 @@
 
 <!-- ALL COSTS SECTION -->
 <div class="all-costs-section">
-  <div class="all-costs-title">Zestawienie kosztów</div>
+  <div class="all-costs-title" data-named="costs_title">Zestawienie kosztów</div>
   <div class="all-costs-grid">
     <div class="cost-card">
       <div class="cost-card-header cc">Jedwabny Szlak do Xi'anu &nbsp;·&nbsp; ~1.253 €</div>
@@ -902,13 +870,6 @@
     </div>
   </div>
 </div>
-
-
-
-
-
-
-
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script src="script.js"></script>
 </body>

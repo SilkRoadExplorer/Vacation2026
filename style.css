@@ -458,19 +458,84 @@ a:hover { text-decoration: underline; }
 }
 .placeholder-hotel em { font-style: italic; opacity: 0.7; }
 
-/* ── Fact boxes ───────────────────────────────────────── */
+/* ── Fact boxes — stamp card design ──────────────────── */
 .fact-box {
   margin: 10px 0 0;
-  padding: 10px 14px;
-  border-radius: 8px;
-  border-left: 3px solid var(--gold);
-  background: var(--gold-light);
-  font-size: 11px;
+  display: flex;
+  align-items: stretch;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  font-size: 12px;
   line-height: 1.6;
 }
-.fact-box-inner { display: flex; gap: 10px; }
-.fact-icon { font-size: 20px; flex-shrink: 0; }
-.fact-text strong { display: block; margin-bottom: 3px; font-size: 12px; }
+
+/* Icon column */
+.fact-stamp-icon {
+  font-size: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 12px;
+  min-width: 50px;
+  flex-shrink: 0;
+  background: var(--gold-light);
+}
+
+/* Body column */
+.fact-stamp-body {
+  padding: 8px 12px;
+  flex: 1;
+  background: var(--white);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2px;
+}
+
+/* Small type label */
+.fact-stamp-type {
+  display: inline-block;
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 2px 7px;
+  border-radius: 20px;
+  margin-bottom: 4px;
+  width: fit-content;
+}
+
+/* Title */
+.fact-stamp-title {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text);
+}
+
+/* Body text */
+.fact-stamp-text {
+  font-size: 11px;
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+/* Color variants */
+.fact-box.fact-wow     { border-color: var(--gold); }
+.fact-box.fact-wow     .fact-stamp-icon { background: var(--gold-light); border-right: 1px solid #e8d0a0; }
+.fact-box.fact-wow     .fact-stamp-type { background: #f5e8c0; color: #7a5a10; }
+
+.fact-box.fact-history { border-color: #c87941; }
+.fact-box.fact-history .fact-stamp-icon { background: #fdf0e3; border-right: 1px solid #e8c8a0; }
+.fact-box.fact-history .fact-stamp-type { background: #f5dfc0; color: #7a3a10; }
+
+.fact-box.fact-nature  { border-color: var(--a-col); }
+.fact-box.fact-nature  .fact-stamp-icon { background: var(--a-light); border-right: 1px solid #b0d0b0; }
+.fact-box.fact-nature  .fact-stamp-type { background: #d0eed0; color: #2a5a2a; }
+
+.fact-box.fact-culture { border-color: var(--c-col); }
+.fact-box.fact-culture .fact-stamp-icon { background: var(--c-light); border-right: 1px solid #d0b0d0; }
+.fact-box.fact-culture .fact-stamp-type { background: #e8d0e8; color: #5a1a5a; }
 
 /* Free day card */
 .free-day-card {
@@ -623,3 +688,78 @@ a:hover { text-decoration: underline; }
   .day-cost      { min-width: 70px; }
   .day-link      { font-size: 11px; padding: 6px 10px; }
 }
+
+
+/* ── Fact boxes — stamp card design ──────────────────── */
+.fact-box {
+  margin: 12px 0 0;
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  border: 1px solid var(--border);
+  box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+}
+
+/* Left icon column */
+.fact-stamp-icon {
+  flex-shrink: 0;
+  width: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  padding: 14px 0;
+}
+
+/* Right content column */
+.fact-stamp-body {
+  flex: 1;
+  padding: 9px 12px 10px;
+  min-width: 0;
+}
+
+.fact-stamp-type {
+  display: inline-block;
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 2px 7px;
+  border-radius: 20px;
+  margin-bottom: 5px;
+}
+
+.fact-stamp-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.25;
+  margin-bottom: 4px;
+}
+
+.fact-stamp-text {
+  font-size: 11px;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+/* Colour variants */
+.fact-box.fact-wow    { background: #fffdf5; }
+.fact-box.fact-wow    .fact-stamp-icon { background: #fff3cc; }
+.fact-box.fact-wow    .fact-stamp-type { background: #fde8a0; color: #7a5800; }
+.fact-box.fact-wow    .fact-stamp-title { color: #5a4010; }
+
+.fact-box.fact-history { background: #f8f4f0; }
+.fact-box.fact-history .fact-stamp-icon { background: #edddd0; }
+.fact-box.fact-history .fact-stamp-type { background: #e0c8b0; color: #5a3010; }
+.fact-box.fact-history .fact-stamp-title { color: #4a2a10; }
+
+.fact-box.fact-nature  { background: #f4faf4; }
+.fact-box.fact-nature  .fact-stamp-icon { background: #d0ecd0; }
+.fact-box.fact-nature  .fact-stamp-type { background: #b8ddb8; color: #1a4a1a; }
+.fact-box.fact-nature  .fact-stamp-title { color: #1a4a1a; }
+
+.fact-box.fact-culture { background: #f7f0f7; }
+.fact-box.fact-culture .fact-stamp-icon { background: #e4d0e4; }
+.fact-box.fact-culture .fact-stamp-type { background: #d0b0d0; color: #4a1a4a; }
+.fact-box.fact-culture .fact-stamp-title { color: #4a1a4a; }
