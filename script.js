@@ -184,11 +184,42 @@ function initMap() {
   map.fitBounds(L.latLngBounds(latlngs), { padding: [40, 40], maxZoom: 6 });
 }
 
+/* ── Currency converter ─────────────────────────────────── */
+// Indicative rates (Aug 2026): 1 EUR = 530 KZT, 1 EUR = 7.9 CNY
+var CUR_RATES = { eur: 1, kzt: 530, cny: 7.9 };
+
+function convertCur(source) {
+  var eurEl = document.getElementById('cur-eur');
+  var kztEl = document.getElementById('cur-kzt');
+  var cnyEl = document.getElementById('cur-cny');
+  if (!eurEl || !kztEl || !cnyEl) return;
+
+  var val = parseFloat(document.getElementById('cur-' + source).value);
+  if (isNaN(val)) {
+    if (source !== 'eur') eurEl.value = '';
+    if (source !== 'kzt') kztEl.value = '';
+    if (source !== 'cny') cnyEl.value = '';
+    return;
+  }
+  // Convert source to EUR base, then to others
+  var eur = val / CUR_RATES[source];
+  var round = function (n) { return Math.round(n * 100) / 100; };
+  if (source !== 'eur') eurEl.value = round(eur);
+  if (source !== 'kzt') kztEl.value = Math.round(eur * CUR_RATES.kzt);
+  if (source !== 'cny') cnyEl.value = round(eur * CUR_RATES.cny);
+}
+
+function initCurrency() {
+  // Populate initial values from the default EUR input
+  if (document.getElementById('cur-eur')) convertCur('eur');
+}
+
 /* ── Init ───────────────────────────────────────────────── */
 document.addEventListener('DOMContentLoaded', () => {
   initPacklist();
   initScrollReveal();
   initParallax();
+  initCurrency();
 });
 
 window.addEventListener('load', () => {
