@@ -10,24 +10,24 @@
 <body>
 <!-- HEADER -->
 <div class="page-header">
-  <div class="overline">Jedwabny Szlak · 1 osoba · 1 – 15 sierpnia 2026</div>
-  <h1>Wakacje 2026</h1>
-  <div style="display:flex;justify-content:center;gap:32px;flex-wrap:wrap;margin-bottom:6px;">
-    <div style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;color:#cc99cc;" data-named="badge">Jedwabny Szlak do Xi'anu</div>
-  </div>
-  <div style="display:flex;justify-content:center;gap:32px;flex-wrap:wrap;margin-bottom:20px;font-size:12px;opacity:0.65;">
-    <div><span data-named="route">Ałmaty → Horgos → Sajram → Yining → Turpan → Jiayuguan → Zhangye → Xi'an</span></div>
-  </div>
-  <div class="plan-badges" style="display:flex;align-items:center;justify-content:center;gap:16px;">
-    <span class="badge badge-c"><span class="badge-dot"></span> <span>Jedwabny Szlak do Xi'anu</span></span>
-    <div class="lang-switcher"><span class="active">PL</span><span class="lang-sep">·</span><a href="index_en.html">EN</a><span class="lang-sep">·</span><a href="index_de.html">DE</a></div>
+  <div class="header-content">
+    <div class="overline" data-named="overline">Jedwabny Szlak · 1 osoba · 1–15 sierpnia 2026</div>
+    <h1 data-named="h1">Wakacje 2026</h1>
+    <div class="header-subtitle" data-named="badge">Jedwabny Szlak do Xi'anu</div>
+    <div class="header-route"><span data-named="route">Ałmaty → Horgos → Sajram → Yining → Turpan → Jiayuguan → Zhangye → Xi'an</span></div>
+    <div class="plan-badges">
+      <span class="badge badge-c"><span class="badge-dot"></span> <span data-named="badge">Jedwabny Szlak do Xi'anu</span></span>
+      <div class="lang-switcher"><span class="active">PL</span><span class="lang-sep">·</span><a href="index_en.html">EN</a><span class="lang-sep">·</span><a href="index_de.html">DE</a></div>
+    </div>
   </div>
 </div>
+
+<div class="page-container">
 
 <!-- PACKLISTE -->
 <div class="packlist-section accordion-section" id="acc-pack">
   <button class="acc-header" onclick="toggleAcc('acc-pack')" aria-expanded="false">
-    <span class="acc-title">🎒 Packliste — Jedwabny Szlak</span>
+    <span class="acc-title" data-named="acc_pack">🎒 Packliste — Jedwabny Szlak</span>
     <span class="acc-arrow">▼</span>
   </button>
   <div class="acc-body" style="display:none">
@@ -123,7 +123,6 @@
     </div>
   </div>
 </div>
-
 
 <!-- WEATHER SECTION -->
 <div class="weather-section accordion-section" id="acc-weather">
@@ -502,13 +501,18 @@
     </div>
 
     <div class="naadam-box">
-      <div class="naadam-title">Festiwal Nadam nad Jeziorem Sajram</div>
-      <span class="day-body-text" data-t="tb_sayram_before">Pobyt nad Jeziorem Sajram na początku sierpnia przypada na</span>
+      <div class="naadam-title"><span data-t="ft_naadam_box_title">Festiwal Nadam nad Jeziorem Sajram</span></div>
+      <div class="naadam-text"><span data-t="tb_sayram_before">Pobyt nad Jeziorem Sajram na początku sierpnia przypada na</span> <strong><span data-t="t185">sezon Nadam Kazachów w Xinjangu</span></strong> — <span data-t="tb_naadam_desc">wyścigi konne, zapasy, łucznictwo, ogniska, śpiew. Bez stałej daty, według kalendarza koczowniczego. Lokalne, autentyczne święto niemal bez zachodnich turystów. Jurty nad brzegiem jeziora ~15–25 € z posiłkami.</span></div>
+    </div>
+
+    <!-- Dzień 4 -->
+    <div class="day-card">
+      <div class="day-card-header">
         <div class="day-num-block dn-china"><span class="dn" data-t="t186">Dzień 4</span><span class="dd" data-t="t187">4 sie</span></div>
         <div class="day-info">
-          <div class="day-title">Jezioro Sajram — Alpejskie jezioro i Nadam</div>
-          <div class="day-loc">Jezioro Sajram · 2073 m n.p.m. · Xinjiang</div>
-          <div class="day-chips"><span class="chip nature">Jezioro alpejskie</span><span class="chip silk">Festiwal Nadam</span><span class="chip culture">Jurty</span></div>
+          <div class="day-title"><span data-t="d4_title">Jezioro Sajram — Alpejskie jezioro i Nadam</span></div>
+          <div class="day-loc"><span data-t="d4_loc">Jezioro Sajram · 2073 m n.p.m. · Xinjiang</span></div>
+          <div class="day-chips"><span class="chip nature" data-t="d4_chip1">Jezioro alpejskie</span><span class="chip silk" data-t="d4_chip2">Festiwal Nadam</span><span class="chip culture" data-t="d4_chip3">Jurty</span></div>
         </div>
         <div class="day-cost"><span class="cost-main">~45 €</span><span class="cost-note"><span data-t="t188">Jurta + wstęp</span></span></div>
       </div>
@@ -816,7 +820,7 @@
         <div class="day-cost"><span class="cost-main">~15 €</span><span class="cost-note" data-t="cn_transfer_airport">Transfer na lotnisko</span></div>
       </div>
       <div class="day-body">
-        <span class="day-body-text" data-t="tb_day15_fly">Wolny poranek — ostatnie zakupy, kawiarnia, spacer. Lot MU5064 wylatuje o 13:30 z Xi'an Xianyang Airport — przyjazd do Wiednia 06:10 następnego dnia rano (15 sie).</span> Lot MU5064 wylatuje o 13:30 z Xi'an Xianyang Airport <span class="day-body-text" data-t="tb_day15_arrival">przyjazd do Wiednia 06:10 następnego dnia rano (15 sie).</span>
+        <span class="day-body-text" data-t="tb_day15_fly">Wolny poranek — ostatnie zakupy, kawiarnia, spacer. Lot MU5064 wylatuje o 13:30 z Xi'an Xianyang Airport — przyjazd do Wiednia 06:10 następnego dnia rano (15 sie).</span> <span data-t="tb_flight_mu">Lot MU5064 wylatuje o 13:30 z Xi'an Xianyang Airport</span> <span class="day-body-text" data-t="tb_day15_arrival">przyjazd do Wiednia 06:10 następnego dnia rano (15 sie).</span>
         <div class="day-links">
           <a class="day-link food" href="https://www.google.com/search?q=xian+airport+breakfast+local+noodles+photos&tbm=isch" target="_blank"><span data-t="t311">🍜 Biang Biang na śniadanie — ostatnia miska przed lotem</span></a>
           <a class="day-link food" href="https://www.google.com/search?q=xian+souvenir+food+dates+walnuts+dried+fruit+photos&tbm=isch" target="_blank"><span data-t="t312">🎁 Pamiątkowe jedzenie — daktyle, orzechy, herbata Xi'an</span></a>
@@ -865,6 +869,15 @@
     </div>
   </div>
 </div>
+
+
+
+
+
+
+
+</div>
+</div><!-- /page-container -->
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script src="script.js"></script>
 </body>

@@ -304,6 +304,9 @@ a:hover { text-decoration: underline; }
   transform: translateY(20px);
   transition: opacity 0.45s var(--ease), transform 0.45s var(--ease), box-shadow 0.2s;
 }
+/* When a fact-box follows a day-card, group them: card loses bottom gap,
+   fact-box connects directly and carries the gap to the next block */
+.day-card:has(+ .fact-box) { margin-bottom: 0; }
 .day-card.visible { opacity: 1; transform: translateY(0); }
 .day-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.08); }
 
@@ -392,7 +395,7 @@ a:hover { text-decoration: underline; }
 
 /* ── Fact boxes — accent stripe ──────────────────────── */
 .fact-box {
-  margin: 14px 0 0;
+  margin: 8px 0 18px;
   border-radius: 8px;
   overflow: hidden;
   display: flex;
@@ -549,4 +552,85 @@ a:hover { text-decoration: underline; }
   .page-header { background: var(--slate) !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
   .day-card, .free-day-card { break-inside: avoid; opacity: 1; transform: none; }
   a { color: inherit; text-decoration: none; }
+}
+
+
+/* ════════════════════════════════════════════════════════
+   MISSING CLASSES — added
+   ════════════════════════════════════════════════════════ */
+
+/* Day num block variants (all use slate, accent stripe via chip) */
+.dn-c, .dn-china, .dn-gansu, .dn-xian { background: var(--slate); color: #fff; }
+
+/* Chip: silk (= Silk Road theme, terracotta) */
+.chip.silk { color: var(--accent); border-color: var(--accent-mid); background: var(--accent-bg); }
+
+/* Badge in header */
+.badge-c { background: rgba(196,84,26,0.2); color: #fbbf9a; border: 1px solid rgba(196,84,26,0.3); }
+
+/* Quick-compare column accent */
+.qc-col.plan-c { border-top: 3px solid var(--accent); }
+
+/* Weather card icon + temp spans */
+.wcard-icon { font-size: 18px; margin-right: 2px; }
+.wtemp-max { font-weight: 600; }
+.wtemp-min { color: var(--muted); }
+.wtemp-sep { color: var(--subtle); }
+
+/* Weather stat rows */
+.stat { display: flex; flex-direction: column; }
+
+/* Naadam box — special highlight card */
+.naadam-box {
+  margin: 0 0 18px;
+  padding: 14px 18px;
+  background: var(--accent-bg);
+  border: 1px solid var(--accent-mid);
+  border-left: 3px solid var(--accent);
+  border-radius: 10px;
+}
+.naadam-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 17px;
+  font-weight: 600;
+  color: #7c2d12;
+  margin-bottom: 6px;
+}
+.naadam-box .day-body-text,
+.naadam-box .naadam-text { display: block; margin: 0; font-size: 12px; color: #7c2d12; line-height: 1.6; }
+.naadam-box strong { color: #5a1f0c; }
+
+/* Totals breakdown */
+.total-main { font-size: 28px; font-weight: 700; color: var(--text); margin: 6px 0 2px; }
+.total-main.tc { color: var(--accent); }
+.total-sub { font-size: 12px; color: var(--muted); margin-bottom: 14px; }
+.total-breakdown { display: grid; gap: 4px; max-width: 360px; }
+.tb-row { display: flex; justify-content: space-between; font-size: 12.5px; padding: 4px 0; border-bottom: 1px solid var(--border); }
+.tb-row:last-child { border-bottom: none; }
+.tb-row span:last-child { font-weight: 600; }
+
+
+/* ════════════════════════════════════════════════════════
+   PAGE CONTAINER + SECTION RHYTHM
+   ════════════════════════════════════════════════════════ */
+.page-container {
+  max-width: 920px;
+  margin: 0 auto;
+  background: var(--surface);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+}
+
+/* Accordion sections get subtle separation */
+.accordion-section { background: var(--surface); }
+.accordion-section + .accordion-section { border-top: none; }
+
+/* The plans area sits on the page bg to separate from accordions */
+.plans-grid { background: var(--bg); border-top: 1px solid var(--border); }
+.plan-col { padding: 28px; }
+
+/* Quick compare gets a tint */
+.quick-compare { background: var(--surface); }
+
+@media (max-width: 960px) {
+  .page-container { max-width: 100%; box-shadow: none; }
 }
