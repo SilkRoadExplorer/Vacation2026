@@ -129,20 +129,22 @@ function initPacklist() {
 function initMap() {
   const container = document.getElementById('route-map');
   if (!container || typeof L === 'undefined') return;
+  if (window._map) return; // already initialized
 
-  const lang = document.documentElement.lang || 'pl';
+  const lang = document.documentElement.lang || 'de';
+  const pick = (o) => (o && (o[lang] != null ? o[lang] : (o.de || o.en || o.pl))) || '';
 
-  const stops = [
-    { name: 'Ałmaty',    nameEn: 'Almaty',    lat: 43.238, lng: 76.945,  days: 'Dni 1–3',    daysEn: 'Days 1–3',    icon: '🏙️' },
-    { name: 'Horgos',    nameEn: 'Khorgos',   lat: 44.205, lng: 80.412,  days: 'Dzień 4',    daysEn: 'Day 4',       icon: '🛂' },
-    { name: 'Sajram',    nameEn: 'Sayram',     lat: 43.870, lng: 81.235,  days: 'Dzień 4',    daysEn: 'Day 4',       icon: '🏔️' },
-    { name: 'Yining',    nameEn: 'Yining',     lat: 43.908, lng: 81.324,  days: 'Dni 4–5',   daysEn: 'Days 4–5',   icon: '🕌' },
-    { name: 'Ürümqi',    nameEn: 'Ürümqi',     lat: 43.793, lng: 87.627,  days: 'Przesiadka', daysEn: 'Transit',     icon: '🚄' },
-    { name: 'Turpan',    nameEn: 'Turpan',     lat: 42.951, lng: 89.189,  days: 'Dni 6–7',   daysEn: 'Days 6–7',   icon: '🌵' },
-    { name: 'Jiayuguan', nameEn: 'Jiayuguan',  lat: 39.802, lng: 98.300,  days: 'Dzień 8',    daysEn: 'Day 8',       icon: '🏯' },
-    { name: 'Zhangye',   nameEn: 'Zhangye',    lat: 38.939, lng: 100.449, days: 'Dzień 9',    daysEn: 'Day 9',       icon: '🌈' },
-    { name: "Xi'an",     nameEn: "Xi'an",      lat: 34.341, lng: 108.940, days: 'Dni 10–13',  daysEn: 'Days 10–13',  icon: '🏛️' },
-  ];
+  // Stops come from trip.js (window.TRIP.meta.map.stops)
+  const tripStops = (window.TRIP && window.TRIP.meta && window.TRIP.meta.map && window.TRIP.meta.map.stops) || [];
+  const stops = tripStops.map(s => ({
+    name: pick(s.name),
+    lat: s.lat,
+    lng: s.lng,
+    days: pick(s.days),
+    icon: s.icon,
+    transit: !!s.transit
+  }));
+  if (!stops.length) return;
 
   const map = L.map('route-map', { scrollWheelZoom: false });
   window._map = map;
@@ -152,26 +154,22 @@ function initMap() {
   }).addTo(map);
 
   const latlngs = stops.map(s => [s.lat, s.lng]);
-  L.polyline(latlngs, { color: '#6a2a6a', weight: 2.5, opacity: 0.7, dashArray: '6,4' }).addTo(map);
-
-  const isTransit = s => s.days === 'Przesiadka';
+  L.polyline(latlngs, { color: '#c4541a', weight: 2.5, opacity: 0.7, dashArray: '6,4' }).addTo(map);
 
   stops.forEach((s, i) => {
-    const transit = isTransit(s);
+    const transit = s.transit;
     const marker = L.circleMarker([s.lat, s.lng], {
       radius:      transit ? 5 : 8,
-      fillColor:   transit ? '#aaa' : '#6a2a6a',
+      fillColor:   transit ? '#aaa' : '#c4541a',
       color:       '#fff',
       weight:      2,
       fillOpacity: transit ? 0.5 : 0.9
     }).addTo(map);
 
-    const displayName = lang === 'pl' ? s.name : s.nameEn;
-    const displayDays = lang === 'pl' ? s.days : s.daysEn;
-    marker.bindPopup(`<strong>${s.icon} ${displayName}</strong><br><span style="color:#888;font-size:11px">${displayDays}</span>`);
+    marker.bindPopup(`<strong>${s.icon} ${s.name}</strong><br><span style="color:#888;font-size:11px">${s.days}</span>`);
 
     if (!transit) {
-      marker.bindTooltip(s.icon + ' ' + displayName, {
+      marker.bindTooltip(s.icon + ' ' + s.name, {
         permanent: true,
         direction: i % 2 === 0 ? 'right' : 'left',
         offset: [8, 0],
@@ -215,22 +213,31 @@ function initCurrency() {
 }
 
 /* ── Init ───────────────────────────────────────────────── */
-document.addEventListener('DOMContentLoaded', () => {
+// render.js fires 'trip-rendered' once cards + header are in the DOM.
+// We init everything then, so packlist/scroll/map find their elements.
+function initAll() {
   initPacklist();
   initScrollReveal();
   initParallax();
   initCurrency();
-});
 
-window.addEventListener('load', () => {
   // Auto-open map on desktop so Leaflet sizes correctly
   const mapSec = document.getElementById('acc-map');
   if (mapSec && window.innerWidth >= 900) {
     const body = mapSec.querySelector('.acc-body');
     const btn  = mapSec.querySelector('.acc-header');
     mapSec.classList.add('open');
-    body.style.display = 'block';
-    btn.setAttribute('aria-expanded', 'true');
+    if (body) body.style.display = 'block';
+    if (btn) btn.setAttribute('aria-expanded', 'true');
   }
   initMap();
+}
+
+document.addEventListener('trip-rendered', initAll);
+
+// Fallback: if render.js isn't present (static HTML), init on load anyway
+window.addEventListener('load', function () {
+  if (!window._tripInited && !document.getElementById('trip-plans')) {
+    initAll();
+  }
 });
