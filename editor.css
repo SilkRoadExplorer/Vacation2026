@@ -1,0 +1,287 @@
+/* ════════════════════════════════════════════════════════════════
+   editor.css — Bearbeitungsmodus
+   ════════════════════════════════════════════════════════════════ */
+
+/* ── Toolbar (oben fixiert) ──────────────────────────────────── */
+.editor-toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: var(--slate, #1e2a3a);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 20px;
+  flex-wrap: wrap;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+}
+.editor-toolbar .et-title {
+  font-weight: 600;
+  font-size: 14px;
+  margin-right: auto;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.editor-toolbar .et-dirty {
+  font-size: 11px;
+  color: #fbbf24;
+  font-weight: 500;
+  display: none;
+}
+.editor-toolbar.dirty .et-dirty { display: inline; }
+
+.et-btn {
+  font-family: inherit;
+  font-size: 12.5px;
+  font-weight: 500;
+  padding: 7px 14px;
+  border-radius: 7px;
+  border: 1px solid rgba(255,255,255,0.2);
+  background: rgba(255,255,255,0.1);
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.15s;
+  white-space: nowrap;
+}
+.et-btn:hover { background: rgba(255,255,255,0.2); }
+.et-btn.primary { background: #c4541a; border-color: #c4541a; }
+.et-btn.primary:hover { background: #a8470f; }
+.et-btn.primary:disabled { opacity: 0.4; cursor: default; }
+.et-btn.ghost { background: transparent; }
+
+/* Language pills in toolbar */
+.et-lang { display: flex; gap: 2px; background: rgba(255,255,255,0.08); border-radius: 7px; padding: 2px; }
+.et-lang button {
+  font-family: inherit; font-size: 12px; font-weight: 500;
+  padding: 5px 11px; border-radius: 5px; border: none;
+  background: transparent; color: rgba(255,255,255,0.6); cursor: pointer;
+}
+.et-lang button.active { background: rgba(255,255,255,0.2); color: #fff; }
+
+/* ── Edit-mode visual cues on cards ──────────────────────────── */
+body.edit-mode .day-card,
+body.edit-mode .free-day-card {
+  position: relative;
+  outline: 1px dashed transparent;
+  transition: outline-color 0.15s;
+}
+body.edit-mode .day-card:hover { outline-color: var(--accent, #c4541a); }
+
+/* Per-card edit controls */
+.card-edit-bar {
+  display: none;
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  z-index: 50;
+  gap: 6px;
+}
+body.edit-mode .card-edit-bar { display: flex; }
+.card-edit-bar button {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 5px 10px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.2);
+}
+.ceb-edit { background: var(--accent, #c4541a); color: #fff; }
+.ceb-up, .ceb-down { background: #fff; color: var(--slate, #1e2a3a); border: 1px solid var(--border, #ddd) !important; }
+.ceb-del { background: #c0392b; color: #fff; }
+.card-edit-bar button:hover { filter: brightness(1.1); }
+
+/* "Add day" buttons between cards */
+.add-day-row {
+  display: none;
+  justify-content: center;
+  margin: -8px 0 12px;
+}
+body.edit-mode .add-day-row { display: flex; }
+.add-day-btn {
+  font-size: 12px;
+  font-weight: 600;
+  padding: 6px 16px;
+  border-radius: 20px;
+  border: 1.5px dashed var(--accent, #c4541a);
+  background: var(--accent-bg, #fdf1eb);
+  color: var(--accent, #c4541a);
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.add-day-btn:hover { background: var(--accent, #c4541a); color: #fff; }
+
+/* ── Modal editor ────────────────────────────────────────────── */
+.editor-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  background: rgba(0,0,0,0.5);
+  display: none;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 30px 16px;
+  overflow-y: auto;
+}
+.editor-overlay.open { display: flex; }
+.editor-modal {
+  background: var(--surface, #fff);
+  border-radius: 14px;
+  width: 100%;
+  max-width: 680px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+  margin: auto;
+}
+.em-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 22px;
+  border-bottom: 1px solid var(--border, #e4e7ec);
+  position: sticky;
+  top: 0;
+  background: var(--surface, #fff);
+  border-radius: 14px 14px 0 0;
+  z-index: 10;
+}
+.em-head h2 { font-size: 17px; font-weight: 600; margin: 0; }
+.em-close {
+  font-size: 22px; line-height: 1; background: none; border: none;
+  color: var(--muted, #6b7280); cursor: pointer; padding: 4px 8px;
+}
+.em-close:hover { color: var(--text, #111); }
+.em-body { padding: 20px 22px; }
+
+/* Form fields */
+.ef-group { margin-bottom: 18px; }
+.ef-label {
+  display: block;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--muted, #6b7280);
+  margin-bottom: 6px;
+}
+.ef-input, .ef-textarea, .ef-select {
+  width: 100%;
+  font-family: inherit;
+  font-size: 13.5px;
+  color: var(--text, #111);
+  padding: 9px 12px;
+  border: 1px solid var(--border-mid, #d0d5dd);
+  border-radius: 8px;
+  background: var(--surface, #fff);
+}
+.ef-input:focus, .ef-textarea:focus, .ef-select:focus {
+  outline: none;
+  border-color: var(--accent, #c4541a);
+  box-shadow: 0 0 0 3px var(--accent-bg, #fdf1eb);
+}
+.ef-textarea { min-height: 70px; resize: vertical; line-height: 1.5; }
+.ef-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+
+/* Language sub-tabs inside a field */
+.ef-langtabs { display: flex; gap: 2px; margin-bottom: 6px; }
+.ef-langtabs button {
+  font-family: inherit; font-size: 11px; font-weight: 600;
+  padding: 3px 10px; border-radius: 5px; border: 1px solid var(--border, #e4e7ec);
+  background: var(--bg, #f7f8fa); color: var(--muted, #6b7280); cursor: pointer;
+}
+.ef-langtabs button.active { background: var(--accent, #c4541a); color: #fff; border-color: var(--accent, #c4541a); }
+.ef-lang-pane { display: none; }
+.ef-lang-pane.active { display: block; }
+
+/* Sub-sections (chips, links, transit, fact) */
+.ef-section {
+  border: 1px solid var(--border, #e4e7ec);
+  border-radius: 10px;
+  padding: 14px;
+  margin-bottom: 18px;
+  background: var(--bg, #f7f8fa);
+}
+.ef-section-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+.ef-section-head h3 { font-size: 13px; font-weight: 600; margin: 0; }
+.ef-additem {
+  font-size: 11.5px; font-weight: 600; padding: 4px 12px; border-radius: 6px;
+  border: 1px dashed var(--accent, #c4541a); background: none;
+  color: var(--accent, #c4541a); cursor: pointer;
+}
+.ef-additem:hover { background: var(--accent, #c4541a); color: #fff; }
+
+/* Repeatable item rows (chip/link) */
+.ef-item {
+  background: var(--surface, #fff);
+  border: 1px solid var(--border, #e4e7ec);
+  border-radius: 8px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+.ef-item:last-child { margin-bottom: 0; }
+.ef-item-head {
+  display: flex; align-items: center; gap: 8px; margin-bottom: 8px;
+}
+.ef-item-head .ef-select { flex: 0 0 auto; width: auto; min-width: 110px; }
+.ef-del-item {
+  margin-left: auto; font-size: 11px; font-weight: 600;
+  padding: 4px 10px; border-radius: 6px; border: none;
+  background: #fce8e6; color: #c0392b; cursor: pointer;
+}
+.ef-del-item:hover { background: #c0392b; color: #fff; }
+
+/* Toggle for optional sections */
+.ef-toggle {
+  display: flex; align-items: center; gap: 8px;
+  font-size: 13px; font-weight: 500; cursor: pointer; user-select: none;
+}
+.ef-toggle input { accent-color: var(--accent, #c4541a); width: 16px; height: 16px; }
+
+.em-foot {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+  padding: 16px 22px;
+  border-top: 1px solid var(--border, #e4e7ec);
+  position: sticky;
+  bottom: 0;
+  background: var(--surface, #fff);
+  border-radius: 0 0 14px 14px;
+}
+
+/* Hidden file input */
+#ed-import-file { display: none; }
+
+/* Toast notification */
+.ed-toast {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%) translateY(20px);
+  background: var(--slate, #1e2a3a);
+  color: #fff;
+  padding: 11px 22px;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 500;
+  box-shadow: 0 6px 24px rgba(0,0,0,0.25);
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s var(--ease, cubic-bezier(0.25,1,0.5,1));
+  z-index: 3000;
+}
+.ed-toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+.ed-toast.success { background: #166534; }
+.ed-toast.error { background: #991b1b; }
+
+@media (max-width: 600px) {
+  .ef-row { grid-template-columns: 1fr; }
+  .editor-toolbar { padding: 10px 14px; }
+  .editor-toolbar .et-title { width: 100%; margin-bottom: 4px; }
+}

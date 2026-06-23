@@ -233,6 +233,10 @@
 
   // ── Mount everything ──────────────────────────────────────────
   function mount() {
+    // Always read the freshest data (editor may have replaced window.TRIP)
+    TRIP = window.TRIP;
+    UI = TRIP.ui;
+
     var headerEl = document.getElementById('trip-header');
     var plansEl = document.getElementById('trip-plans');
     var totalsEl = document.getElementById('trip-totals');
@@ -273,6 +277,13 @@
   // expose lang + helper for script.js
   window.TRIP_LANG = LANG;
   window.TRIP_T = t;
+  // expose re-render so the editor can refresh the page after edits
+  window.TRIP_RENDER = mount;
+
+  // If the editor saved a modified trip in the browser, load it before rendering
+  if (window.TRIP_EDITOR_APPLY_SAVED) {
+    try { window.TRIP_EDITOR_APPLY_SAVED(); } catch (e) {}
+  }
 
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', mount);

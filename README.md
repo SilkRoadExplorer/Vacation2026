@@ -1,65 +1,60 @@
-# Reiseplaner — Modulares System
+# Reiseplaner — mit Browser-Editor
 
-Eine wiederverwendbare, dreisprachige (PL/EN/DE) Reiseplaner-Webseite.
-Der Reiseinhalt steckt komplett in **einer Datendatei** — du änderst nie HTML.
+Dreisprachige (DE/EN/PL) Reiseplaner-Seite. Du kannst den **kompletten Plan direkt
+auf der Webseite bearbeiten** — kein Code nötig. Änderungen werden im Browser
+gespeichert (auf deinem Gerät).
 
 ## Dateien
 
-| Datei | Zweck | Änderst du? |
-|---|---|---|
-| `trip.js` | **Die Reisedaten** (Tage, Kosten, Karte, Texte) | ✅ Ja — hier passiert alles |
-| `render.js` | Baut die Tageskarten aus `trip.js` | ❌ Nein |
-| `index.html` | Gerüst + statische Sektionen | ❌ Selten |
-| `style.css` | Aussehen | ❌ Nur fürs Design |
-| `script.js` | Karte, Packliste, Währungsrechner | ❌ Nein |
-| `trip.template.js` | Leere Vorlage für neue Reisen | Kopiervorlage |
+| Datei | Zweck |
+|---|---|
+| `index.html` | Die Seite — hier öffnest du alles |
+| `trip.js` | Die Reisedaten (Ausgangsplan) |
+| `editor.js` + `editor.css` | Der Bearbeitungsmodus |
+| `render.js` | Baut die Tageskarten |
+| `script.js`, `style.css` | Karte, Packliste, Währungsrechner, Design |
+| `trip.template.js` | Leere Vorlage für eine ganz neue Reise |
 
-## Eine Reise ändern
+**Wichtig:** Alle Dateien müssen im selben Ordner liegen (z. B. dein GitHub-Pages-Repo).
 
-Öffne `trip.js`. Jeder Tag ist ein Objekt im `days`-Array:
+## So bearbeitest du den Plan
 
-```javascript
-{
-  num: 1,
-  date: { de: "1. Aug" },
-  type: "rest",                    // bestimmt die Akzentfarbe
-  title: { de: "Ankunft" },
-  loc:   { de: "Wien · Hotel" },
-  cost: "~50 €",
-  costNote: { de: "Hotel" },
-  body: { de: "Beschreibung..." },
-  chips: [{ kind: "rest", text: { de: "Ankunft" } }],
-  links: [{ kind: "sleep", url: "https://...", text: { de: "🛏️ Hotel" } }]
-}
-```
+1. Seite öffnen, oben auf **„Bearbeiten"** klicken.
+2. An jeder Tageskarte erscheinen Knöpfe:
+   - **✏️ Bearbeiten** — öffnet ein Formular mit ALLEN Feldern des Tages
+   - **▲ / ▼** — Tag nach oben/unten verschieben
+   - **🗑** — Tag löschen
+   - **+ Tag hinzufügen** — neuen Tag einfügen (zwischen den Karten)
+3. Im Bearbeiten-Formular änderst du Titel, Ort, Kosten, Beschreibung, Chips,
+   Links (Essen/Sehenswürdigkeit/Transport/Hotel), Transit-Karte und Fun-Fact —
+   jeweils in **DE / EN / PL** (Reiter im Formular).
+4. **„Übernehmen"** schließt das Formular und zeigt die Änderung sofort.
+5. Wenn alles passt, oben auf **„Speichern"** klicken → wird im Browser gespeichert.
 
-- **Tag hinzufügen** → neues Objekt ins `days`-Array
-- **Tag löschen** → Objekt entfernen
-- **Längere Reise** → mehr Objekte; **kürzere** → weniger
+Der Speichern-Knopf wird erst aktiv, wenn es ungespeicherte Änderungen gibt.
+Verlässt du die Seite mit ungespeicherten Änderungen, warnt der Browser.
 
-Alles Weitere (Nummerierung, Farben, Layout, Übersetzung) macht `render.js` automatisch.
+## Sichern & Übertragen
 
-## Neue Reise anlegen
+- **Export** — lädt deinen aktuellen Plan als JSON-Datei herunter (Sicherung).
+- **Import** — lädt so eine JSON-Datei wieder ein.
+- **Zurücksetzen** — verwirft gespeicherte Änderungen, zurück zum Original aus `trip.js`.
 
-1. `trip.template.js` → nach `trip.js` kopieren
-2. `days` füllen, `header` + `total` + `map.stops` anpassen
-3. Im Browser `index.html` öffnen
+### Änderungen dauerhaft machen
+Der Browser-Speicher gilt nur auf deinem Gerät und kann beim Leeren des Caches
+verloren gehen. Für eine dauerhafte Version: **Export** klicken, den Inhalt der
+heruntergeladenen Datei kopieren und damit den `window.TRIP = {...}`-Block in
+`trip.js` ersetzen, dann neu hochladen. So wird dein Plan zum neuen Ausgangsstand.
 
 ## Sprache
 
 `index.html?lang=de` (oder `en` / `pl`). Der Umschalter oben rechts merkt sich die Wahl.
-Jedes Textfeld ist `{ pl: "...", en: "...", de: "..." }`. Fehlende Sprachen fallen auf DE zurück.
 
-## Feldreferenz
+## Gut zu wissen
 
-**type** (Tagesfarbe): `rest` · `transit` · `city` · `nature` · `culture` · `china` · `gansu` · `xian`
-**chip.kind**: `rest` · `transit` · `border` · `nature` · `culture` · `city` · `history` · `silk`
-**link.kind**: `food` · `sights` · `transport` · `sleep`
-**fact.type**: `wow` · `history` · `nature` · `culture`
-
-**Optionale Felder pro Tag**: `transit` (Zug/Bus-Karte), `fact` (Fun-Fact-Box), `naadam` (Spezialbox).
-
-## Hosting
-
-Alle Dateien in dasselbe Verzeichnis legen (z. B. GitHub Pages). Fertig.
-Hinweis: Die Seite braucht JavaScript — die Tageskarten werden im Browser erzeugt.
+- Die Seite braucht JavaScript (die Karten werden im Browser erzeugt).
+- Der Browser-Speicher ist pro Gerät und pro Browser. Auf einem anderen Gerät
+  siehst du wieder den Original-Plan (bis du dort importierst).
+- Möchtest du den Plan auf mehreren Geräten synchron oder zu mehreren bearbeiten,
+  bräuchte es einen Cloud-Dienst (Firebase/Supabase) — das ist bewusst nicht
+  eingebaut, um die Seite einfach und ohne Konto zu halten.
