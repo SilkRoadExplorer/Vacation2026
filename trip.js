@@ -251,40 +251,7 @@ window.TRIP = {
         }
       ]
     },
-    "sectionLabels": [
-      {
-        "afterDay": 2,
-        "text": {
-          "pl": "Tranzyt do Chin — przez Horgos",
-          "en": "Transit to China — via Khorgos",
-          "de": "Transit nach China — über Khorgos"
-        }
-      },
-      {
-        "afterDay": 6,
-        "text": {
-          "pl": "Turpan — Serce Jedwabnego Szlaku",
-          "en": "Turpan — Heart of the Silk Road",
-          "de": "Turpan — Herz der Seidenstraße"
-        }
-      },
-      {
-        "afterDay": 8,
-        "text": {
-          "pl": "Jiayuguan — Zachodni Kraniec Wielkiego Muru",
-          "en": "Jiayuguan — Western End of the Great Wall",
-          "de": "Jiayuguan — Westliches Ende der Großen Mauer"
-        }
-      },
-      {
-        "afterDay": 11,
-        "text": {
-          "pl": "Xi'an — Dawna Stolica i Koniec Jedwabnego Szlaku",
-          "en": "Xi'an — Ancient Capital & End of the Silk Road",
-          "de": "Xi'an — Alte Hauptstadt & Ende der Seidenstraße"
-        }
-      }
-    ]
+    "sectionLabels": []
   },
   "ui": {
     "langNames": {

@@ -16,8 +16,22 @@
 
 (function () {
   var STORAGE_KEY = 'trip_data_v1';
-  var LANGS = ['de', 'en', 'pl'];
+  var ALL_LANGS = ['de', 'en', 'pl'];
   var LANG_NAMES = { de: 'DE', en: 'EN', pl: 'PL' };
+
+  // Detect the language the page is currently shown in (set by render.js).
+  // Used so the editor opens on that language and new days are seeded from it.
+  function currentLang() {
+    var l = (window.TRIP_LANG || document.documentElement.lang || 'de');
+    return ALL_LANGS.indexOf(l) !== -1 ? l : 'de';
+  }
+  // LANGS: same three languages, but the page language first so its tab/field
+  // is the default the user sees when editing.
+  function orderedLangs() {
+    var cur = currentLang();
+    return [cur].concat(ALL_LANGS.filter(function (l) { return l !== cur; }));
+  }
+  var LANGS = orderedLangs();
 
   // Option lists (from existing data)
   var DAY_TYPES = ['rest', 'transit', 'city', 'nature', 'culture', 'china', 'gansu', 'xian', 'c'];
@@ -38,7 +52,7 @@
 
   var editMode = false;
   var dirty = false;
-  var editLang = 'de';       // current language being edited in modal
+  var editLang = currentLang();  // edit in the language the page is shown in
   var currentEditIndex = -1; // which day is open in the modal
 
   // ── Storage ──────────────────────────────────────────────────
@@ -137,6 +151,8 @@
 
   function toggleEdit() {
     editMode = !editMode;
+    LANGS = orderedLangs();        // keep language order in sync with the page
+    editLang = currentLang();
     document.body.classList.toggle('edit-mode', editMode);
     document.getElementById('ed-toggle').textContent = editMode ? 'Vorschau' : 'Bearbeiten';
     if (editMode) injectCardControls();
@@ -148,13 +164,16 @@
     document.querySelectorAll('.card-edit-bar, .add-day-row').forEach(function (e) { e.remove(); });
 
     var cards = document.querySelectorAll('.plans-grid .day-card, .plans-grid .free-day-card');
+    var total = cards.length;
     cards.forEach(function (card, i) {
       // Edit bar on the card
       var bar = document.createElement('div');
       bar.className = 'card-edit-bar';
+      var upDis = i === 0 ? ' disabled' : '';
+      var downDis = i === total - 1 ? ' disabled' : '';
       bar.innerHTML =
-        '<button class="ceb-up" title="Nach oben">▲</button>' +
-        '<button class="ceb-down" title="Nach unten">▼</button>' +
+        '<button class="ceb-up" title="Nach oben"' + upDis + '>▲</button>' +
+        '<button class="ceb-down" title="Nach unten"' + downDis + '>▼</button>' +
         '<button class="ceb-edit" title="Bearbeiten">✏️ Bearbeiten</button>' +
         '<button class="ceb-del" title="Löschen">🗑</button>';
       card.style.position = 'relative';
@@ -168,7 +187,7 @@
       // "Add day" row after each card
       var addRow = document.createElement('div');
       addRow.className = 'add-day-row';
-      addRow.innerHTML = '<button class="add-day-btn">+ Tag hier einfügen</button>';
+      addRow.innerHTML = '<button class="add-day-btn">+ Tag einfügen</button>';
       addRow.querySelector('button').addEventListener('click', function () { addDay(i + 1); });
       card.parentNode.insertBefore(addRow, card.nextSibling);
     });
@@ -203,11 +222,16 @@
     rerender();
   }
   function addDay(pos) {
+    var cur = currentLang();
+    // Seed the title only in the language the page is shown in, so the new
+    // card reads correctly right away; other languages stay empty for the user.
+    var seedTitle = {};
+    seedTitle[cur] = ({ de: 'Neuer Tag', en: 'New day', pl: 'Nowy dzień' })[cur] || 'Neuer Tag';
     var newDay = {
       num: 0,
       date: emptyML(),
       type: 'rest',
-      title: { de: 'Neuer Tag', en: 'New day', pl: 'Nowy dzień' },
+      title: seedTitle,
       loc: emptyML(),
       cost: '',
       costNote: emptyML(),
@@ -219,8 +243,22 @@
     renumber();
     setDirty(true);
     rerender();
-    // Open the new day for editing right away
-    setTimeout(function () { openEditor(pos); }, 60);
+    // After re-render: scroll the new card into view, then open its editor.
+    setTimeout(function () {
+      scrollToDay(pos);
+      openEditor(pos);
+    }, 80);
+  }
+
+  // Scroll a given day index into the middle of the viewport (smooth).
+  function scrollToDay(index) {
+    var cards = document.querySelectorAll('.plans-grid .day-card, .plans-grid .free-day-card');
+    var card = cards[index];
+    if (card && card.scrollIntoView) {
+      card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      card.classList.add('day-card-flash');
+      setTimeout(function () { card.classList.remove('day-card-flash'); }, 1500);
+    }
   }
   function renumber() {
     window.TRIP.days.forEach(function (d, i) { d.num = i + 1; });
@@ -290,13 +328,23 @@
   }
 
   function openEditor(index) {
+    LANGS = orderedLangs();        // refresh: page language first (render.js has set it by now)
+    editLang = currentLang();
     currentEditIndex = index;
     var d = window.TRIP.days[index];
     document.getElementById('em-title').textContent = 'Tag ' + d.num + ' bearbeiten';
     document.getElementById('em-body').innerHTML = buildForm(d);
     wireForm(d);
-    document.getElementById('ed-overlay').classList.add('open');
+    var overlay = document.getElementById('ed-overlay');
+    overlay.classList.add('open');
     document.body.style.overflow = 'hidden';
+    // Reset modal scroll to top and focus the first text field for fast typing
+    var modalBody = document.getElementById('em-body');
+    if (modalBody) modalBody.scrollTop = 0;
+    setTimeout(function () {
+      var first = modalBody && modalBody.querySelector('.ef-lang-pane.active input, .ef-lang-pane.active textarea, .ef-input');
+      if (first) { try { first.focus(); } catch (e) {} }
+    }, 50);
   }
   function closeEditor() {
     document.getElementById('ed-overlay').classList.remove('open');
@@ -572,8 +620,11 @@
     }
 
     setDirty(true);
-    closeEditor();
+    var idx = currentEditIndex;
     rerender();
+    closeEditor();
+    // After both re-render and close, bring the edited card back into view
+    if (idx >= 0) setTimeout(function () { scrollToDay(idx); }, 90);
   }
 
   function readML(scope, id) {
